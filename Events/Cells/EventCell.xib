@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="320" id="KGk-i7-Jjw" customClass="EventCell" customModule="Events" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="503" height="323"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="503" height="322.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-Mc-1AE">
+                        <rect key="frame" x="13" y="17" width="477" height="288.5"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lp-Ui-75c" customClass="GradientView" customModule="Events" customModuleProvider="target">
+                        <rect key="frame" x="13" y="230.5" width="477" height="84"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AcademicEvent" translatesAutoresizingMaskIntoConstraints="NO" id="9ZF-al-fae">
+                                <rect key="frame" x="8" y="37" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9ZF-al-fae" secondAttribute="height" multiplier="1:1" id="ev5-k1-72l"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W47-Qp-bRc">
+                                <rect key="frame" x="45" y="52.5" width="424" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19.5" id="CRd-oI-GLD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encontro das Emas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIl-OV-fzY">
+                                <rect key="frame" x="45" y="31" width="424" height="23.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23.5" id="kRK-tS-FOY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dIl-OV-fzY" firstAttribute="top" secondItem="3lp-Ui-75c" secondAttribute="top" constant="31" id="1SY-tc-MMr"/>
+                            <constraint firstAttribute="trailing" secondItem="W47-Qp-bRc" secondAttribute="trailing" constant="8" id="XmS-aa-fWr"/>
+                            <constraint firstItem="9ZF-al-fae" firstAttribute="leading" secondItem="3lp-Ui-75c" secondAttribute="leading" constant="8" id="acQ-pg-Gb3"/>
+                            <constraint firstAttribute="trailing" secondItem="dIl-OV-fzY" secondAttribute="trailing" constant="8" id="e6k-mq-53q"/>
+                            <constraint firstItem="W47-Qp-bRc" firstAttribute="leading" secondItem="9ZF-al-fae" secondAttribute="trailing" constant="8" id="fkv-bo-AxN"/>
+                            <constraint firstItem="9ZF-al-fae" firstAttribute="top" secondItem="3lp-Ui-75c" secondAttribute="top" constant="37" id="idY-HL-OGy"/>
+                            <constraint firstItem="dIl-OV-fzY" firstAttribute="leading" secondItem="9ZF-al-fae" secondAttribute="trailing" constant="8" id="kPa-P4-XrK"/>
+                            <constraint firstAttribute="bottom" secondItem="W47-Qp-bRc" secondAttribute="bottom" constant="12" id="rXD-H4-gL1"/>
+                            <constraint firstAttribute="bottom" secondItem="9ZF-al-fae" secondAttribute="bottom" constant="18" id="uyE-A3-mui"/>
+                            <constraint firstAttribute="height" constant="84" id="wLN-7L-mcH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oUo-Mc-1AE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="0uh-je-iDn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="oUo-Mc-1AE" secondAttribute="bottom" constant="9" id="7P5-bt-Lar"/>
+                    <constraint firstItem="oUo-Mc-1AE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="IDR-eR-QxW"/>
+                    <constraint firstItem="3lp-Ui-75c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="Kv4-Sl-5Cm"/>
+                    <constraint firstItem="oUo-Mc-1AE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="dMu-b7-mdq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oUo-Mc-1AE" secondAttribute="trailing" constant="5" id="goc-M6-PsN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="3lp-Ui-75c" secondAttribute="trailing" constant="5" id="jNh-yl-g5g"/>
+                    <constraint firstItem="oUo-Mc-1AE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rk3-bQ-swd"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3lp-Ui-75c" secondAttribute="bottom" id="zvR-Wi-yoi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="coverImageView" destination="oUo-Mc-1AE" id="EHh-kh-cZy"/>
+                <outlet property="infoLabel" destination="W47-Qp-bRc" id="QqO-We-Y93"/>
+                <outlet property="titleLabel" destination="dIl-OV-fzY" id="kgH-T9-0bb"/>
+                <outlet property="typeImageView" destination="9ZF-al-fae" id="CVC-4z-X2B"/>
+            </connections>
+            <point key="canvasLocation" x="-3.5" y="187.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="AcademicEvent" width="96" height="96"/>
+        <image name="EventPlaceholder" width="370" height="235"/>
+    </resources>
+</document>

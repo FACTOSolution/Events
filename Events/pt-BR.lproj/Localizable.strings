@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  Events
+
+  Created by Orlando Amorim on 22/08/17.
+  Copyright © 2017 Orlando Amorim. All rights reserved.
+*/
+
+// Common - Portuguese - pt-BR.lproj/Localizable.strings
+
+    "common.event"      = "Event";
+    "common.user"       = "User";
+
+// Login - Portuguese - pt-BR.lproj/Localizable.strings
+
+    "login.email"       = "Email";
+    "login.password"    = "Senha (min. 8 caracteres)";
+    "login.userName"    = "Nome de usuário";
+    "login.logIn"       = "Login";
+    "login.signUp"      = "Criar Conta";
+    "login.welcome"     = "Bem Vindo ao UFPIEvents";
+    "login.terms"       = "Ao me cadastrando, eu aceito os termos e condições";
+
+// AlertType - Portuguese - pt-BR.lproj/Localizable.strings
+
+    "alertType.change"      = "Mudar";
+    "alertType.error"       = "Erro";
+    "alertType.delete"      = "Excluir";
+    "alertType.wait"        = "Aguarde";
+    "alertType.add"         = "Adicionar";
+    "alertType.update"      = "Atualizar";
+    "alertType.cancel"      = "Cancelar";
+    "alertType.createdAt"   = "Criado em";
+    "alertType.ok"          = "Ok";
+
+// FormFields - Portuguese - pt-BR.lproj/Localizable.strings
+
+    "formFields.name"           = "Nome";
+    "formFields.birthday"       = "Nascimento";
+    "formFields.gender"         = "Genero";
+    "formFields.ethnic"         = "Etinia";
+    "formFields.mail"           = "Email";
+    "formFields.phoneNumber"    = "Telefone";
+    "formFields.about"          = "Sobre";
+
+
+// Camera - Portuguese - pt-BR.lproj/Localizable.strings
+
+    "camera.camera"             = "Camera";
+    "camera.photoLibrary"       = "Biblioteca de Fotos";
+    "camera.savedPhotosAlbum"   = "Fotos Salvas";

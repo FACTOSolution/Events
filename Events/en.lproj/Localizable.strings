@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  Events
+
+  Created by Orlando Amorim on 22/08/17.
+  Copyright © 2017 Orlando Amorim. All rights reserved.
+*/
+
+// Common - English - en.lproj/Localizable.strings
+
+    "common.event"      = "Event";
+    "common.user"       = "User";
+
+// Login - English - en.lproj/Localizable.strings
+
+    "login.email"       = "Email";
+    "login.password"    = "Password (min. 8 characters)";
+    "login.userName"    = "Username";
+    "login.logIn"       = "Log in";
+    "login.signUp"      = "Sign up";
+    "login.welcome"     = "Welcome to UFPIEvents";
+    "login.terms"       = "By signing up I accept the terms and condictions";
+
+
+// AlertType - English - en.lproj/Localizable.strings
+
+    "alertType.change"      = "Change";
+    "alertType.error"       = "Error";
+    "alertType.delete"      = "Delete";
+    "alertType.wait"        = "Wait";
+    "alertType.add"         = "Add";
+    "alertType.update"      = "Update";
+    "alertType.cancel"      = "Cancel";
+    "alertType.createdAt"   = "Created At";
+    "alertType.ok"          = "Ok";
+
+// FormFields - English - en.lproj/Localizable.strings
+
+    "formFields.name"           = "Name";
+    "formFields.birthday"       = "Birthday";
+    "formFields.gender"         = "Gender";
+    "formFields.ethnic"         = "Ethnic";
+    "formFields.mail"           = "Mail";
+    "formFields.phoneNumber"    = "Phone Number";
+    "formFields.about"          = "About";
+
+// Camera - English - en.lproj/Localizable.strings
+
+    "camera.camera"             = "Camera";
+    "camera.photoLibrary"       = "Photo Library";
+    "camera.savedPhotosAlbum"   = "Saved Photos";
