@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="I0b-Ri-sfY" customClass="EventEureka" customModule="Events" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Academic" translatesAutoresizingMaskIntoConstraints="NO" id="btz-yB-Xat">
+                    <rect key="frame" x="152" y="-37" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="3ER-cs-l7y"/>
+                        <constraint firstAttribute="height" constant="70" id="riT-8v-ONH"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ms. Arno WisozkMs. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="38y-Vu-yf0">
+                    <rect key="frame" x="16" y="27" width="343" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="PNu-DB-K0A"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="btz-yB-Xat" firstAttribute="centerX" secondItem="I0b-Ri-sfY" secondAttribute="centerX" id="9dg-GP-k8N"/>
+                <constraint firstItem="38y-Vu-yf0" firstAttribute="top" secondItem="btz-yB-Xat" secondAttribute="bottom" constant="-6" id="BiP-Rq-XL9"/>
+                <constraint firstAttribute="trailing" secondItem="38y-Vu-yf0" secondAttribute="trailing" constant="16" id="Qei-hg-vy2"/>
+                <constraint firstItem="btz-yB-Xat" firstAttribute="top" secondItem="I0b-Ri-sfY" secondAttribute="top" constant="-37" id="jdM-vw-ULz"/>
+                <constraint firstAttribute="bottom" secondItem="38y-Vu-yf0" secondAttribute="bottom" id="u9a-Y3-eSi"/>
+                <constraint firstItem="38y-Vu-yf0" firstAttribute="leading" secondItem="I0b-Ri-sfY" secondAttribute="leading" constant="16" id="yqp-XZ-gRR"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="38y-Vu-yf0" id="8cE-fh-G6N"/>
+                <outlet property="typeImageView" destination="btz-yB-Xat" id="9Cf-od-wYE"/>
+            </connections>
+            <point key="canvasLocation" x="20.5" y="366"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Academic" width="96" height="96"/>
+    </resources>
+</document>

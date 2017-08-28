@@ -16,10 +16,13 @@ class EventViewController: FormViewController {
     let realm = try! Realm()
     var event: Event? { didSet{ setupForm() } }
 
+    var titleView: UIScrollView = UIScrollView()
+    var contentView: UIScrollView = UIScrollView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.    
-        //setupForm()
+        // Do any additional setup after loading the view.
+        self.tableView.separatorColor = EventsTheme.textColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +31,11 @@ class EventViewController: FormViewController {
     }
     
     private func setupForm() {
+        TextAreaRow.defaultCellSetup = { cell, row in
+            cell.backgroundColor = UIColor.clear
+            cell.textView.backgroundColor = UIColor.clear
+        }
+        
     
        form +++ Section() {
             let imageImputs: [SDWebImageSource] =
@@ -42,21 +50,31 @@ class EventViewController: FormViewController {
                 
             }
             $0.header = header
+        
+            var footer = HeaderFooterView<EventEureka>(.nibFile(name: "EventEureka", bundle: nil))
+            footer.onSetupView = { (view, section) -> () in
+                view.set(self.event!)
+            }
+        
+            $0.footer = footer
         }
         
-        +++ Section("Section1")
-        <<< TextRow(){ row in
-            row.title = "Text Row"
-            row.placeholder = "Enter text here"
-        }
-        <<< PhoneRow(){
-            $0.title = "Phone Row"
-            $0.placeholder = "And numbers here"
-        }
-        +++ Section("Section2")
-        <<< DateRow(){
-            $0.title = "Date Row"
-            $0.value = Date(timeIntervalSinceReferenceDate: 0)
+//        +++ Section() {
+//            var header = HeaderFooterView<EventEureka>(.nibFile(name: "EventEureka", bundle: nil))
+//            header.onSetupView = { (view, section) -> () in
+//                view.set(self.event!)
+//            }
+//            $0.header = header
+//        }
+        +++ Section(Events.Localizable.FormFields.description.localized)
+
+        <<< TextAreaRow() {
+            $0.textAreaHeight = .dynamic(initialTextViewHeight: 50)
+            $0.value = event!._description
+            $0.disabled = true
+            $0.deselect(animated: true)
+            }.cellSetup{ (cell, row) in
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 2000, bottom: 0, right: 0)
         }
     }
 }
@@ -70,3 +88,21 @@ extension EventViewController: ImageSlideShowDelegate {
     }
     
 }
+
+extension UITableViewCell {
+    
+    var isSeparatorHidden: Bool {
+        get {
+            return self.separatorInset.right != 0
+        }
+        set {
+            if newValue {
+                self.separatorInset = UIEdgeInsetsMake(0, self.bounds.size.width, 0, 0)
+            } else {
+                self.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            }
+        }
+    }
+    
+}
+

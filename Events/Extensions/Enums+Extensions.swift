@@ -11,9 +11,23 @@ import UIKit
 // MARK: - Project Constants
 enum Events {
     
+    //Events Types
+    enum Types: String {
+        case academic = "Academic"
+        case cultural = "Cultural"
+        
+        func localized() -> String {
+            switch self {
+                case .academic: return Localizable.Common.academic.localized
+                case .cultural: return Localizable.Common.cultural.localized
+            }
+        }
+    }
+    
     // Image Names
     enum Images: String, ImageRepresentable {
-        case academicEvent      = "AcademicEvent"
+        case academic           = "Academic"
+        case cultural           = "Cultural"
         case eventPlaceholder   = "EventPlaceholder"
     }
     
@@ -22,8 +36,10 @@ enum Events {
         
         // Common Names
         enum Common: String, LocalizeRepresentable {
-            case event    = "common.event"
-            case user    = "common.user"
+            case event      = "common.event"
+            case user       = "common.user"
+            case academic   = "common.academic"
+            case cultural   = "common.cultural"
         }
         
         enum Login: String, LocalizeRepresentable {
@@ -57,6 +73,8 @@ enum Events {
             case mail           = "formFields.mail"
             case phoneNumber    = "formFields.phoneNumber"
             case about          = "formFields.about"
+            case description    = "formFields.description"
+
         }
         
         enum Camera: String, LocalizeRepresentable {

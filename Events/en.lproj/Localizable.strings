@@ -10,6 +10,8 @@
 
     "common.event"      = "Event";
     "common.user"       = "User";
+    "common.academic"   = "Academic";
+    "common.cultural"   = "Cultural";
 
 // Login - English - en.lproj/Localizable.strings
 
@@ -43,6 +45,7 @@
     "formFields.mail"           = "Mail";
     "formFields.phoneNumber"    = "Phone Number";
     "formFields.about"          = "About";
+    "formFields.description"    = "Description";
 
 // Camera - English - en.lproj/Localizable.strings
 

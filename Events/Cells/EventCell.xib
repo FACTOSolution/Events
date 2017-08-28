@@ -20,19 +20,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="503" height="322.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EventPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-Mc-1AE">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oUo-Mc-1AE">
                         <rect key="frame" x="13" y="17" width="477" height="288.5"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lp-Ui-75c" customClass="GradientView" customModule="Events" customModuleProvider="target">
                         <rect key="frame" x="13" y="230.5" width="477" height="84"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AcademicEvent" translatesAutoresizingMaskIntoConstraints="NO" id="9ZF-al-fae">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9ZF-al-fae">
                                 <rect key="frame" x="8" y="37" width="29" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9ZF-al-fae" secondAttribute="height" multiplier="1:1" id="ev5-k1-72l"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W47-Qp-bRc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EventDescription" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W47-Qp-bRc">
                                 <rect key="frame" x="45" y="52.5" width="424" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19.5" id="CRd-oI-GLD"/>
@@ -41,7 +41,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encontro das Emas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIl-OV-fzY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIl-OV-fzY">
                                 <rect key="frame" x="45" y="31" width="424" height="23.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23.5" id="kRK-tS-FOY"/>
@@ -86,8 +86,4 @@
             <point key="canvasLocation" x="-3.5" y="187.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="AcademicEvent" width="96" height="96"/>
-        <image name="EventPlaceholder" width="370" height="235"/>
-    </resources>
 </document>

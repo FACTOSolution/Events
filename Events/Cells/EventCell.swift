@@ -29,10 +29,20 @@ class EventCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        coverImageView.layer.cornerRadius = 4.0
+        coverImageView.layer.masksToBounds = true
+        
+        typeImageView.layer.cornerRadius = 4.0
+        typeImageView.layer.masksToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        coverImageView.addShadowView()
     }
     
     
@@ -43,13 +53,15 @@ class EventCell: UITableViewCell {
     }()
     
     public func set(_ event: Event) {
+        typeImageView.image = Events.Images(rawValue: event.type)?.image
         titleLabel.text = event.name
         infoLabel.text = dateFormatter.string(from: event.date)
         infoLabel.text = infoLabel.text! + " • " + event.address
-        
-        let url = URL(string: "https://lh5.googleusercontent.com/p-1GrbrKuqEKFWY_edQ5lfiByz_Y4T-EwF8sKgdObpUKoAqJW1X59W3O86uf9en_c-pRPoiVWc3PGgg=w2560-h1298")!
-        coverImageView.sd_setImage(with: url, placeholderImage: Events.Images.eventPlaceholder.image, options: SDWebImageOptions.progressiveDownload)
-        
+        if let image = event.images.first?.url {
+            coverImageView.sd_setImage(with: URL(string: image)!, placeholderImage: Events.Images.eventPlaceholder.image, options: SDWebImageOptions.progressiveDownload)
+        } else {
+            coverImageView.image = Events.Images.eventPlaceholder.image
+        }
     }
 }
 class GradientView: UIView {
@@ -60,6 +72,6 @@ class GradientView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let gradientLayer = self.layer as! CAGradientLayer
-        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0.0).cgColor, UIColor(red: 0.161, green: 0.208, blue: 0.235, alpha: 1).cgColor]
+        gradientLayer.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0.0).cgColor, EventsTheme.darkerColor.cgColor]
     }
 }
