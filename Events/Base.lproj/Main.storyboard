@@ -41,10 +41,46 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="U9O-6H-6dR"/>
+                    <connections>
+                        <segue destination="2Zq-T8-zVw" kind="show" identifier="ShowEvent" id="ywf-uh-wCb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V7g-pB-qzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1805.5999999999999" y="-233.43328335832086"/>
+        </scene>
+        <!--Event View Controller-->
+        <scene sceneID="AEX-4l-zmV">
+            <objects>
+                <viewController id="2Zq-T8-zVw" customClass="EventViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="udX-jd-YV9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lwx-s5-OXS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H1M-Jw-qHA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="M0r-Ti-BW2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M0r-Ti-BW2" firstAttribute="bottom" secondItem="Lwx-s5-OXS" secondAttribute="top" id="2ow-1s-Mck"/>
+                            <constraint firstAttribute="trailing" secondItem="M0r-Ti-BW2" secondAttribute="trailing" id="4CB-Zt-SR8"/>
+                            <constraint firstItem="M0r-Ti-BW2" firstAttribute="top" secondItem="H1M-Jw-qHA" secondAttribute="top" id="DvU-bv-R0A"/>
+                            <constraint firstItem="M0r-Ti-BW2" firstAttribute="leading" secondItem="H1M-Jw-qHA" secondAttribute="leading" id="ZpZ-b7-leo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="M0r-Ti-BW2" id="nKD-EO-5nl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yv4-le-p43" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2709.5999999999999" y="-233.43328335832086"/>
         </scene>
         <!--Events-->
         <scene sceneID="Ro8-fw-gMZ">

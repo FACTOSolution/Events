@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Eureka.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ImageSlideshow-ImageSlideshow.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,7 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FED6EF2EC9C4C714D225BCF825B4AA7</key>
+		<key>261D6B4E4C864C6B94998BE1859A1538</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>31FD3D85FEEA068BA5E7348520573816</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,6 +87,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>675A114988AE198732ED4AD726408964</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
@@ -87,22 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9C4ADD5C3BBB47A44CD36D84DE2C57AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C88A6303DCAE6F46BA8F9639A499A35C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>CD6C9FB6B052E1CF663F8A56041EA163</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F634E09C139F672963B9C96A48184226</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC272FA2FA8739B0A9F43AFB38F6A47D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

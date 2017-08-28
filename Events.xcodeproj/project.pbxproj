@@ -13,7 +13,7 @@
 		1813C5D71F4F571E008ACBE5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5D61F4F571E008ACBE5 /* Event.swift */; };
 		1813C5DB1F4F5C46008ACBE5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5DA1F4F5C46008ACBE5 /* User.swift */; };
 		1813C5DE1F4F9FEC008ACBE5 /* EventsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5DC1F4F9FEC008ACBE5 /* EventsAPI.swift */; };
-		1813C5E11F4FC263008ACBE5 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5E01F4FC263008ACBE5 /* NetworkAdapter.swift */; };
+		1813C5E11F4FC263008ACBE5 /* EventNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5E01F4FC263008ACBE5 /* EventNetworkAdapter.swift */; };
 		1813C5E51F4FE076008ACBE5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5E41F4FE076008ACBE5 /* EventsTableViewController.swift */; };
 		1813C5E91F4FE09D008ACBE5 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5E71F4FE09D008ACBE5 /* EventCell.swift */; };
 		1813C5EA1F4FE09D008ACBE5 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1813C5E81F4FE09D008ACBE5 /* EventCell.xib */; };
@@ -26,6 +26,10 @@
 		18A230AD1F4C73DF0025DA84 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A230AB1F4C73DF0025DA84 /* Localizable.strings */; };
 		18A230B31F4C746A0025DA84 /* Enums+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A230B11F4C746A0025DA84 /* Enums+Extensions.swift */; };
 		18A230B41F4C746A0025DA84 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A230B21F4C746A0025DA84 /* UIColor+Extensions.swift */; };
+		18A77AA11F5377B200AEE365 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A77AA01F5377B200AEE365 /* EventViewController.swift */; };
+		18A77AA61F537EEC00AEE365 /* ImageSlideShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A77AA51F537EEC00AEE365 /* ImageSlideShow.swift */; };
+		18CE76FA1F5391E500C79E54 /* ImageSlideShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */; };
+		18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE76FB1F53A8A900C79E54 /* Image.swift */; };
 		D2C4394DEFFC47BB1FF2862E /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23FBDAC5A1F745C618814F1 /* Pods_Events.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +57,7 @@
 		1813C5D61F4F571E008ACBE5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Model/Event.swift; sourceTree = "<group>"; };
 		1813C5DA1F4F5C46008ACBE5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		1813C5DC1F4F9FEC008ACBE5 /* EventsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsAPI.swift; path = API/EventsAPI.swift; sourceTree = "<group>"; };
-		1813C5E01F4FC263008ACBE5 /* NetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkAdapter.swift; path = API/NetworkAdapter.swift; sourceTree = "<group>"; };
+		1813C5E01F4FC263008ACBE5 /* EventNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventNetworkAdapter.swift; path = API/EventNetworkAdapter.swift; sourceTree = "<group>"; };
 		1813C5E41F4FE076008ACBE5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsTableViewController.swift; path = ViewControllers/EventsTableViewController.swift; sourceTree = "<group>"; };
 		1813C5E71F4FE09D008ACBE5 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCell.swift; path = Cells/EventCell.swift; sourceTree = "<group>"; };
 		1813C5E81F4FE09D008ACBE5 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventCell.xib; path = Cells/EventCell.xib; sourceTree = "<group>"; };
@@ -76,6 +80,10 @@
 		18A230AF1F4C73E70025DA84 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "Events/pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		18A230B11F4C746A0025DA84 /* Enums+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Enums+Extensions.swift"; path = "Extensions/Enums+Extensions.swift"; sourceTree = "<group>"; };
 		18A230B21F4C746A0025DA84 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		18A77AA01F5377B200AEE365 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ViewControllers/EventViewController.swift; sourceTree = "<group>"; };
+		18A77AA51F537EEC00AEE365 /* ImageSlideShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSlideShow.swift; path = Cells/ImageSlideShow.swift; sourceTree = "<group>"; };
+		18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageSlideShow.xib; path = Cells/ImageSlideShow.xib; sourceTree = "<group>"; };
+		18CE76FB1F53A8A900C79E54 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Model/Image.swift; sourceTree = "<group>"; };
 		6A277B896B6EC1B8E5349247 /* Pods-Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.debug.xcconfig"; sourceTree = "<group>"; };
 		A23FBDAC5A1F745C618814F1 /* Pods_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93EA2DA4B291F4D743F8640 /* Pods-Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +128,7 @@
 			children = (
 				1813C5D61F4F571E008ACBE5 /* Event.swift */,
 				1813C5DA1F4F5C46008ACBE5 /* User.swift */,
+				18CE76FB1F53A8A900C79E54 /* Image.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -129,6 +138,8 @@
 			children = (
 				1813C5E71F4FE09D008ACBE5 /* EventCell.swift */,
 				1813C5E81F4FE09D008ACBE5 /* EventCell.xib */,
+				18A77AA51F537EEC00AEE365 /* ImageSlideShow.swift */,
+				18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -161,7 +172,7 @@
 			children = (
 				18A2309E1F4C72B10025DA84 /* AppDelegate */,
 				18A2309D1F4C72A80025DA84 /* Storyboards */,
-				18A2309F1F4C72C00025DA84 /* ViewController */,
+				18A2309F1F4C72C00025DA84 /* Controllers */,
 				1813C5D51F4F56EA008ACBE5 /* Model */,
 				18A230B61F4C7B8C0025DA84 /* API */,
 				1801083F1F536508006380DB /* UI */,
@@ -216,12 +227,13 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
-		18A2309F1F4C72C00025DA84 /* ViewController */ = {
+		18A2309F1F4C72C00025DA84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				1813C5E41F4FE076008ACBE5 /* EventsTableViewController.swift */,
+				18A77AA01F5377B200AEE365 /* EventViewController.swift */,
 			);
-			name = ViewController;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		18A230B01F4C745D0025DA84 /* Extensions */ = {
@@ -238,8 +250,8 @@
 		18A230B61F4C7B8C0025DA84 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1813C5E01F4FC263008ACBE5 /* EventNetworkAdapter.swift */,
 				1813C5DC1F4F9FEC008ACBE5 /* EventsAPI.swift */,
-				1813C5E01F4FC263008ACBE5 /* NetworkAdapter.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -379,6 +391,7 @@
 				18A230791F4C72780025DA84 /* LaunchScreen.storyboard in Resources */,
 				18A230AD1F4C73DF0025DA84 /* Localizable.strings in Resources */,
 				18A230761F4C72780025DA84 /* Assets.xcassets in Resources */,
+				18CE76FA1F5391E500C79E54 /* ImageSlideShow.xib in Resources */,
 				18A230741F4C72780025DA84 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +421,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Events/Pods-Events-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -419,6 +433,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -474,11 +489,14 @@
 			files = (
 				18A230B31F4C746A0025DA84 /* Enums+Extensions.swift in Sources */,
 				1813C5E51F4FE076008ACBE5 /* EventsTableViewController.swift in Sources */,
+				18A77AA11F5377B200AEE365 /* EventViewController.swift in Sources */,
 				1801083D1F53521C006380DB /* ObjectMapper+Extensions.swift in Sources */,
+				18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */,
 				180108411F53651D006380DB /* EventsUI.swift in Sources */,
 				18A230B41F4C746A0025DA84 /* UIColor+Extensions.swift in Sources */,
+				18A77AA61F537EEC00AEE365 /* ImageSlideShow.swift in Sources */,
 				1813C5DE1F4F9FEC008ACBE5 /* EventsAPI.swift in Sources */,
-				1813C5E11F4FC263008ACBE5 /* NetworkAdapter.swift in Sources */,
+				1813C5E11F4FC263008ACBE5 /* EventNetworkAdapter.swift in Sources */,
 				1801083B1F51B01D006380DB /* Moya+Extensions.swift in Sources */,
 				1813C5DB1F4F5C46008ACBE5 /* User.swift in Sources */,
 				1813C5D71F4F571E008ACBE5 /* Event.swift in Sources */,

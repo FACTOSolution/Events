@@ -8,4 +8,5 @@ target 'Events' do
   pod 'ImageSlideshow/SDWebImage'
   pod 'RealmSwift'
   pod 'ObjectMapper', '~> 2.2'
+  pod 'Eureka'
 end

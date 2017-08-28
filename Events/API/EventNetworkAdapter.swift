@@ -16,10 +16,40 @@ struct EventNetworkAdapter {
     static let provider = MoyaProvider<EventsAPI>()
     // Get the default Realm
     static let realm = try! Realm()
-    //success successCallback: @escaping ([Event]) -> Void, 
+
     static func getAllEvents(error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
         
         provider.request(EventsAPI.getAllEvents) { (result) in
+            switch result {
+            case .success(let response):
+                // 1:
+                if response.statusCode >= 200 && response.statusCode <= 300 {
+                    do {
+                        let eventsJson = try response.mapJSON()
+                        let events: [Event] = Mapper<Event>().mapArray(JSONArray: eventsJson as! [[String : Any]])
+                        try! realm.write {
+                            for event in events {
+                                realm.add(event, update: true)
+                            }
+                        }
+                    }catch {
+                        errorCallback(error)
+                    }
+                } else {
+                    let error = NSError(domain: response.description, code: response.statusCode, userInfo:[NSLocalizedDescriptionKey: "Parsing Error"])
+                    errorCallback(error)
+                }
+                
+            case .failure(let error):
+                // 3:
+                failureCallback(error)
+            }
+        }
+    }
+    
+    static func getEvent(with id: Int, error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
+        
+        provider.request(EventsAPI.getEvent(id: id)) { (result) in
             switch result {
             case .success(let response):
                 // 1:

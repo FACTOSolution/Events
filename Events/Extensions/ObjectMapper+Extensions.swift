@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
 public class DateFormatterTransform: TransformType {
     public typealias Object = Date
@@ -33,4 +34,32 @@ public class DateFormatterTransform: TransformType {
         }
         return nil
     }
+}
+
+public class ListImageTransform: TransformType {
+
+    public typealias Object = List<Image>
+    public typealias JSON = [String]
+    
+    init() {}
+    
+    public func transformFromJSON(_ value: Any?) -> List<Image>? {
+        let listImage = List<Image>()
+        guard let items = value as? [String] else { return listImage }
+        for item in items {
+            let image = Image()
+            image.url = item
+            listImage.append(image)
+        }
+        return listImage
+    }
+    public func transformToJSON(_ value: List<Image>?) -> [String]? {
+        guard let listImage = value else { return nil }
+        var arrayImage:[String] = [String]()
+        for image in listImage {
+            arrayImage.append(image.url)
+        }
+        return arrayImage
+    }
+    
 }

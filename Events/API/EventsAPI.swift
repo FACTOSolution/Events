@@ -30,7 +30,7 @@ extension EventsAPI: TargetType {
         case .updateUser(let user):
             return "/users/\(user.id)"
         case .getUser(let id):
-            return "/users/\(id)"
+            return "/users/\(id).json"
         case .getAllUsers:
             return "/users.json"
         case .createEvent:
@@ -38,7 +38,7 @@ extension EventsAPI: TargetType {
         case .updateEvent(let event):
             return "/event/\(event.id)"
         case .getEvent(let id):
-            return "/event/\(id)"
+            return "/event/\(id).json"
         case .getAllEvents:
             return "/event.json"
         }

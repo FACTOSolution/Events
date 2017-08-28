@@ -23,7 +23,7 @@ class Event: Object, Mappable {
     dynamic var created = Date()
     dynamic var updated = Date()
     dynamic var published = false
-    dynamic var image = ""
+    var images = List<Image>()
     dynamic var type = ""
     
     override static func primaryKey() -> String? {
@@ -46,7 +46,7 @@ class Event: Object, Mappable {
         created <- (map["created_at"], DateFormatterTransform())
         updated <- (map["updated_at"], DateFormatterTransform())
         published <- map["published"]
-        image <- map["image"]
+        images <- (map["image"], ListImageTransform())
         type <- map["type"]
     }
     
@@ -58,5 +58,16 @@ class Event: Object, Mappable {
 
 }
 
+
+//var nicknames: [String] {
+//    get {
+//        return _backingNickNames.map { $0.stringValue }
+//    }
+//    set {
+//        _backingNickNames.removeAll()
+//        _backingNickNames.appendContentsOf(newValue.map({ RealmString(value: [$0]) }))
+//    }
+//}
+//let _backingNickNames = List<RealmString>()
 
 
