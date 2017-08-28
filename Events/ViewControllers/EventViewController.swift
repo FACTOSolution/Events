@@ -59,13 +59,6 @@ class EventViewController: FormViewController {
             $0.footer = footer
         }
         
-//        +++ Section() {
-//            var header = HeaderFooterView<EventEureka>(.nibFile(name: "EventEureka", bundle: nil))
-//            header.onSetupView = { (view, section) -> () in
-//                view.set(self.event!)
-//            }
-//            $0.header = header
-//        }
         +++ Section(Events.Localizable.FormFields.description.localized)
 
         <<< TextAreaRow() {

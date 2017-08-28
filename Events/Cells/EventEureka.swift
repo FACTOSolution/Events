@@ -9,7 +9,8 @@
 import UIKit
 
 class EventEureka: UIView {
-
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var typeImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
@@ -17,12 +18,20 @@ class EventEureka: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        typeImageView.backgroundColor = EventsTheme.darkerColor
-        typeImageView.contentMode = .scaleAspectFit
-        typeImageView.layer.cornerRadius = typeImageView.frame.size.width / 2
-        typeImageView.clipsToBounds = true
-        typeImageView.layer.borderWidth = 3.0
-        typeImageView.layer.borderColor = EventsTheme.linkColor.cgColor
+        typeView.backgroundColor = EventsTheme.darkerColor
+        typeView.contentMode = .scaleAspectFit
+        typeView.layer.cornerRadius = typeView.frame.size.width / 2
+        typeView.clipsToBounds = true
+        typeView.layer.borderWidth = 2.0
+        typeView.layer.borderColor = EventsTheme.linkColor.cgColor
+        
+        lineView.backgroundColor = EventsTheme.linkColor
+        
+//        typeImageView.backgroundColor = EventsTheme.darkerColor
+//        typeImageView.contentMode = .scaleAspectFit
+//        typeImageView.layer.cornerRadius = typeImageView.frame.size.width / 2
+//        typeImageView.clipsToBounds = true
+//        typeImageView.layer.borderWidth = 2.0
         
         titleLabel.textColor = UIColor.white
     }
@@ -30,5 +39,8 @@ class EventEureka: UIView {
     public func set(_ event: Event) {
         typeImageView.image = Events.Images(rawValue: event.type)?.image
         titleLabel.text = event.name
+        
+    
     }
 }
+

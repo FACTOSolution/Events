@@ -26,7 +26,7 @@ extension EventsAPI: TargetType {
     var path: String {
         switch self {
         case .createUser:
-            return "/users"
+            return "/auth"
         case .updateUser(let user):
             return "/users/\(user.id)"
         case .getUser(let id):
@@ -34,7 +34,7 @@ extension EventsAPI: TargetType {
         case .getAllUsers:
             return "/users.json"
         case .createEvent:
-            return "/event"
+            return "/auth"
         case .updateEvent(let event):
             return "/event/\(event.id)"
         case .getEvent(let id):
@@ -47,7 +47,9 @@ extension EventsAPI: TargetType {
         switch self {
         case .getUser, .getAllUsers, .getEvent, .getAllEvents:
             return .get
-        case .createUser, .updateUser, .createEvent, .updateEvent:
+        case .createUser, .createEvent:
+            return .post
+        case .updateUser, .updateEvent:
             return .put
         }
     }
