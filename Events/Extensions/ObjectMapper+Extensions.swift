@@ -61,5 +61,26 @@ public class ListImageTransform: TransformType {
         }
         return arrayImage
     }
+}
+
+public class ValueTransform: TransformType {
+    
+    public typealias Object = Double
+    public typealias JSON = String
+    
+    init() {}
+
+    public func transformFromJSON(_ value: Any?) -> Double? {
+        if let valueString = value as? String {
+            return Double(valueString)
+        }
+        return nil
+    }
+    public func transformToJSON(_ value: Double?) -> String? {
+        if let value = value {
+            return String(value)
+        }
+        return nil
+    }
     
 }

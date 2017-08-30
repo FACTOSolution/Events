@@ -12,7 +12,7 @@ import RealmSwift
 class EventsTableViewController: UITableViewController {
     
     let realm = try! Realm()
-    let results = try! Realm().objects(Event.self).sorted(byKeyPath: "date", ascending: true)
+    let results = try! Realm().objects(Event.self).sorted(byKeyPath: "startDate", ascending: true)
     var notificationToken: NotificationToken?
     
     override func viewDidLoad() {

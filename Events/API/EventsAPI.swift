@@ -73,7 +73,8 @@ extension EventsAPI: TargetType {
             parameters["contact"] = event.contact
             parameters["value_in_real"] = event.value
             parameters["address"] = event.address
-            parameters["date"] = event.date
+            parameters["startDate"] = event.startDate
+            parameters["endDate"] = event.endDate
             parameters["created_at"] = event.created
             parameters["updated_at"] = event.updated
             parameters["published"] = event.published

@@ -45,6 +45,13 @@
     "formFields.phoneNumber"    = "Telefone";
     "formFields.about"          = "Sobre";
     "formFields.description"    = "Descrição";
+    "formFields.startDate"      = "Inicio";
+    "formFields.endDate"        = "Termino";
+    "formFields.value"          = "Valor";
+    "formFields.createdBy"      = "Criado por";
+    "formFields.report"         = "Reportar";
+    "formFields.address"        = "Local";
+    "formFields.free"           = "Gratis";
 
 // Camera - Portuguese - pt-BR.lproj/Localizable.strings
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bf2-86-sie" customClass="MapCell" customModule="Events" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sRf-Ra-qNa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sRf-Ra-qNa" firstAttribute="centerY" secondItem="bf2-86-sie" secondAttribute="centerY" id="8wo-Na-yAn"/>
+                <constraint firstItem="sRf-Ra-qNa" firstAttribute="top" secondItem="bf2-86-sie" secondAttribute="top" id="Jeh-9d-CMI"/>
+                <constraint firstItem="sRf-Ra-qNa" firstAttribute="centerX" secondItem="bf2-86-sie" secondAttribute="centerX" id="g5G-2I-4hQ"/>
+                <constraint firstAttribute="trailing" secondItem="sRf-Ra-qNa" secondAttribute="trailing" id="gFg-Nw-btg"/>
+                <constraint firstItem="sRf-Ra-qNa" firstAttribute="leading" secondItem="bf2-86-sie" secondAttribute="leading" id="rBe-FX-cj4"/>
+                <constraint firstAttribute="bottom" secondItem="sRf-Ra-qNa" secondAttribute="bottom" id="xXx-U1-Bj2"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mapImageView" destination="sRf-Ra-qNa" id="fol-wZ-Pgx"/>
+            </connections>
+            <point key="canvasLocation" x="27.5" y="540"/>
+        </view>
+    </objects>
+</document>

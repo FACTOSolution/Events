@@ -74,7 +74,13 @@ enum Events {
             case phoneNumber    = "formFields.phoneNumber"
             case about          = "formFields.about"
             case description    = "formFields.description"
-
+            case startDate      = "formFields.startDate"
+            case endDate        = "formFields.endDate"
+            case value          = "formFields.value"
+            case createdBy      = "formFields.createdBy"
+            case report         = "formFields.report"
+            case address        = "formFields.address"
+            case free           = "formFields.free"
         }
         
         enum Camera: String, LocalizeRepresentable {

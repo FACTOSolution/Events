@@ -33,6 +33,9 @@
 		18A230B41F4C746A0025DA84 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A230B21F4C746A0025DA84 /* UIColor+Extensions.swift */; };
 		18A77AA11F5377B200AEE365 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A77AA01F5377B200AEE365 /* EventViewController.swift */; };
 		18A77AA61F537EEC00AEE365 /* ImageSlideShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A77AA51F537EEC00AEE365 /* ImageSlideShow.swift */; };
+		18A8505B1F56614E00D21A08 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A850591F56614E00D21A08 /* MapCell.swift */; };
+		18A8505C1F56614E00D21A08 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A8505A1F56614E00D21A08 /* MapCell.xib */; };
+		18A8505E1F566D0800D21A08 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A8505D1F566D0800D21A08 /* Keys.plist */; };
 		18CE76FA1F5391E500C79E54 /* ImageSlideShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */; };
 		18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE76FB1F53A8A900C79E54 /* Image.swift */; };
 		D2C4394DEFFC47BB1FF2862E /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23FBDAC5A1F745C618814F1 /* Pods_Events.framework */; };
@@ -92,6 +95,9 @@
 		18A230B21F4C746A0025DA84 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		18A77AA01F5377B200AEE365 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventViewController.swift; path = ViewControllers/EventViewController.swift; sourceTree = "<group>"; };
 		18A77AA51F537EEC00AEE365 /* ImageSlideShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSlideShow.swift; path = Cells/ImageSlideShow.swift; sourceTree = "<group>"; };
+		18A850591F56614E00D21A08 /* MapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCell.swift; path = Cells/MapCell.swift; sourceTree = "<group>"; };
+		18A8505A1F56614E00D21A08 /* MapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapCell.xib; path = Cells/MapCell.xib; sourceTree = "<group>"; };
+		18A8505D1F566D0800D21A08 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Keys.plist; path = Events/Keys.plist; sourceTree = "<group>"; };
 		18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageSlideShow.xib; path = Cells/ImageSlideShow.xib; sourceTree = "<group>"; };
 		18CE76FB1F53A8A900C79E54 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Model/Image.swift; sourceTree = "<group>"; };
 		6A277B896B6EC1B8E5349247 /* Pods-Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 				18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */,
 				180631C21F53C671000F59B6 /* EventNavigationBar.swift */,
 				180631C31F53C671000F59B6 /* EventNavigationBar.xib */,
+				18A850591F56614E00D21A08 /* MapCell.swift */,
+				18A8505A1F56614E00D21A08 /* MapCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 				18A230AB1F4C73DF0025DA84 /* Localizable.strings */,
 				18A2307A1F4C72780025DA84 /* Info.plist */,
 				18A230751F4C72780025DA84 /* Assets.xcassets */,
+				18A8505D1F566D0800D21A08 /* Keys.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -406,10 +415,12 @@
 				18A230791F4C72780025DA84 /* LaunchScreen.storyboard in Resources */,
 				180631BF1F53B5DE000F59B6 /* EventEureka.xib in Resources */,
 				18A230AD1F4C73DF0025DA84 /* Localizable.strings in Resources */,
+				18A8505E1F566D0800D21A08 /* Keys.plist in Resources */,
 				18A230761F4C72780025DA84 /* Assets.xcassets in Resources */,
 				18CE76FA1F5391E500C79E54 /* ImageSlideShow.xib in Resources */,
 				180631C51F53C671000F59B6 /* EventNavigationBar.xib in Resources */,
 				18A230741F4C72780025DA84 /* Main.storyboard in Resources */,
+				18A8505C1F56614E00D21A08 /* MapCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +531,7 @@
 				180631BE1F53B5DE000F59B6 /* EventEureka.swift in Sources */,
 				1813C5DB1F4F5C46008ACBE5 /* User.swift in Sources */,
 				1813C5D71F4F571E008ACBE5 /* Event.swift in Sources */,
+				18A8505B1F56614E00D21A08 /* MapCell.swift in Sources */,
 				1813C5E91F4FE09D008ACBE5 /* EventCell.swift in Sources */,
 				18A2306D1F4C72780025DA84 /* AppDelegate.swift in Sources */,
 			);

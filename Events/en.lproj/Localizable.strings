@@ -46,6 +46,13 @@
     "formFields.phoneNumber"    = "Phone Number";
     "formFields.about"          = "About";
     "formFields.description"    = "Description";
+    "formFields.startDate"      = "Start Date";
+    "formFields.endDate"        = "End Date";
+    "formFields.value"          = "Value";
+    "formFields.createdBy"      = "Created By";
+    "formFields.report"         = "Report";
+    "formFields.address"        = "Address";
+    "formFields.free"           = "Free";
 
 // Camera - English - en.lproj/Localizable.strings
 

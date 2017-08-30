@@ -24,23 +24,13 @@ class EventEureka: UIView {
         typeView.clipsToBounds = true
         typeView.layer.borderWidth = 2.0
         typeView.layer.borderColor = EventsTheme.linkColor.cgColor
-        
         lineView.backgroundColor = EventsTheme.linkColor
-        
-//        typeImageView.backgroundColor = EventsTheme.darkerColor
-//        typeImageView.contentMode = .scaleAspectFit
-//        typeImageView.layer.cornerRadius = typeImageView.frame.size.width / 2
-//        typeImageView.clipsToBounds = true
-//        typeImageView.layer.borderWidth = 2.0
-        
         titleLabel.textColor = UIColor.white
     }
     
     public func set(_ event: Event) {
         typeImageView.image = Events.Images(rawValue: event.type)?.image
         titleLabel.text = event.name
-        
-    
     }
 }
 
