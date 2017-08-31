@@ -50,7 +50,7 @@ class Event: Object, Mappable {
         created         <- (map["created_at"], DateFormatterTransform())
         updated         <- (map["updated_at"], DateFormatterTransform())
         published       <- map["published"]
-        images          <- (map["image_url"], ListImageTransform())
+        images          <- (map["images"], ListImageTransform())
         type            <- map["type"]
         latitude        <- map["latitude"]
         longitude       <- map["longitude"]

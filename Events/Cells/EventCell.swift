@@ -60,7 +60,7 @@ class EventCell: UITableViewCell {
         if let image = event.images.first?.url {
             coverImageView.setShowActivityIndicator(true)
             coverImageView.setIndicatorStyle(.gray)
-            coverImageView.sd_setImage(with: URL(string: image)!, placeholderImage: Events.Images.eventPlaceholder.image, options: [SDWebImageOptions.progressiveDownload])
+            coverImageView.sd_setImage(with: URL(string: image), placeholderImage: Events.Images.eventPlaceholder.image, options: [SDWebImageOptions.progressiveDownload])
         } else {
             coverImageView.image = Events.Images.eventPlaceholder.image
         }

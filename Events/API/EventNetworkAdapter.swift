@@ -28,7 +28,10 @@ struct EventNetworkAdapter {
                         let eventsJson = try response.mapJSON()
                         let events: [Event] = Mapper<Event>().mapArray(JSONArray: eventsJson as! [[String : Any]])
                         try! realm.write {
+                            realm.delete(realm.objects(Event.self))
+                            realm.delete(realm.objects(Image.self))
                             for event in events {
+                                print(event)
                                 realm.add(event, update: true)
                             }
                         }
@@ -57,8 +60,15 @@ struct EventNetworkAdapter {
                     do {
                         let eventsJson = try response.mapJSON()
                         let events: [Event] = Mapper<Event>().mapArray(JSONArray: eventsJson as! [[String : Any]])
+                        
                         try! realm.write {
+                            let rEvents = realm.objects(Event.self)
+                            let rImage = realm.objects(Image.self)
+                            realm.delete(rEvents)
+                            realm.delete(rImage)
+                            print(realm.objects(Event.self).count)
                             for event in events {
+                                print(event)
                                 realm.add(event, update: true)
                             }
                         }

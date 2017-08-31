@@ -8,12 +8,24 @@
 
 import Foundation
 import RealmSwift
+import ObjectMapper
 
-public class Image: Object {
+public class Image: Object, Mappable {
+    dynamic var id = 0
+    dynamic var eventId = 0
     dynamic var url = ""
-    
+
     override public static func primaryKey() -> String? {
-        return "url"
+        return "id"
     }
     
+    required convenience public init?(map: Map) {
+        self.init()
+    }
+    
+    public func mapping(map: Map) {
+        id      <- map["id"]
+        eventId <- map["event_id"]
+        url     <- map["image_url"]
+    }
 }

@@ -39,27 +39,23 @@ public class DateFormatterTransform: TransformType {
 public class ListImageTransform: TransformType {
 
     public typealias Object = List<Image>
-    public typealias JSON = [String]
+    public typealias JSON = [[String : Any]]
     
     init() {}
     
     public func transformFromJSON(_ value: Any?) -> List<Image>? {
-        let listImage = List<Image>()
-        guard let items = value as? [String] else { return listImage }
-        for item in items {
-            let image = Image()
-            image.url = item
-            listImage.append(image)
+        guard let items = value as? [[String : Any]] else { return nil }
+        let mapperImages: [Image] = Mapper<Image>().mapArray(JSONArray: items)
+        let realmImages = List<Image>()
+        for image in mapperImages {
+            realmImages.append(image)
         }
-        return listImage
+        return realmImages
     }
-    public func transformToJSON(_ value: List<Image>?) -> [String]? {
+    public func transformToJSON(_ value: List<Image>?) -> [[String : Any]]? {
         guard let listImage = value else { return nil }
-        var arrayImage:[String] = [String]()
-        for image in listImage {
-            arrayImage.append(image.url)
-        }
-        return arrayImage
+        guard listImage.count > 0 else { return nil }
+        return Mapper<Image>().toJSONArray( Array(listImage))
     }
 }
 
