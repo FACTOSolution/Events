@@ -18,7 +18,6 @@ struct EventNetworkAdapter {
     static let realm = try! Realm()
 
     static func getAllEvents(error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
-        
         provider.request(EventsAPI.getAllEvents) { (result) in
             switch result {
             case .success(let response):
@@ -31,7 +30,6 @@ struct EventNetworkAdapter {
                             realm.delete(realm.objects(Event.self))
                             realm.delete(realm.objects(Image.self))
                             for event in events {
-                                print(event)
                                 realm.add(event, update: true)
                             }
                         }
@@ -42,9 +40,7 @@ struct EventNetworkAdapter {
                     let error = NSError(domain: response.description, code: response.statusCode, userInfo:[NSLocalizedDescriptionKey: "Parsing Error"])
                     errorCallback(error)
                 }
-                
             case .failure(let error):
-                // 3:
                 failureCallback(error)
             }
         }
@@ -55,7 +51,6 @@ struct EventNetworkAdapter {
         provider.request(EventsAPI.getEvent(id: id)) { (result) in
             switch result {
             case .success(let response):
-                // 1:
                 if response.statusCode >= 200 && response.statusCode <= 300 {
                     do {
                         let eventsJson = try response.mapJSON()
@@ -66,9 +61,7 @@ struct EventNetworkAdapter {
                             let rImage = realm.objects(Image.self)
                             realm.delete(rEvents)
                             realm.delete(rImage)
-                            print(realm.objects(Event.self).count)
                             for event in events {
-                                print(event)
                                 realm.add(event, update: true)
                             }
                         }
@@ -81,7 +74,6 @@ struct EventNetworkAdapter {
                 }
                 
             case .failure(let error):
-                // 3:
                 failureCallback(error)
             }
         }

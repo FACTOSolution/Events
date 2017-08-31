@@ -10,6 +10,7 @@ import UIKit
 import Eureka
 import ImageSlideshow
 import RealmSwift
+import SDWebImage
 
 class EventViewController: FormViewController {
     
@@ -19,6 +20,26 @@ class EventViewController: FormViewController {
             setupForm()
             setupButtons()
             title = event!.name
+            user = realm.objects(User.self).filter("id == %@", event!.ownerId).first
+            load(user: event!.ownerId)
+        }
+    }
+    
+    var user: User? {
+        didSet{
+            let userRow = form.rowBy(tag: "CreatedBy") as! ImageRow
+            userRow.title = user!.nickname != "" ? user!.nickname : user!.name
+            if user!.image != "" {
+                SDWebImageDownloader().downloadImage(with: URL(string: user!.image), options: SDWebImageDownloaderOptions.progressiveDownload, progress: { (_, _) in }, completed: { (image, data, error, bool) in
+                    if error == nil {
+                        userRow.value = image
+                    }
+                })
+            } else {
+                userRow.value = Events.Images.eventPlaceholder.image
+            }
+            userRow.updateCell()
+            userRow.reload()
         }
     }
 
@@ -37,15 +58,15 @@ class EventViewController: FormViewController {
     }
     
     private func setupForm() {
-        let font = UIFont(name: "Avenir-Black", size: 23.0)
         
         NameRow.defaultCellSetup = { cell, row in
             cell.textField.backgroundColor = UIColor.clear
             row.cellUpdate({ (cell, row) in
                 cell.textField.textColor = .white
-                cell.textField.textAlignment = .center
-                cell.textField.minimumFontSize = 14
-                cell.textField.font = font
+                cell.textField.textAlignment = .right
+                cell.imageView!.contentMode = .scaleAspectFit
+                cell.imageView!.layer.cornerRadius = cell.imageView!.frame.size.width / 2
+                cell.imageView!.clipsToBounds = true
             })
         }
         
@@ -168,6 +189,14 @@ class EventViewController: FormViewController {
             $0.disabled = true
         }
         
+        +++ Section(Events.Localizable.FormFields.createdBy.localized)
+        <<< ImageRow("CreatedBy") {
+            $0.disabled = true
+            }
+            .cellUpdate { cell, row in
+                cell.accessoryView?.layer.cornerRadius = 17
+                cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        }
     }
     
     class CurrencyFormatter : NumberFormatter, FormatterProtocol {
@@ -194,6 +223,13 @@ class EventViewController: FormViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: Events.Images(rawValue: event!.type)?.image, style: .plain, target: nil, action: nil)
     }
     
+    private func load(user id: Int) {
+        UserNetworkAdapter.getUser(with: self.event!.ownerId, error: { (error) in
+            print(error)
+        }) { (moyaError) in
+            print(moyaError)
+        }
+    }
 }
 
 extension EventViewController: ImageSlideShowDelegate {

@@ -10,6 +10,7 @@
 		1801083B1F51B01D006380DB /* Moya+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801083A1F51B01D006380DB /* Moya+Extensions.swift */; };
 		1801083D1F53521C006380DB /* ObjectMapper+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801083C1F53521C006380DB /* ObjectMapper+Extensions.swift */; };
 		180108411F53651D006380DB /* EventsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180108401F53651D006380DB /* EventsUI.swift */; };
+		1805F58D1F57A17600B0FA8B /* UserNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805F58C1F57A17600B0FA8B /* UserNetworkAdapter.swift */; };
 		180631BE1F53B5DE000F59B6 /* EventEureka.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631BC1F53B5DE000F59B6 /* EventEureka.swift */; };
 		180631BF1F53B5DE000F59B6 /* EventEureka.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180631BD1F53B5DE000F59B6 /* EventEureka.xib */; };
 		180631C11F53B91D000F59B6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631C01F53B91D000F59B6 /* UIView+Extensions.swift */; };
@@ -22,6 +23,9 @@
 		1813C5E51F4FE076008ACBE5 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5E41F4FE076008ACBE5 /* EventsTableViewController.swift */; };
 		1813C5E91F4FE09D008ACBE5 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5E71F4FE09D008ACBE5 /* EventCell.swift */; };
 		1813C5EA1F4FE09D008ACBE5 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1813C5E81F4FE09D008ACBE5 /* EventCell.xib */; };
+		181900861F57B4340073AA63 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900831F57B4340073AA63 /* ImageCell.swift */; };
+		181900871F57B4340073AA63 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900841F57B4340073AA63 /* ImagePickerController.swift */; };
+		181900881F57B4340073AA63 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900851F57B4340073AA63 /* ImageRow.swift */; };
 		18A2306D1F4C72780025DA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2306C1F4C72780025DA84 /* AppDelegate.swift */; };
 		18A230741F4C72780025DA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A230721F4C72780025DA84 /* Main.storyboard */; };
 		18A230761F4C72780025DA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A230751F4C72780025DA84 /* Assets.xcassets */; };
@@ -62,6 +66,7 @@
 		1801083A1F51B01D006380DB /* Moya+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Moya+Extensions.swift"; path = "Extensions/Moya+Extensions.swift"; sourceTree = "<group>"; };
 		1801083C1F53521C006380DB /* ObjectMapper+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ObjectMapper+Extensions.swift"; path = "Extensions/ObjectMapper+Extensions.swift"; sourceTree = "<group>"; };
 		180108401F53651D006380DB /* EventsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsUI.swift; path = UI/EventsUI.swift; sourceTree = "<group>"; };
+		1805F58C1F57A17600B0FA8B /* UserNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserNetworkAdapter.swift; path = API/UserNetworkAdapter.swift; sourceTree = "<group>"; };
 		180631BC1F53B5DE000F59B6 /* EventEureka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventEureka.swift; path = Cells/EventEureka.swift; sourceTree = "<group>"; };
 		180631BD1F53B5DE000F59B6 /* EventEureka.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventEureka.xib; path = Cells/EventEureka.xib; sourceTree = "<group>"; };
 		180631C01F53B91D000F59B6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -74,6 +79,9 @@
 		1813C5E41F4FE076008ACBE5 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsTableViewController.swift; path = ViewControllers/EventsTableViewController.swift; sourceTree = "<group>"; };
 		1813C5E71F4FE09D008ACBE5 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCell.swift; path = Cells/EventCell.swift; sourceTree = "<group>"; };
 		1813C5E81F4FE09D008ACBE5 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventCell.xib; path = Cells/EventCell.xib; sourceTree = "<group>"; };
+		181900831F57B4340073AA63 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = Cells/ImageRow/ImageCell.swift; sourceTree = "<group>"; };
+		181900841F57B4340073AA63 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Cells/ImageRow/ImagePickerController.swift; sourceTree = "<group>"; };
+		181900851F57B4340073AA63 /* ImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRow.swift; path = Cells/ImageRow/ImageRow.swift; sourceTree = "<group>"; };
 		18A230691F4C72780025DA84 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A2306C1F4C72780025DA84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A230731F4C72780025DA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 		1813C5E61F4FE07F008ACBE5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				181900821F57B4240073AA63 /* ImageRow */,
 				180631BC1F53B5DE000F59B6 /* EventEureka.swift */,
 				180631BD1F53B5DE000F59B6 /* EventEureka.xib */,
 				1813C5E71F4FE09D008ACBE5 /* EventCell.swift */,
@@ -164,6 +173,16 @@
 				18A8505A1F56614E00D21A08 /* MapCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		181900821F57B4240073AA63 /* ImageRow */ = {
+			isa = PBXGroup;
+			children = (
+				181900831F57B4340073AA63 /* ImageCell.swift */,
+				181900841F57B4340073AA63 /* ImagePickerController.swift */,
+				181900851F57B4340073AA63 /* ImageRow.swift */,
+			);
+			name = ImageRow;
 			sourceTree = "<group>";
 		};
 		18A230601F4C72780025DA84 = {
@@ -274,8 +293,9 @@
 		18A230B61F4C7B8C0025DA84 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				1813C5E01F4FC263008ACBE5 /* EventNetworkAdapter.swift */,
 				1813C5DC1F4F9FEC008ACBE5 /* EventsAPI.swift */,
+				1813C5E01F4FC263008ACBE5 /* EventNetworkAdapter.swift */,
+				1805F58C1F57A17600B0FA8B /* UserNetworkAdapter.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -518,8 +538,10 @@
 				180631C41F53C671000F59B6 /* EventNavigationBar.swift in Sources */,
 				18A230B31F4C746A0025DA84 /* Enums+Extensions.swift in Sources */,
 				1813C5E51F4FE076008ACBE5 /* EventsTableViewController.swift in Sources */,
+				181900881F57B4340073AA63 /* ImageRow.swift in Sources */,
 				18A77AA11F5377B200AEE365 /* EventViewController.swift in Sources */,
 				1801083D1F53521C006380DB /* ObjectMapper+Extensions.swift in Sources */,
+				181900861F57B4340073AA63 /* ImageCell.swift in Sources */,
 				18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */,
 				180108411F53651D006380DB /* EventsUI.swift in Sources */,
 				180631C11F53B91D000F59B6 /* UIView+Extensions.swift in Sources */,
@@ -528,8 +550,10 @@
 				1813C5DE1F4F9FEC008ACBE5 /* EventsAPI.swift in Sources */,
 				1813C5E11F4FC263008ACBE5 /* EventNetworkAdapter.swift in Sources */,
 				1801083B1F51B01D006380DB /* Moya+Extensions.swift in Sources */,
+				1805F58D1F57A17600B0FA8B /* UserNetworkAdapter.swift in Sources */,
 				180631BE1F53B5DE000F59B6 /* EventEureka.swift in Sources */,
 				1813C5DB1F4F5C46008ACBE5 /* User.swift in Sources */,
+				181900871F57B4340073AA63 /* ImagePickerController.swift in Sources */,
 				1813C5D71F4F571E008ACBE5 /* Event.swift in Sources */,
 				18A8505B1F56614E00D21A08 /* MapCell.swift in Sources */,
 				1813C5E91F4FE09D008ACBE5 /* EventCell.swift in Sources */,

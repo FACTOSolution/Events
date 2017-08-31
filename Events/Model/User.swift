@@ -31,15 +31,15 @@ class User : Object, Mappable {
     }
     
     func mapping(map: Map) {
-        id <- map["id"]
-        uid <- map["uid"]
-        name <- map["name"]
-        nickname <- map["nickname"]
-        email <- map["email"]
-        provider <- map["provider"]
-        image <- map["image"]
-        created <- (map["created_at"], DateFormatterTransform())
-        created <- (map["updated_at"], DateFormatterTransform())
+        id          <- map["id"]
+        uid         <- map["uid"]
+        name        <- map["name"]
+        nickname    <- map["nickname"]
+        email       <- map["email"]
+        provider    <- map["provider"]
+        image       <- map["image"]
+        created     <- (map["created_at"], DateFormatterTransform())
+        created     <- (map["updated_at"], DateFormatterTransform())
     }
     
     private var dateFormatter: DateFormatter = {
