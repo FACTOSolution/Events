@@ -36,7 +36,7 @@ class EventViewController: FormViewController {
                     }
                 })
             } else {
-                userRow.value = Events.Images.eventPlaceholder.image
+                userRow.value = Events.Images.userPlaceholder.image
             }
             userRow.updateCell()
             userRow.reload()
@@ -101,6 +101,13 @@ class EventViewController: FormViewController {
                 cell.detailTextLabel?.textColor = .white
             })
         }
+        
+        ImageRow.defaultCellSetup = { cell, row in
+            cell.textLabel?.backgroundColor = UIColor.clear
+            row.cellUpdate({ (cell, row) in
+                cell.textLabel?.textColor = .white
+            })
+        }
     
        form +++ Section() {
             var imageImputs: [SDWebImageSource] = [SDWebImageSource]()
@@ -120,11 +127,6 @@ class EventViewController: FormViewController {
         
             $0.header = header
         }
-        
-//        <<< NameRow () {
-//            $0.value = event!.name
-//            $0.disabled = true
-//        }
         
         +++ Section()
         
@@ -191,11 +193,8 @@ class EventViewController: FormViewController {
         
         +++ Section(Events.Localizable.FormFields.createdBy.localized)
         <<< ImageRow("CreatedBy") {
+            $0.deselect(animated: true)
             $0.disabled = true
-            }
-            .cellUpdate { cell, row in
-                cell.accessoryView?.layer.cornerRadius = 17
-                cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
         }
     }
     
@@ -235,27 +234,6 @@ class EventViewController: FormViewController {
 extension EventViewController: ImageSlideShowDelegate {
     
     func slideShowTapped(cell: ImageSlideShow) {
-        //cell.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
         cell.slideshow.presentFullScreenController(from: self)
-
     }
-    
 }
-
-extension UITableViewCell {
-    
-    var isSeparatorHidden: Bool {
-        get {
-            return self.separatorInset.right != 0
-        }
-        set {
-            if newValue {
-                self.separatorInset = UIEdgeInsetsMake(0, self.bounds.size.width, 0, 0)
-            } else {
-                self.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
-            }
-        }
-    }
-    
-}
-

@@ -31,9 +31,10 @@ public final class ImageCell: Cell<UIImage>, CellType {
         
         accessoryType = .none
         editingAccessoryView = .none
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 34, height: 34))
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 17
         accessoryView = imageView
         editingAccessoryView = imageView
     }

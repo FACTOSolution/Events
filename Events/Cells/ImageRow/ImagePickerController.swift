@@ -37,15 +37,18 @@ open class ImagePickerController : UIImagePickerController, TypedRowControllerTy
     open override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
+        EventsTheme.applyImagePickerDefaults()
     }
     
     open func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         (row as? ImageRow)?.imageURL = info[UIImagePickerControllerReferenceURL] as? URL
         row.value = info[UIImagePickerControllerOriginalImage] as? UIImage
+        EventsTheme.applyAppearanceDefaults()
         onDismissCallback?(self)
     }
     
     open func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        EventsTheme.applyAppearanceDefaults()
         onDismissCallback?(self)
     }
     
