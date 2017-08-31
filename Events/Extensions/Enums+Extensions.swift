@@ -29,6 +29,7 @@ enum Events {
         case academic           = "Academic"
         case cultural           = "Cultural"
         case eventPlaceholder   = "EventPlaceholder"
+        case userPlaceholder    = "UserPlaceholder"
     }
     
     // Localizable Strings
