@@ -26,10 +26,11 @@ enum Events {
     
     // Image Names
     enum Images: String, ImageRepresentable {
-        case academic           = "Academic"
-        case cultural           = "Cultural"
-        case eventPlaceholder   = "EventPlaceholder"
-        case userPlaceholder    = "UserPlaceholder"
+        case academic               = "Academic"
+        case cultural               = "Cultural"
+        case eventPlaceholder       = "EventPlaceholder"
+        case userPlaceholder        = "UserPlaceholder"
+        case userPlaceholderForm    = "userPlaceholderForm"
     }
     
     // Localizable Strings

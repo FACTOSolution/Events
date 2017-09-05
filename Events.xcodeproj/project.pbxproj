@@ -26,6 +26,8 @@
 		181900861F57B4340073AA63 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900831F57B4340073AA63 /* ImageCell.swift */; };
 		181900871F57B4340073AA63 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900841F57B4340073AA63 /* ImagePickerController.swift */; };
 		181900881F57B4340073AA63 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900851F57B4340073AA63 /* ImageRow.swift */; };
+		188BF93B1F5A01FF0043ABC6 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188BF93A1F5A01FF0043ABC6 /* UserCell.xib */; };
+		188BF93D1F5A02DC0043ABC6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BF93C1F5A02DC0043ABC6 /* UserCell.swift */; };
 		18A2306D1F4C72780025DA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2306C1F4C72780025DA84 /* AppDelegate.swift */; };
 		18A230741F4C72780025DA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A230721F4C72780025DA84 /* Main.storyboard */; };
 		18A230761F4C72780025DA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A230751F4C72780025DA84 /* Assets.xcassets */; };
@@ -82,6 +84,8 @@
 		181900831F57B4340073AA63 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = Cells/ImageRow/ImageCell.swift; sourceTree = "<group>"; };
 		181900841F57B4340073AA63 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Cells/ImageRow/ImagePickerController.swift; sourceTree = "<group>"; };
 		181900851F57B4340073AA63 /* ImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRow.swift; path = Cells/ImageRow/ImageRow.swift; sourceTree = "<group>"; };
+		188BF93A1F5A01FF0043ABC6 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Cells/UserRow/UserCell.xib; sourceTree = "<group>"; };
+		188BF93C1F5A02DC0043ABC6 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Cells/UserRow/UserCell.swift; sourceTree = "<group>"; };
 		18A230691F4C72780025DA84 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A2306C1F4C72780025DA84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18A230731F4C72780025DA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		1813C5E61F4FE07F008ACBE5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				188BF9391F5A01930043ABC6 /* UserRow */,
 				181900821F57B4240073AA63 /* ImageRow */,
 				180631BC1F53B5DE000F59B6 /* EventEureka.swift */,
 				180631BD1F53B5DE000F59B6 /* EventEureka.xib */,
@@ -183,6 +188,15 @@
 				181900851F57B4340073AA63 /* ImageRow.swift */,
 			);
 			name = ImageRow;
+			sourceTree = "<group>";
+		};
+		188BF9391F5A01930043ABC6 /* UserRow */ = {
+			isa = PBXGroup;
+			children = (
+				188BF93A1F5A01FF0043ABC6 /* UserCell.xib */,
+				188BF93C1F5A02DC0043ABC6 /* UserCell.swift */,
+			);
+			name = UserRow;
 			sourceTree = "<group>";
 		};
 		18A230601F4C72780025DA84 = {
@@ -432,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1813C5EA1F4FE09D008ACBE5 /* EventCell.xib in Resources */,
+				188BF93B1F5A01FF0043ABC6 /* UserCell.xib in Resources */,
 				18A230791F4C72780025DA84 /* LaunchScreen.storyboard in Resources */,
 				180631BF1F53B5DE000F59B6 /* EventEureka.xib in Resources */,
 				18A230AD1F4C73DF0025DA84 /* Localizable.strings in Resources */,
@@ -543,6 +558,7 @@
 				1801083D1F53521C006380DB /* ObjectMapper+Extensions.swift in Sources */,
 				181900861F57B4340073AA63 /* ImageCell.swift in Sources */,
 				18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */,
+				188BF93D1F5A02DC0043ABC6 /* UserCell.swift in Sources */,
 				180108411F53651D006380DB /* EventsUI.swift in Sources */,
 				180631C11F53B91D000F59B6 /* UIView+Extensions.swift in Sources */,
 				18A230B41F4C746A0025DA84 /* UIColor+Extensions.swift in Sources */,

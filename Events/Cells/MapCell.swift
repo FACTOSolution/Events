@@ -33,7 +33,5 @@ class MapCell: UIView {
             mapImageView.sd_setImage(with: url)
             
         }
-//27333A
-        
     }
 }

@@ -16,7 +16,7 @@ enum EventsTheme {
     lightColor    = UIColor(red: 0.964, green: 0.721, blue: 0.329, alpha: 1),
     linkColor     = UIColor(red: 0.321, green: 0.901, blue: 0.882, alpha: 1),
     selectedColor = UIColor(red: 0.937, green: 0.400, blue: 0.227, alpha: 1),
-    textColor     = UIColor(red: 0.623, green: 0.647, blue: 0.663, alpha: 1),
+    textColor     = UIColor.white,
     boldColor     = UIColor(red: 0.906, green: 0.902, blue: 0.894, alpha: 1)
     
     static func applyAppearanceDefaults() {

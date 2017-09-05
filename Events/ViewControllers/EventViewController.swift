@@ -27,19 +27,9 @@ class EventViewController: FormViewController {
     
     var user: User? {
         didSet{
-            let userRow = form.rowBy(tag: "CreatedBy") as! ImageRow
-            userRow.title = user!.nickname != "" ? user!.nickname : user!.name
-            if user!.image != "" {
-                SDWebImageDownloader().downloadImage(with: URL(string: user!.image), options: SDWebImageDownloaderOptions.progressiveDownload, progress: { (_, _) in }, completed: { (image, data, error, bool) in
-                    if error == nil {
-                        userRow.value = image
-                    }
-                })
-            } else {
-                userRow.value = Events.Images.userPlaceholder.image
-            }
-            userRow.updateCell()
-            userRow.reload()
+            let row = form.rowBy(tag: "CreatedBy") as! UserRow
+            row.value = self.user
+            row.updateCell()
         }
     }
 
@@ -58,17 +48,6 @@ class EventViewController: FormViewController {
     }
     
     private func setupForm() {
-        
-        NameRow.defaultCellSetup = { cell, row in
-            cell.textField.backgroundColor = UIColor.clear
-            row.cellUpdate({ (cell, row) in
-                cell.textField.textColor = .white
-                cell.textField.textAlignment = .right
-                cell.imageView!.contentMode = .scaleAspectFit
-                cell.imageView!.layer.cornerRadius = cell.imageView!.frame.size.width / 2
-                cell.imageView!.clipsToBounds = true
-            })
-        }
         
         TextAreaRow.defaultCellSetup = { cell, row in
             cell.textView.backgroundColor = UIColor.clear
@@ -191,13 +170,12 @@ class EventViewController: FormViewController {
             $0.disabled = true
         }
         
+        
         +++ Section(Events.Localizable.FormFields.createdBy.localized)
-        <<< ImageRow("CreatedBy") {
-            $0.deselect(animated: true)
-            $0.disabled = true
-        }
+        
+        <<< UserRow("CreatedBy")
     }
-    
+
     class CurrencyFormatter : NumberFormatter, FormatterProtocol {
         override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, range rangep: UnsafeMutablePointer<NSRange>?) throws {
             guard obj != nil else { return }
