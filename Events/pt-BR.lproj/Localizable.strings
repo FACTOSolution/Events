@@ -8,17 +8,22 @@
 
 // Common - Portuguese - pt-BR.lproj/Localizable.strings
 
-    "common.event"      = "Event";
-    "common.user"       = "User";
+    "common.event"      = "Evento";
+    "common.user"       = "Usuario";
     "common.academic"   = "Academico";
     "common.cultural"   = "Cultural";
+
+// TabBar - Portuguese - pt-BR.lproj/Localizable.strings
+
+    "common.events"      = "Eventos";
+    "common.settings"    = "Configurações";
 
 // Login - Portuguese - pt-BR.lproj/Localizable.strings
 
     "login.email"       = "Email";
     "login.password"    = "Senha (min. 8 caracteres)";
     "login.userName"    = "Nome de usuário";
-    "login.logIn"       = "Login";
+    "login.logIn"       = "Logar";
     "login.signUp"      = "Criar Conta";
     "login.welcome"     = "Bem Vindo ao UFPIEvents";
     "login.terms"       = "Ao me cadastrando, eu aceito os termos e condições";

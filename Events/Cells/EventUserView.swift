@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventEureka: UIView {
+class EventUserView: UIView {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var typeImageView: UIImageView!
@@ -31,6 +31,13 @@ class EventEureka: UIView {
     public func set(_ event: Event) {
         typeImageView.image = Events.Images(rawValue: event.type)?.image
         titleLabel.text = event.name
+    }
+    
+    @nonobjc
+    public func set(_ user: User) {
+        typeImageView.sd_setImage(with: URL(string: user.image), placeholderImage: Events.Images.userPlaceholder.image)
+        titleLabel.text = user.name
+        
     }
 }
 

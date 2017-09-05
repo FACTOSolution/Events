@@ -13,6 +13,12 @@
     "common.academic"   = "Academic";
     "common.cultural"   = "Cultural";
 
+// TabBar - English - en.lproj/Localizable.strings
+
+    "common.events"      = "Events";
+    "common.settings"    = "Settings";
+
+
 // Login - English - en.lproj/Localizable.strings
 
     "login.email"       = "Email";

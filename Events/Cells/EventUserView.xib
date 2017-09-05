@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="I0b-Ri-sfY" customClass="EventEureka" customModule="Events" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="I0b-Ri-sfY" customClass="EventUserView" customModule="Events" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -73,6 +73,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Academic" width="96" height="96"/>
+        <image name="Academic" width="25" height="25"/>
     </resources>
 </document>

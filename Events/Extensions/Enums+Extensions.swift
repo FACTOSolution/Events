@@ -44,6 +44,12 @@ enum Events {
             case cultural   = "common.cultural"
         }
         
+        // Common Names
+        enum TabBar: String, LocalizeRepresentable {
+            case events     = "common.events"
+            case settings   = "common.settings"
+        }
+        
         enum Login: String, LocalizeRepresentable {
             case email      = "login.email"
             case password   = "login.password"

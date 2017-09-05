@@ -20,6 +20,7 @@ class User : Object, Mappable {
     dynamic var image = ""
     dynamic var created = Date()
     dynamic var updated = Date()
+    dynamic var logged = false
 
     
     override static func primaryKey() -> String? {

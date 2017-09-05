@@ -11,8 +11,8 @@
 		1801083D1F53521C006380DB /* ObjectMapper+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801083C1F53521C006380DB /* ObjectMapper+Extensions.swift */; };
 		180108411F53651D006380DB /* EventsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180108401F53651D006380DB /* EventsUI.swift */; };
 		1805F58D1F57A17600B0FA8B /* UserNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805F58C1F57A17600B0FA8B /* UserNetworkAdapter.swift */; };
-		180631BE1F53B5DE000F59B6 /* EventEureka.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631BC1F53B5DE000F59B6 /* EventEureka.swift */; };
-		180631BF1F53B5DE000F59B6 /* EventEureka.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180631BD1F53B5DE000F59B6 /* EventEureka.xib */; };
+		180631BE1F53B5DE000F59B6 /* EventUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631BC1F53B5DE000F59B6 /* EventUserView.swift */; };
+		180631BF1F53B5DE000F59B6 /* EventUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180631BD1F53B5DE000F59B6 /* EventUserView.xib */; };
 		180631C11F53B91D000F59B6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631C01F53B91D000F59B6 /* UIView+Extensions.swift */; };
 		180631C41F53C671000F59B6 /* EventNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631C21F53C671000F59B6 /* EventNavigationBar.swift */; };
 		180631C51F53C671000F59B6 /* EventNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180631C31F53C671000F59B6 /* EventNavigationBar.xib */; };
@@ -44,6 +44,7 @@
 		18A8505E1F566D0800D21A08 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A8505D1F566D0800D21A08 /* Keys.plist */; };
 		18CE76FA1F5391E500C79E54 /* ImageSlideShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */; };
 		18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE76FB1F53A8A900C79E54 /* Image.swift */; };
+		18D058AD1F5E485300A15F13 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D058AC1F5E485300A15F13 /* SettingsViewController.swift */; };
 		D2C4394DEFFC47BB1FF2862E /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23FBDAC5A1F745C618814F1 /* Pods_Events.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +70,8 @@
 		1801083C1F53521C006380DB /* ObjectMapper+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ObjectMapper+Extensions.swift"; path = "Extensions/ObjectMapper+Extensions.swift"; sourceTree = "<group>"; };
 		180108401F53651D006380DB /* EventsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsUI.swift; path = UI/EventsUI.swift; sourceTree = "<group>"; };
 		1805F58C1F57A17600B0FA8B /* UserNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserNetworkAdapter.swift; path = API/UserNetworkAdapter.swift; sourceTree = "<group>"; };
-		180631BC1F53B5DE000F59B6 /* EventEureka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventEureka.swift; path = Cells/EventEureka.swift; sourceTree = "<group>"; };
-		180631BD1F53B5DE000F59B6 /* EventEureka.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventEureka.xib; path = Cells/EventEureka.xib; sourceTree = "<group>"; };
+		180631BC1F53B5DE000F59B6 /* EventUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventUserView.swift; path = Cells/EventUserView.swift; sourceTree = "<group>"; };
+		180631BD1F53B5DE000F59B6 /* EventUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventUserView.xib; path = Cells/EventUserView.xib; sourceTree = "<group>"; };
 		180631C01F53B91D000F59B6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
 		180631C21F53C671000F59B6 /* EventNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventNavigationBar.swift; path = Cells/EventNavigationBar.swift; sourceTree = "<group>"; };
 		180631C31F53C671000F59B6 /* EventNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventNavigationBar.xib; path = Cells/EventNavigationBar.xib; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		18A8505D1F566D0800D21A08 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Keys.plist; path = Events/Keys.plist; sourceTree = "<group>"; };
 		18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageSlideShow.xib; path = Cells/ImageSlideShow.xib; sourceTree = "<group>"; };
 		18CE76FB1F53A8A900C79E54 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Model/Image.swift; sourceTree = "<group>"; };
+		18D058AC1F5E485300A15F13 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		6A277B896B6EC1B8E5349247 /* Pods-Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.debug.xcconfig"; sourceTree = "<group>"; };
 		A23FBDAC5A1F745C618814F1 /* Pods_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93EA2DA4B291F4D743F8640 /* Pods-Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,8 +168,8 @@
 			children = (
 				188BF9391F5A01930043ABC6 /* UserRow */,
 				181900821F57B4240073AA63 /* ImageRow */,
-				180631BC1F53B5DE000F59B6 /* EventEureka.swift */,
-				180631BD1F53B5DE000F59B6 /* EventEureka.xib */,
+				180631BC1F53B5DE000F59B6 /* EventUserView.swift */,
+				180631BD1F53B5DE000F59B6 /* EventUserView.xib */,
 				1813C5E71F4FE09D008ACBE5 /* EventCell.swift */,
 				1813C5E81F4FE09D008ACBE5 /* EventCell.xib */,
 				18A77AA51F537EEC00AEE365 /* ImageSlideShow.swift */,
@@ -286,8 +288,8 @@
 		18A2309F1F4C72C00025DA84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1813C5E41F4FE076008ACBE5 /* EventsTableViewController.swift */,
-				18A77AA01F5377B200AEE365 /* EventViewController.swift */,
+				18D058AA1F5E481C00A15F13 /* Events */,
+				18D058AB1F5E482600A15F13 /* Settings */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -312,6 +314,23 @@
 				1805F58C1F57A17600B0FA8B /* UserNetworkAdapter.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		18D058AA1F5E481C00A15F13 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				1813C5E41F4FE076008ACBE5 /* EventsTableViewController.swift */,
+				18A77AA01F5377B200AEE365 /* EventViewController.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		18D058AB1F5E482600A15F13 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				18D058AC1F5E485300A15F13 /* SettingsViewController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		AB5F9DA673BD6D36212D048F /* Pods */ = {
@@ -448,7 +467,7 @@
 				1813C5EA1F4FE09D008ACBE5 /* EventCell.xib in Resources */,
 				188BF93B1F5A01FF0043ABC6 /* UserCell.xib in Resources */,
 				18A230791F4C72780025DA84 /* LaunchScreen.storyboard in Resources */,
-				180631BF1F53B5DE000F59B6 /* EventEureka.xib in Resources */,
+				180631BF1F53B5DE000F59B6 /* EventUserView.xib in Resources */,
 				18A230AD1F4C73DF0025DA84 /* Localizable.strings in Resources */,
 				18A8505E1F566D0800D21A08 /* Keys.plist in Resources */,
 				18A230761F4C72780025DA84 /* Assets.xcassets in Resources */,
@@ -558,6 +577,7 @@
 				1801083D1F53521C006380DB /* ObjectMapper+Extensions.swift in Sources */,
 				181900861F57B4340073AA63 /* ImageCell.swift in Sources */,
 				18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */,
+				18D058AD1F5E485300A15F13 /* SettingsViewController.swift in Sources */,
 				188BF93D1F5A02DC0043ABC6 /* UserCell.swift in Sources */,
 				180108411F53651D006380DB /* EventsUI.swift in Sources */,
 				180631C11F53B91D000F59B6 /* UIView+Extensions.swift in Sources */,
@@ -567,7 +587,7 @@
 				1813C5E11F4FC263008ACBE5 /* EventNetworkAdapter.swift in Sources */,
 				1801083B1F51B01D006380DB /* Moya+Extensions.swift in Sources */,
 				1805F58D1F57A17600B0FA8B /* UserNetworkAdapter.swift in Sources */,
-				180631BE1F53B5DE000F59B6 /* EventEureka.swift in Sources */,
+				180631BE1F53B5DE000F59B6 /* EventUserView.swift in Sources */,
 				1813C5DB1F4F5C46008ACBE5 /* User.swift in Sources */,
 				181900871F57B4340073AA63 /* ImagePickerController.swift in Sources */,
 				1813C5D71F4F571E008ACBE5 /* Event.swift in Sources */,

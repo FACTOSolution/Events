@@ -27,7 +27,7 @@ class EventsTableViewController: UITableViewController {
     }
     
     func setupUI() {
-        self.title = Events.Localizable.Common.event.localized
+        self.title = Events.Localizable.TabBar.events.localized
     }
     
     func observeNotification () {

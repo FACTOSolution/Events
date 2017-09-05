@@ -33,18 +33,13 @@ class EventViewController: FormViewController {
         }
     }
 
-    var titleView: UIScrollView = UIScrollView()
-    var contentView: UIScrollView = UIScrollView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.tableView.separatorColor = EventsTheme.linkColor
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     private func setupForm() {
