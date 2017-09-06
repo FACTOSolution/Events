@@ -26,6 +26,7 @@
 		181900861F57B4340073AA63 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900831F57B4340073AA63 /* ImageCell.swift */; };
 		181900871F57B4340073AA63 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900841F57B4340073AA63 /* ImagePickerController.swift */; };
 		181900881F57B4340073AA63 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900851F57B4340073AA63 /* ImageRow.swift */; };
+		1835DB201F5F891E002E0DEC /* LSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835DB1F1F5F891E002E0DEC /* LSViewController.swift */; };
 		188BF93B1F5A01FF0043ABC6 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188BF93A1F5A01FF0043ABC6 /* UserCell.xib */; };
 		188BF93D1F5A02DC0043ABC6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BF93C1F5A02DC0043ABC6 /* UserCell.swift */; };
 		18A2306D1F4C72780025DA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2306C1F4C72780025DA84 /* AppDelegate.swift */; };
@@ -85,6 +86,7 @@
 		181900831F57B4340073AA63 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCell.swift; path = Cells/ImageRow/ImageCell.swift; sourceTree = "<group>"; };
 		181900841F57B4340073AA63 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Cells/ImageRow/ImagePickerController.swift; sourceTree = "<group>"; };
 		181900851F57B4340073AA63 /* ImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRow.swift; path = Cells/ImageRow/ImageRow.swift; sourceTree = "<group>"; };
+		1835DB1F1F5F891E002E0DEC /* LSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LSViewController.swift; path = ViewControllers/LSViewController.swift; sourceTree = "<group>"; };
 		188BF93A1F5A01FF0043ABC6 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Cells/UserRow/UserCell.xib; sourceTree = "<group>"; };
 		188BF93C1F5A02DC0043ABC6 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Cells/UserRow/UserCell.swift; sourceTree = "<group>"; };
 		18A230691F4C72780025DA84 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +194,14 @@
 			name = ImageRow;
 			sourceTree = "<group>";
 		};
+		1835DB1E1F5F88DB002E0DEC /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				1835DB1F1F5F891E002E0DEC /* LSViewController.swift */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
 		188BF9391F5A01930043ABC6 /* UserRow */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				18D058AA1F5E481C00A15F13 /* Events */,
+				1835DB1E1F5F88DB002E0DEC /* Users */,
 				18D058AB1F5E482600A15F13 /* Settings */,
 			);
 			name = Controllers;
@@ -588,6 +599,7 @@
 				1801083B1F51B01D006380DB /* Moya+Extensions.swift in Sources */,
 				1805F58D1F57A17600B0FA8B /* UserNetworkAdapter.swift in Sources */,
 				180631BE1F53B5DE000F59B6 /* EventUserView.swift in Sources */,
+				1835DB201F5F891E002E0DEC /* LSViewController.swift in Sources */,
 				1813C5DB1F4F5C46008ACBE5 /* User.swift in Sources */,
 				181900871F57B4340073AA63 /* ImagePickerController.swift in Sources */,
 				1813C5D71F4F571E008ACBE5 /* Event.swift in Sources */,

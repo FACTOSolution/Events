@@ -50,7 +50,7 @@ extension EventsAPI: TargetType {
         case .createUser, .createEvent:
             return .post
         case .updateUser, .updateEvent:
-            return .put
+            return .post
         }
     }
     var parameters: [String: Any]? {
@@ -59,10 +59,14 @@ extension EventsAPI: TargetType {
             return nil
         case .createUser(let user), .updateUser(let user):
             var parameters = [String: Any]()
-            var parameterUser = [String: Any]()
-            parameterUser["name"] = user.name
+            parameters["email"] = user.email
+            parameters["password"] = user.password
+            parameters["password_confirmation"] = user.passwordConfirmation
             
-            parameters["user"] = user
+            parameters["name"] = user.name
+            parameters["nickname"] = user.nickname
+            parameters["image"] = user.image
+            print(parameters)
             return parameters
         case .createEvent(let event), .updateEvent(let event):
             var parameters = [String: Any]()
@@ -79,6 +83,7 @@ extension EventsAPI: TargetType {
             parameters["updated_at"] = event.updated
             parameters["published"] = event.published
             parameters["type"] = event.type
+            print(parameters)
             return parameters
         }
     }
@@ -104,7 +109,7 @@ extension EventsAPI: TargetType {
         }
     }
     var headers: [String: String]? {
-        return ["Content-type": "application/json"]
+        return ["Content-type": "application/json; charset=utf-8"]
     }
 }
 // MARK: - Helpers

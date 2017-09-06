@@ -31,7 +31,7 @@
         <!--Settings View Controller-->
         <scene sceneID="zdL-PA-NfS">
             <objects>
-                <viewController id="sJ4-sq-PNX" customClass="SettingsViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" modalPresentationStyle="currentContext" id="sJ4-sq-PNX" customClass="SettingsViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KaK-BR-crl"/>
                         <viewControllerLayoutGuide type="bottom" id="b5Q-bq-XcV"/>
@@ -58,7 +58,7 @@
                     <navigationItem key="navigationItem" id="sRG-gn-rmc"/>
                     <connections>
                         <outlet property="tableView" destination="3ZQ-5G-dPQ" id="rMy-gw-ICT"/>
-                        <segue destination="U84-uf-rtj" kind="show" identifier="LoginSignUpSegue" action="showDetailViewController:sender:" id="Aqd-ig-ip1"/>
+                        <segue destination="Pgb-o4-Hx5" kind="show" identifier="LoginSignUpSegue" id="OnT-ga-Ysg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHA-iz-bw7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,20 +66,20 @@
             <point key="canvasLocation" x="1804" y="483.50824587706148"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="4WN-ed-7Vz">
+        <scene sceneID="63q-yV-JQi">
             <objects>
-                <viewController id="U84-uf-rtj" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="Pgb-o4-Hx5" customClass="LSViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VAU-Cb-Nu7"/>
-                        <viewControllerLayoutGuide type="bottom" id="v7W-ec-j0Z"/>
+                        <viewControllerLayoutGuide type="top" id="KpV-At-dIg"/>
+                        <viewControllerLayoutGuide type="bottom" id="BOy-XA-YGR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LQn-D2-bvD">
+                    <view key="view" contentMode="scaleToFill" id="3vd-s7-bfs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vPp-e2-Lrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzK-Qj-iRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2710" y="484"/>
         </scene>

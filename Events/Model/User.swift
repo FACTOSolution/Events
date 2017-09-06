@@ -21,7 +21,13 @@ class User : Object, Mappable {
     dynamic var created = Date()
     dynamic var updated = Date()
     dynamic var logged = false
+    
+    dynamic var password = ""
+    dynamic var passwordConfirmation = ""
 
+    override static func ignoredProperties() -> [String] {
+        return ["password", "passwordConfirmation"]
+    }
     
     override static func primaryKey() -> String? {
         return "id"
