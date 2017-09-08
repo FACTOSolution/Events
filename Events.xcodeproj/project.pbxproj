@@ -14,8 +14,6 @@
 		180631BE1F53B5DE000F59B6 /* EventUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631BC1F53B5DE000F59B6 /* EventUserView.swift */; };
 		180631BF1F53B5DE000F59B6 /* EventUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180631BD1F53B5DE000F59B6 /* EventUserView.xib */; };
 		180631C11F53B91D000F59B6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631C01F53B91D000F59B6 /* UIView+Extensions.swift */; };
-		180631C41F53C671000F59B6 /* EventNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180631C21F53C671000F59B6 /* EventNavigationBar.swift */; };
-		180631C51F53C671000F59B6 /* EventNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180631C31F53C671000F59B6 /* EventNavigationBar.xib */; };
 		1813C5D71F4F571E008ACBE5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5D61F4F571E008ACBE5 /* Event.swift */; };
 		1813C5DB1F4F5C46008ACBE5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5DA1F4F5C46008ACBE5 /* User.swift */; };
 		1813C5DE1F4F9FEC008ACBE5 /* EventsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813C5DC1F4F9FEC008ACBE5 /* EventsAPI.swift */; };
@@ -46,6 +44,8 @@
 		18CE76FA1F5391E500C79E54 /* ImageSlideShow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */; };
 		18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE76FB1F53A8A900C79E54 /* Image.swift */; };
 		18D058AD1F5E485300A15F13 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D058AC1F5E485300A15F13 /* SettingsViewController.swift */; };
+		18D8A63E1F623B9200F914A0 /* EurekaCustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8A63D1F623B9200F914A0 /* EurekaCustomCells.swift */; };
+		18D8A6401F623BC200F914A0 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8A63F1F623BC200F914A0 /* FloatLabelTextField.swift */; };
 		D2C4394DEFFC47BB1FF2862E /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A23FBDAC5A1F745C618814F1 /* Pods_Events.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +74,6 @@
 		180631BC1F53B5DE000F59B6 /* EventUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventUserView.swift; path = Cells/EventUserView.swift; sourceTree = "<group>"; };
 		180631BD1F53B5DE000F59B6 /* EventUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventUserView.xib; path = Cells/EventUserView.xib; sourceTree = "<group>"; };
 		180631C01F53B91D000F59B6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
-		180631C21F53C671000F59B6 /* EventNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventNavigationBar.swift; path = Cells/EventNavigationBar.swift; sourceTree = "<group>"; };
-		180631C31F53C671000F59B6 /* EventNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventNavigationBar.xib; path = Cells/EventNavigationBar.xib; sourceTree = "<group>"; };
 		1813C5D61F4F571E008ACBE5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Model/Event.swift; sourceTree = "<group>"; };
 		1813C5DA1F4F5C46008ACBE5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		1813C5DC1F4F9FEC008ACBE5 /* EventsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsAPI.swift; path = API/EventsAPI.swift; sourceTree = "<group>"; };
@@ -118,6 +116,8 @@
 		18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageSlideShow.xib; path = Cells/ImageSlideShow.xib; sourceTree = "<group>"; };
 		18CE76FB1F53A8A900C79E54 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Model/Image.swift; sourceTree = "<group>"; };
 		18D058AC1F5E485300A15F13 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewControllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		18D8A63D1F623B9200F914A0 /* EurekaCustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EurekaCustomCells.swift; path = Cells/EurekaCustomCells.swift; sourceTree = "<group>"; };
+		18D8A63F1F623BC200F914A0 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloatLabelTextField.swift; path = Helpers/FloatLabelTextField.swift; sourceTree = "<group>"; };
 		6A277B896B6EC1B8E5349247 /* Pods-Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.debug.xcconfig"; sourceTree = "<group>"; };
 		A23FBDAC5A1F745C618814F1 /* Pods_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93EA2DA4B291F4D743F8640 /* Pods-Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,18 +170,13 @@
 		1813C5E61F4FE07F008ACBE5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				18D8A63D1F623B9200F914A0 /* EurekaCustomCells.swift */,
 				188BF9391F5A01930043ABC6 /* UserRow */,
 				181900821F57B4240073AA63 /* ImageRow */,
-				180631BC1F53B5DE000F59B6 /* EventUserView.swift */,
-				180631BD1F53B5DE000F59B6 /* EventUserView.xib */,
-				1813C5E71F4FE09D008ACBE5 /* EventCell.swift */,
-				1813C5E81F4FE09D008ACBE5 /* EventCell.xib */,
-				18A77AA51F537EEC00AEE365 /* ImageSlideShow.swift */,
-				18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */,
-				180631C21F53C671000F59B6 /* EventNavigationBar.swift */,
-				180631C31F53C671000F59B6 /* EventNavigationBar.xib */,
-				18A850591F56614E00D21A08 /* MapCell.swift */,
-				18A8505A1F56614E00D21A08 /* MapCell.xib */,
+				18D8A6381F623AFE00F914A0 /* EventUserView */,
+				18D8A6391F623B0500F914A0 /* EventCell */,
+				18D8A63A1F623B1300F914A0 /* ImageSlideShow */,
+				18D8A63C1F623B6800F914A0 /* MapCell */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -247,6 +242,7 @@
 				1801083F1F536508006380DB /* UI */,
 				1813C5E61F4FE07F008ACBE5 /* Cells */,
 				18A230B01F4C745D0025DA84 /* Extensions */,
+				18D8A6371F6239FC00F914A0 /* Helpers */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -344,6 +340,50 @@
 				18D058AC1F5E485300A15F13 /* SettingsViewController.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		18D8A6371F6239FC00F914A0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				18D8A63F1F623BC200F914A0 /* FloatLabelTextField.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		18D8A6381F623AFE00F914A0 /* EventUserView */ = {
+			isa = PBXGroup;
+			children = (
+				180631BC1F53B5DE000F59B6 /* EventUserView.swift */,
+				180631BD1F53B5DE000F59B6 /* EventUserView.xib */,
+			);
+			name = EventUserView;
+			sourceTree = "<group>";
+		};
+		18D8A6391F623B0500F914A0 /* EventCell */ = {
+			isa = PBXGroup;
+			children = (
+				1813C5E71F4FE09D008ACBE5 /* EventCell.swift */,
+				1813C5E81F4FE09D008ACBE5 /* EventCell.xib */,
+			);
+			name = EventCell;
+			sourceTree = "<group>";
+		};
+		18D8A63A1F623B1300F914A0 /* ImageSlideShow */ = {
+			isa = PBXGroup;
+			children = (
+				18A77AA51F537EEC00AEE365 /* ImageSlideShow.swift */,
+				18CE76F91F5391E500C79E54 /* ImageSlideShow.xib */,
+			);
+			name = ImageSlideShow;
+			sourceTree = "<group>";
+		};
+		18D8A63C1F623B6800F914A0 /* MapCell */ = {
+			isa = PBXGroup;
+			children = (
+				18A850591F56614E00D21A08 /* MapCell.swift */,
+				18A8505A1F56614E00D21A08 /* MapCell.xib */,
+			);
+			name = MapCell;
 			sourceTree = "<group>";
 		};
 		AB5F9DA673BD6D36212D048F /* Pods */ = {
@@ -485,7 +525,6 @@
 				18A8505E1F566D0800D21A08 /* Keys.plist in Resources */,
 				18A230761F4C72780025DA84 /* Assets.xcassets in Resources */,
 				18CE76FA1F5391E500C79E54 /* ImageSlideShow.xib in Resources */,
-				180631C51F53C671000F59B6 /* EventNavigationBar.xib in Resources */,
 				18A230741F4C72780025DA84 /* Main.storyboard in Resources */,
 				18A8505C1F56614E00D21A08 /* MapCell.xib in Resources */,
 			);
@@ -582,18 +621,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180631C41F53C671000F59B6 /* EventNavigationBar.swift in Sources */,
 				18A230B31F4C746A0025DA84 /* Enums+Extensions.swift in Sources */,
 				1813C5E51F4FE076008ACBE5 /* EventsTableViewController.swift in Sources */,
 				181900881F57B4340073AA63 /* ImageRow.swift in Sources */,
 				18A77AA11F5377B200AEE365 /* EventViewController.swift in Sources */,
 				1801083D1F53521C006380DB /* ObjectMapper+Extensions.swift in Sources */,
 				181900861F57B4340073AA63 /* ImageCell.swift in Sources */,
+				18D8A6401F623BC200F914A0 /* FloatLabelTextField.swift in Sources */,
 				18CE76FC1F53A8A900C79E54 /* Image.swift in Sources */,
 				18D058AD1F5E485300A15F13 /* SettingsViewController.swift in Sources */,
 				188BF93D1F5A02DC0043ABC6 /* UserCell.swift in Sources */,
 				180108411F53651D006380DB /* EventsUI.swift in Sources */,
 				180631C11F53B91D000F59B6 /* UIView+Extensions.swift in Sources */,
+				18D8A63E1F623B9200F914A0 /* EurekaCustomCells.swift in Sources */,
 				18A230B41F4C746A0025DA84 /* UIColor+Extensions.swift in Sources */,
 				18A77AA61F537EEC00AEE365 /* ImageSlideShow.swift in Sources */,
 				1813C5DE1F4F9FEC008ACBE5 /* EventsAPI.swift in Sources */,
