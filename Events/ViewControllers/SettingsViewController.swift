@@ -29,7 +29,7 @@ class SettingsViewController: FormViewController {
     }
     
     private func setupUI() {
-        self.title = Events.Localizable.TabBar.settings.localized
+        self.title = Events.localizable.tabBar.settings.localized
     }
     
     private func setupValues() {
@@ -57,7 +57,7 @@ class SettingsViewController: FormViewController {
         }
         
         <<< ButtonRow() {
-            $0.title = "\(Events.Localizable.Login.signUp.localized) | \(Events.Localizable.Login.logIn.localized)"
+            $0.title = "\(Events.localizable.login.signUp.localized) | \(Events.localizable.login.logIn.localized)"
             $0.presentationMode = .segueName(segueName: "LoginSignUpSegue", onDismiss: nil)
             $0.hidden = user != nil ? true : false
         }.cellSetup { cell, row in

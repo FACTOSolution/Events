@@ -32,7 +32,7 @@ class LSViewController: FormViewController {
     }
     
     private func setupUI() {
-        self.title = Events.Localizable.TabBar.settings.localized
+        self.title = Events.localizable.tabBar.settings.localized
     }
     
     private func setupValues() {
@@ -42,6 +42,14 @@ class LSViewController: FormViewController {
     private func setupForm() {
         
         form +++ Section()
+        
+            <<< PasswordFloatLabelRow() {
+                $0.title = Events.localizable.login.mail.localized
+            }
+            
+            <<< PasswordFloatLabelRow() {
+                $0.title = Events.localizable.login.password.localized
+            }
     }
     
     

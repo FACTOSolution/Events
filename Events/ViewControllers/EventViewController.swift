@@ -104,21 +104,21 @@ class EventViewController: FormViewController {
         
         +++ Section()
         
-        <<< DateTimeInlineRow(Events.Localizable.FormFields.startDate.localized) {
+        <<< DateTimeInlineRow(Events.localizable.formFields.startDate.localized) {
             $0.title = $0.tag
             $0.value = event!.startDate
             $0.disabled = true
 
             }
 
-        <<< DateTimeInlineRow(Events.Localizable.FormFields.endDate.localized){
+        <<< DateTimeInlineRow(Events.localizable.formFields.endDate.localized){
             $0.title = $0.tag
             $0.value = event!.endDate
             $0.disabled = true
             $0.hidden = event!.endDate == nil ? true : false
         }
         
-        +++ Section(Events.Localizable.FormFields.description.localized)
+        +++ Section(Events.localizable.formFields.description.localized)
         
         <<< TextAreaRow() {
             $0.textAreaHeight = .dynamic(initialTextViewHeight: 50)
@@ -128,8 +128,8 @@ class EventViewController: FormViewController {
             }
 
         <<< TextRow() {
-            $0.title = Events.Localizable.FormFields.value.localized
-            $0.value = Events.Localizable.FormFields.free.localized
+            $0.title = Events.localizable.formFields.value.localized
+            $0.value = Events.localizable.formFields.free.localized
             $0.hidden = event!.value == 00.00 ? false : true
             $0.disabled = true
             }.cellUpdate({ (cell, row) in
@@ -139,7 +139,7 @@ class EventViewController: FormViewController {
         
         <<< DecimalRow(){
             $0.useFormatterDuringInput = true
-            $0.title = Events.Localizable.FormFields.value.localized
+            $0.title = Events.localizable.formFields.value.localized
             $0.value = event!.value
             let formatter = CurrencyFormatter()
             formatter.locale = .current
@@ -160,13 +160,13 @@ class EventViewController: FormViewController {
         }
         
         <<< TextRow() {
-            $0.title = Events.Localizable.FormFields.address.localized
+            $0.title = Events.localizable.formFields.address.localized
             $0.value = event!.address
             $0.disabled = true
         }
         
         
-        +++ Section(Events.Localizable.FormFields.createdBy.localized)
+        +++ Section(Events.localizable.formFields.createdBy.localized)
         
         <<< UserRow("CreatedBy")
     }

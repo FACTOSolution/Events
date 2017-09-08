@@ -21,7 +21,7 @@
 
 // Login - English - en.lproj/Localizable.strings
 
-    "login.email"       = "Email";
+    "login.mail"        = "Mail";
     "login.password"    = "Password (min. 8 characters)";
     "login.userName"    = "Username";
     "login.logIn"       = "Log in";

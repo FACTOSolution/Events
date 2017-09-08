@@ -18,8 +18,8 @@ enum Events {
         
         func localized() -> String {
             switch self {
-                case .academic: return Localizable.Common.academic.localized
-                case .cultural: return Localizable.Common.cultural.localized
+                case .academic: return localizable.common.academic.localized
+                case .cultural: return localizable.common.cultural.localized
             }
         }
     }
@@ -34,10 +34,10 @@ enum Events {
     }
     
     // Localizable Strings
-    enum Localizable {
+    enum localizable {
         
         // Common Names
-        enum Common: String, LocalizeRepresentable {
+        enum common: String, LocalizeRepresentable {
             case event      = "common.event"
             case user       = "common.user"
             case academic   = "common.academic"
@@ -45,13 +45,13 @@ enum Events {
         }
         
         // Common Names
-        enum TabBar: String, LocalizeRepresentable {
+        enum tabBar: String, LocalizeRepresentable {
             case events     = "tabBar.events"
             case settings   = "tabBar.settings"
         }
         
-        enum Login: String, LocalizeRepresentable {
-            case email      = "login.email"
+        enum login: String, LocalizeRepresentable {
+            case mail       = "login.mail"
             case password   = "login.password"
             case userName   = "login.userName"
             case logIn      = "login.logIn"
@@ -61,7 +61,7 @@ enum Events {
         }
         
         // Alert Types
-        enum AlertType: String, LocalizeRepresentable {
+        enum alertType: String, LocalizeRepresentable {
             case change     = "alertType.change"
             case error      = "alertType.error"
             case delete     = "alertType.delete"
@@ -73,7 +73,7 @@ enum Events {
             case ok         = "alertType.ok"
         }
         
-        enum FormFields: String, LocalizeRepresentable {
+        enum formFields: String, LocalizeRepresentable {
             case name           = "formFields.name"
             case birthday       = "formFields.birthday"
             case gender         = "formFields.gender"
@@ -91,13 +91,13 @@ enum Events {
             case free           = "formFields.free"
         }
         
-        enum Camera: String, LocalizeRepresentable {
+        enum camera: String, LocalizeRepresentable {
             case camera             = "camera.camera"
             case photoLibrary       = "camera.photoLibrary"
             case savedPhotosAlbum   = "camera.savedPhotosAlbum"
         }
         
-        enum TableView: String, LocalizeRepresentable {
+        enum tableView: String, LocalizeRepresentable {
             case pullToRefresh  = "tableView.pullToRefresh"
         }
     }

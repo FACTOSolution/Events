@@ -27,13 +27,13 @@ class EventsTableViewController: UITableViewController {
     }
     
     func setupUI() {
-        self.title = Events.Localizable.TabBar.events.localized
+        self.title = Events.localizable.tabBar.events.localized
         
         // UIRefreshControl
         let refreshControl:UIRefreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(update), for: UIControlEvents.valueChanged)
         
-        refreshControl.attributedTitle = NSAttributedString(string: Events.Localizable.TableView.pullToRefresh.localized )
+        refreshControl.attributedTitle = NSAttributedString(string: Events.localizable.tableView.pullToRefresh.localized )
         self.refreshControl = refreshControl
     }
     

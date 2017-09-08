@@ -20,7 +20,7 @@
 
 // Login - Portuguese - pt-BR.lproj/Localizable.strings
 
-    "login.email"       = "Email";
+    "login.mail"        = "E-mail";
     "login.password"    = "Senha (min. 8 caracteres)";
     "login.userName"    = "Nome de usuário";
     "login.logIn"       = "Logar";
