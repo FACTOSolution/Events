@@ -9,4 +9,5 @@ target 'Events' do
   pod 'RealmSwift'
   pod 'ObjectMapper', '~> 2.2'
   pod 'Eureka'
+  pod 'Locksmith'
 end
