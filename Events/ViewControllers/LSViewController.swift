@@ -15,15 +15,16 @@ import Eureka
 class LSViewController: FormViewController {
     
     enum LSType {
-        case login
-        case singup
+        case logIn
+        case singUp
     }
     
-    let type: LSType = .login
+    let type: LSType = .logIn
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupUI()
+        setupForm()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +33,10 @@ class LSViewController: FormViewController {
     }
     
     private func setupUI() {
-        self.title = Events.localizable.tabBar.settings.localized
+        self.title = type == .logIn ? Events.localizable.login.logIn.localized : Events.localizable.login.signUp.localized
+        self.tableView.separatorColor = EventsTheme.linkColor
+        
+        navigationOptions = .Disabled
     }
     
     private func setupValues() {
@@ -41,14 +45,104 @@ class LSViewController: FormViewController {
     
     private func setupForm() {
         
+        EmailFloatLabelRow.defaultCellSetup = { cell, row in
+            cell.textField.backgroundColor = UIColor.clear
+            cell.textLabel?.backgroundColor = UIColor.clear
+            row.cellUpdate({ (cell, row) in
+                cell.textField.textColor = .white
+            })
+        }
+        
+        PasswordFloatLabelRow.defaultCellSetup = { cell, row in
+            cell.textField.backgroundColor = UIColor.clear
+            cell.textLabel?.backgroundColor = UIColor.clear
+            row.cellUpdate({ (cell, row) in
+                cell.textField.textColor = .white
+            })
+        }
+        
+        LabelRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.textColor = .red
+        }
+        
+        
         form +++ Section()
         
-            <<< PasswordFloatLabelRow() {
-                $0.title = Events.localizable.login.mail.localized
+            <<< EmailFloatLabelRow(Events.localizable.login.mail.localized) {
+                $0.title = $0.tag
+                $0.add(rule: RuleRequired())
+                $0.add(rule: RuleEmail())
+                $0.validationOptions = .validatesOnChange
+                }.onRowValidationChanged { cell, row in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
             }
             
-            <<< PasswordFloatLabelRow() {
-                $0.title = Events.localizable.login.password.localized
+            <<< PasswordFloatLabelRow(Events.localizable.login.password.localized) {
+                $0.title = $0.tag
+                $0.add(rule: RuleRequired())
+                $0.validationOptions = .validatesOnChange
+                }.onRowValidationChanged { cell, row in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                                $0.cell.textLabel?.textColor = .red
+                                
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
+            }
+        
+            <<< PasswordFloatLabelRow(Events.localizable.login.passwordConfirmation.localized) {
+                $0.title = $0.tag
+                $0.hidden = type != .logIn ? false : true
+                $0.add(rule: RuleRequired())
+                $0.validationOptions = .validatesOnChange
+                $0.add(rule: RuleEqualsToRow(form: form, tag: Events.localizable.login.password.localized))
+                }.onRowValidationChanged { cell, row in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                                $0.cell.textLabel?.textColor = .red
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
+                }
+        
+            +++ Section()
+            
+            <<< ButtonRow() {
+                $0.title = type == .logIn ? Events.localizable.login.logIn.localized : Events.localizable.login.signUp.localized
+            }
+            .onCellSelection { cell, row in
+                if row.section?.form?.validate().count == 0 {
+                    
+                }
             }
     }
     

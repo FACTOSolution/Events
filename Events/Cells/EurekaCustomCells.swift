@@ -177,6 +177,7 @@ public class _FloatLabelCell<T>: Cell<T>, UITextFieldDelegate, TextFieldCell whe
         floatLabelTextField.text =  row.displayValueFor?(row.value)
         floatLabelTextField.isEnabled = !row.isDisabled
         floatLabelTextField.titleTextColour = .lightGray
+        floatLabelTextField.titleActiveTextColour = EventsTheme.linkColor
         floatLabelTextField.alpha = row.isDisabled ? 0.6 : 1
     }
 

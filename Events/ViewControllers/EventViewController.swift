@@ -57,7 +57,6 @@ class EventViewController: FormViewController {
             row.cellUpdate({ (cell, row) in
                 cell.textField.textColor = .white
             })
-            
         }
         
         DecimalRow.defaultCellSetup = { cell, row in

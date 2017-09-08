@@ -51,13 +51,14 @@ enum Events {
         }
         
         enum login: String, LocalizeRepresentable {
-            case mail       = "login.mail"
-            case password   = "login.password"
-            case userName   = "login.userName"
-            case logIn      = "login.logIn"
-            case signUp     = "login.signUp"
-            case welcome    = "login.welcome"
-            case terms      = "login.terms"
+            case mail                   = "login.mail"
+            case password               = "login.password"
+            case passwordConfirmation   = "login.passwordConfirmation"
+            case userName               = "login.userName"
+            case logIn                  = "login.logIn"
+            case signUp                 = "login.signUp"
+            case welcome                = "login.welcome"
+            case terms                  = "login.terms"
         }
         
         // Alert Types

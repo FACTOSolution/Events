@@ -62,6 +62,8 @@ class SettingsViewController: FormViewController {
             $0.hidden = user != nil ? true : false
         }.cellSetup { cell, row in
                 cell.imageView?.image = Events.Images.userPlaceholderForm.image
+                cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+                cell.tintColor = UIColor.white
         }.cellUpdate({ (cell, row) in
             cell.imageView?.tintColor = EventsTheme.linkColor
         })
