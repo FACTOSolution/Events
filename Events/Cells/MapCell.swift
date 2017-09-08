@@ -20,18 +20,20 @@ class MapCell: UIView {
     public func set(_ event: Event) {
         let keysFile = Bundle.main.path(forResource: "Keys", ofType: "plist")
         let dictionary = NSDictionary(contentsOfFile: keysFile!)
-        if let apiKey = dictionary?["googleMapsApiKey"] as? String {
-            let url = URL(string: "https://maps.googleapis.com/maps/api/staticmap?" +
-                "center=-5.056789,-42.788927" +
-                "&zoom=17" +
-                "&scale=2" +
-                "&size=400x180" +
-                "&markers=label:%7C-5.056789,-42.788927" +
-                "&key=\(apiKey)")
-            mapImageView.setShowActivityIndicator(true)
-            mapImageView.setIndicatorStyle(.gray)
-            mapImageView.sd_setImage(with: url)
-            
+        if event.latitude != "" && event.longitude != "" {
+            if let apiKey = dictionary?["googleMapsApiKey"] as? String {
+                let url = URL(string: "https://maps.googleapis.com/maps/api/staticmap?" +
+                    "center=\(event.latitude),\(event.longitude)" +
+                    "&zoom=17" +
+                    "&scale=2" +
+                    "&size=400x180" +
+                    "&markers=label:%7C\(event.latitude),\(event.longitude)" +
+                    "&key=\(apiKey)")
+                mapImageView.setShowActivityIndicator(true)
+                mapImageView.setIndicatorStyle(.gray)
+                mapImageView.sd_setImage(with: url)
+                
+            }
         }
     }
 }

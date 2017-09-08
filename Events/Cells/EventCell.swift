@@ -54,13 +54,15 @@ class EventCell: UITableViewCell {
     
     public func set(_ event: Event) {
         typeImageView.image = Events.Images(rawValue: event.type)?.image
+        typeImageView.image = typeImageView.image!.withRenderingMode(.alwaysTemplate)
+        typeImageView.tintColor = UIColor.white
         titleLabel.text = event.name
         infoLabel.text = dateFormatter.string(from: event.startDate)
         infoLabel.text = infoLabel.text! + " • " + event.address
         if let image = event.images.first?.url {
             coverImageView.setShowActivityIndicator(true)
             coverImageView.setIndicatorStyle(.gray)
-            coverImageView.sd_setImage(with: URL(string: image), placeholderImage: Events.Images.eventPlaceholder.image, options: [SDWebImageOptions.progressiveDownload])
+            coverImageView.sd_setImage(with: URL(string: image), placeholderImage: Events.Images.eventPlaceholder.image, options: [.progressiveDownload, .refreshCached])
         } else {
             coverImageView.image = Events.Images.eventPlaceholder.image
         }

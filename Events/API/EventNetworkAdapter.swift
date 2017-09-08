@@ -10,6 +10,7 @@ import Foundation
 import Moya
 import ObjectMapper
 import RealmSwift
+import SDWebImage
 
 struct EventNetworkAdapter {
     // Get the default Provider
@@ -18,7 +19,7 @@ struct EventNetworkAdapter {
     static let realm = try! Realm()
 
     static func getAllEvents(error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
-        provider.request(EventsAPI.getAllEvents) { (result) in
+        provider.request(EventsAPI.getEvents(OrderBy(date: .desc, value: .none))) { (result) in
             switch result {
             case .success(let response):
                 // 1:
@@ -26,9 +27,14 @@ struct EventNetworkAdapter {
                     do {
                         let eventsJson = try response.mapJSON()
                         let events: [Event] = Mapper<Event>().mapArray(JSONArray: eventsJson as! [[String : Any]])
+                        
+                        
+                        
                         try! realm.write {
                             realm.delete(realm.objects(Event.self))
                             realm.delete(realm.objects(Image.self))
+                            //SDImageCache.shared().clearMemory()
+                            //SDImageCache.shared().clearDisk()
                             for event in events {
                                 realm.add(event, update: true)
                             }

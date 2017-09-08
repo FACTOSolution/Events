@@ -8,9 +8,19 @@
 
 import UIKit
 import RealmSwift
+import SDWebImage
+import Eureka
 
 // LogIn | SignUp
-class LSViewController: UIViewController {
+class LSViewController: FormViewController {
+    
+    enum LSType {
+        case login
+        case singup
+    }
+    
+    let type: LSType = .login
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,4 +30,19 @@ class LSViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    private func setupUI() {
+        self.title = Events.Localizable.TabBar.settings.localized
+    }
+    
+    private func setupValues() {
+
+    }
+    
+    private func setupForm() {
+        
+        form +++ Section()
+    }
+    
+    
 }

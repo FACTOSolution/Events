@@ -46,8 +46,8 @@ enum Events {
         
         // Common Names
         enum TabBar: String, LocalizeRepresentable {
-            case events     = "common.events"
-            case settings   = "common.settings"
+            case events     = "tabBar.events"
+            case settings   = "tabBar.settings"
         }
         
         enum Login: String, LocalizeRepresentable {
@@ -95,6 +95,10 @@ enum Events {
             case camera             = "camera.camera"
             case photoLibrary       = "camera.photoLibrary"
             case savedPhotosAlbum   = "camera.savedPhotosAlbum"
+        }
+        
+        enum TableView: String, LocalizeRepresentable {
+            case pullToRefresh  = "tableView.pullToRefresh"
         }
     }
 

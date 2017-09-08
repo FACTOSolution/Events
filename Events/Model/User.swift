@@ -54,5 +54,4 @@ class User : Object, Mappable {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         return dateFormatter
     }()
-
 }

@@ -35,7 +35,7 @@ class EventUserView: UIView {
     
     @nonobjc
     public func set(_ user: User) {
-        typeImageView.sd_setImage(with: URL(string: user.image), placeholderImage: Events.Images.userPlaceholder.image)
+        typeImageView.sd_setImage(with: URL(string: user.image), placeholderImage: Events.Images.userPlaceholder.image, options: [.progressiveDownload, .refreshCached])
         titleLabel.text = user.name
         
     }

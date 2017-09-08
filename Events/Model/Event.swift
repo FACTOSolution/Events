@@ -52,8 +52,8 @@ class Event: Object, Mappable {
         published       <- map["published"]
         images          <- (map["images"], ListImageTransform())
         type            <- map["type"]
-        latitude        <- map["latitude"]
-        longitude       <- map["longitude"]
+        latitude        <- map["lat"]
+        longitude       <- map["long"]
 
     }
 }

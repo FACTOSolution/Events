@@ -53,9 +53,9 @@ struct UserNetworkAdapter {
                 if response.statusCode >= 200 && response.statusCode <= 300 {
                     do {
                         let userJson = try response.mapJSON()
-                        let user = Mapper<User>().mapDictionary(JSON: userJson as! [String : [String : Any]])
-                        try! realm.write {
-                            if let user = user!["user"] {
+                        print(userJson)
+                        if let user = Mapper<User>().map(JSON: userJson as! [String : Any]) {
+                            try! realm.write {
                                 realm.add(user, update: true)
                             }
                         }

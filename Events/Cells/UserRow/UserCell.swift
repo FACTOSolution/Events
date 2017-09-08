@@ -69,7 +69,7 @@ final class UserCell: Cell<User>, CellType {
             let url = URL(string: user.image)
             userImageView.setShowActivityIndicator(true)
             userImageView.setIndicatorStyle(.gray)
-            userImageView.sd_setImage(with: url, placeholderImage: Events.Images.userPlaceholder.image)
+            userImageView.sd_setImage(with: url, placeholderImage: Events.Images.userPlaceholder.image, options: [.progressiveDownload, .refreshCached])
         } else {
             userImageView.image = Events.Images.userPlaceholder.image
         }

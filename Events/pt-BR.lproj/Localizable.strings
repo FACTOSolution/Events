@@ -15,8 +15,8 @@
 
 // TabBar - Portuguese - pt-BR.lproj/Localizable.strings
 
-    "common.events"      = "Eventos";
-    "common.settings"    = "Configurações";
+    "tabBar.events"      = "Eventos";
+    "tabBar.settings"    = "Configurações";
 
 // Login - Portuguese - pt-BR.lproj/Localizable.strings
 
@@ -63,3 +63,7 @@
     "camera.camera"             = "Camera";
     "camera.photoLibrary"       = "Biblioteca de Fotos";
     "camera.savedPhotosAlbum"   = "Fotos Salvas";
+
+// TableView - Portuguese - pt-BR.lproj/Localizable.strings
+
+    "tableView.pullToRefresh" = "Puxe para Atualizar...";

@@ -28,6 +28,13 @@ class EventsTableViewController: UITableViewController {
     
     func setupUI() {
         self.title = Events.Localizable.TabBar.events.localized
+        
+        // UIRefreshControl
+        let refreshControl:UIRefreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(update), for: UIControlEvents.valueChanged)
+        
+        refreshControl.attributedTitle = NSAttributedString(string: Events.Localizable.TableView.pullToRefresh.localized )
+        self.refreshControl = refreshControl
     }
     
     func observeNotification () {
@@ -106,6 +113,15 @@ class EventsTableViewController: UITableViewController {
 }
 
 extension EventsTableViewController{
+    
+    // MARK: - Update
+    
+    func update(){
+        loadEvents()
+        tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
+    
     func loadEvents() {
         EventNetworkAdapter.getAllEvents(error: { (error) in
             print(error)

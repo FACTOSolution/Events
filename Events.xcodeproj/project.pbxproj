@@ -87,6 +87,10 @@
 		181900841F57B4340073AA63 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Cells/ImageRow/ImagePickerController.swift; sourceTree = "<group>"; };
 		181900851F57B4340073AA63 /* ImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRow.swift; path = Cells/ImageRow/ImageRow.swift; sourceTree = "<group>"; };
 		1835DB1F1F5F891E002E0DEC /* LSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LSViewController.swift; path = ViewControllers/LSViewController.swift; sourceTree = "<group>"; };
+		1864A8011F61D63E008A02A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1864A8021F61D644008A02A8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		1864A8041F61D69C008A02A8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1864A8061F61D69F008A02A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		188BF93A1F5A01FF0043ABC6 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Cells/UserRow/UserCell.xib; sourceTree = "<group>"; };
 		188BF93C1F5A02DC0043ABC6 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = Cells/UserRow/UserCell.swift; sourceTree = "<group>"; };
 		18A230691F4C72780025DA84 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,8 +105,6 @@
 		18A2308A1F4C72780025DA84 /* EventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A2308E1F4C72780025DA84 /* EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsUITests.swift; sourceTree = "<group>"; };
 		18A230901F4C72780025DA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18A230A41F4C734C0025DA84 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
-		18A230A51F4C734C0025DA84 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		18A230AC1F4C73DF0025DA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Events/Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18A230AE1F4C73E50025DA84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Events/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18A230AF1F4C73E70025DA84 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "Events/pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -194,12 +196,12 @@
 			name = ImageRow;
 			sourceTree = "<group>";
 		};
-		1835DB1E1F5F88DB002E0DEC /* Users */ = {
+		1835DB1E1F5F88DB002E0DEC /* LogIn | SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				1835DB1F1F5F891E002E0DEC /* LSViewController.swift */,
 			);
-			name = Users;
+			name = "LogIn | SignUp";
 			sourceTree = "<group>";
 		};
 		188BF9391F5A01930043ABC6 /* UserRow */ = {
@@ -299,7 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				18D058AA1F5E481C00A15F13 /* Events */,
-				1835DB1E1F5F88DB002E0DEC /* Users */,
+				1835DB1E1F5F88DB002E0DEC /* LogIn | SignUp */,
 				18D058AB1F5E482600A15F13 /* Settings */,
 			);
 			name = Controllers;
@@ -645,7 +647,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				18A230731F4C72780025DA84 /* Base */,
-				18A230A41F4C734C0025DA84 /* pt-BR */,
+				1864A8011F61D63E008A02A8 /* en */,
+				1864A8021F61D644008A02A8 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -654,7 +657,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				18A230781F4C72780025DA84 /* Base */,
-				18A230A51F4C734C0025DA84 /* pt-BR */,
+				1864A8041F61D69C008A02A8 /* pt-BR */,
+				1864A8061F61D69F008A02A8 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
