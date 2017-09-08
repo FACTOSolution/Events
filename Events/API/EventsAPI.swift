@@ -80,7 +80,7 @@ extension EventsAPI: TargetType {
             parameters["password"] = user.password
             parameters["password_confirmation"] = user.passwordConfirmation
             
-            parameters["name"] = user.name
+            parameters["username"] = user.name
             parameters["nickname"] = user.nickname
             parameters["image"] = user.image
             print(parameters)

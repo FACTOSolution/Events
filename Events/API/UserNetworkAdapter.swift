@@ -85,6 +85,7 @@ struct UserNetworkAdapter {
                         errorCallback(error)
                     }
                 } else {
+                    print(response)
                     let error = NSError(domain: response.debugDescription, code: response.statusCode, userInfo:[NSLocalizedDescriptionKey: "Parsing Error"] )
                     errorCallback(error)
                 }

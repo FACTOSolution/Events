@@ -19,7 +19,7 @@ class LSViewController: FormViewController {
         case singUp
     }
     
-    let type: LSType = .logIn
+    let type: LSType = .singUp
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +92,7 @@ class LSViewController: FormViewController {
             <<< PasswordFloatLabelRow(Events.localizable.login.password.localized) {
                 $0.title = $0.tag
                 $0.add(rule: RuleRequired())
+                $0.add(rule: RuleMinLength(minLength: 8))
                 $0.validationOptions = .validatesOnChange
                 }.onRowValidationChanged { cell, row in
                     let rowIndex = row.indexPath!.row
@@ -115,6 +116,7 @@ class LSViewController: FormViewController {
                 $0.title = $0.tag
                 $0.hidden = type != .logIn ? false : true
                 $0.add(rule: RuleRequired())
+                $0.add(rule: RuleMinLength(minLength: 8))
                 $0.validationOptions = .validatesOnChange
                 $0.add(rule: RuleEqualsToRow(form: form, tag: Events.localizable.login.password.localized))
                 }.onRowValidationChanged { cell, row in
@@ -141,10 +143,39 @@ class LSViewController: FormViewController {
             }
             .onCellSelection { cell, row in
                 if row.section?.form?.validate().count == 0 {
-                    
+                    switch self.type {
+                    case .logIn:    self.logIn()
+                    case .singUp:   self.singUp()
+                    }
                 }
             }
     }
     
+    private func logIn() {
+        guard let email = form.rowBy(tag: Events.localizable.login.mail.localized) as? EmailFloatLabelRow else { return }
+        guard let password = form.rowBy(tag: Events.localizable.login.password.localized) as? PasswordFloatLabelRow else { return }
+
+        let user = User()
+        user.email = email.value!
+        user.password = password.value!
+    }
     
+    private func singUp() {
+        guard let email = form.rowBy(tag: Events.localizable.login.mail.localized) as? EmailFloatLabelRow else { return }
+        guard let password = form.rowBy(tag: Events.localizable.login.password.localized) as? PasswordFloatLabelRow else { return }
+        guard let passwordConfirmation = form.rowBy(tag: Events.localizable.login.passwordConfirmation.localized) as? PasswordFloatLabelRow else { return }
+        
+        let user = User()
+        user.email = email.value!
+        user.password = password.value!
+        user.passwordConfirmation = passwordConfirmation.value!
+        user.nickname = "lololo"
+        user.name = "PEDRO"
+
+        UserNetworkAdapter.create(user, error: { (error) in
+            print(error)
+        }) { (moyaError) in
+            print(moyaError)
+        }
+    }
 }
