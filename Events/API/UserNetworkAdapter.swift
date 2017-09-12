@@ -72,18 +72,13 @@ struct UserNetworkAdapter {
         }
     }
     
-    static func create(_ user: User, error errorCallback: @escaping (Swift.Error) -> Void,
+    static func create(_ user: User, success successCallback: @escaping () -> Void, error errorCallback: @escaping (Swift.Error) -> Void,
                         failure failureCallback: @escaping (MoyaError) -> Void) {
         provider.request(EventsAPI.createUser(user)) { (result) in
             switch result {
             case .success(let response):
                 if response.statusCode >= 200 && response.statusCode <= 300 {
-                    do {
-                        let userJson = try response.mapJSON()
-                        print(userJson)
-                    }catch {
-                        errorCallback(error)
-                    }
+                    successCallback()
                 } else {
                     print(response)
                     let error = NSError(domain: response.debugDescription, code: response.statusCode, userInfo:[NSLocalizedDescriptionKey: "Parsing Error"] )
@@ -93,6 +88,5 @@ struct UserNetworkAdapter {
                 failureCallback(error)
             }
         }
-    
-    }
+    }    
 }

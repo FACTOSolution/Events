@@ -18,6 +18,7 @@ enum EventsAPI {
     case updateEvent(Event)
     case getEvent(id: Int)
     case getEvents(OrderBy)
+    case signIn(User)
 }
 
 struct OrderBy {
@@ -58,13 +59,15 @@ extension EventsAPI: TargetType {
             return "/event/\(id)"
         case .getEvents:
             return "/event"
+        case .signIn:
+            return "/auth/sign_in"
         }
     }
     var method: Moya.Method {
         switch self {
         case .getUser, .getAllUsers, .getEvent:
             return .get
-        case .createUser, .createEvent, .getEvents:
+        case .createUser, .createEvent, .getEvents, .signIn:
             return .post
         case .updateUser, .updateEvent:
             return .put
@@ -72,16 +75,14 @@ extension EventsAPI: TargetType {
     }
     var parameters: [String: Any]? {
         switch self {
-        case .getUser, .getAllUsers, .getEvent:
-            return nil
         case .createUser(let user), .updateUser(let user):
             var parameters = [String: Any]()
             parameters["email"] = user.email
             parameters["password"] = user.password
-            parameters["password_confirmation"] = user.passwordConfirmation
+            parameters["password_confirmation"] = user.password
             
-            parameters["username"] = user.name
-            parameters["nickname"] = user.nickname
+            parameters["name"] = user.name
+            parameters["nickname"] = user.username
             parameters["image"] = user.image
             print(parameters)
             return parameters
@@ -113,17 +114,25 @@ extension EventsAPI: TargetType {
             if orderBy.value != .none {
                 parameters["value"] = orderBy.value.rawValue
             }
-            
+            print(parameters)
             return parameters
+        case .signIn(let user):
+            var parameters = [String: Any]()
+            parameters["email"] = user.email
+            parameters["password"] = user.password
+            print(parameters)
+            return parameters
+        default:
+            return nil
         }
     }
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .getUser, .getAllUsers, .getEvent, .getEvents:
+        case .getUser, .getAllUsers, .getEvent:
             return URLEncoding.default // Send parameters in URL for GET, DELETE and HEAD. For other HTTP methods, parameters will be sent in request body
         case .updateUser, .updateEvent:
             return URLEncoding.queryString // Always sends parameters in URL, regardless of which HTTP method is used
-        case .createUser, .createEvent:
+        case .createUser, .createEvent, .signIn, .getEvents:
             return JSONEncoding.default // Send parameters as JSON in request body
         }
     }
@@ -134,10 +143,13 @@ extension EventsAPI: TargetType {
 
     var task: Task {
         switch self {
-        case .createUser, .updateUser, .getUser, .getAllUsers, .createEvent, .updateEvent, .getEvent, .getEvents:
-            return .request
+        case .createUser, .updateUser, .createEvent, .updateEvent, .getEvents, .signIn:
+            return .requestParameters(parameters: parameters!, encoding: parameterEncoding)
+        default:
+            return .requestPlain
         }
     }
+    
     var headers: [String: String]? {
         return ["Content-type": "application/json; charset=utf-8"]
     }

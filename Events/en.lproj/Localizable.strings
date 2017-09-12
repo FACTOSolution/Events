@@ -19,16 +19,16 @@
     "tabBar.settings"    = "Settings";
 
 
-// Login - English - en.lproj/Localizable.strings
+// Oauth - English - en.lproj/Localizable.strings
 
-    "login.mail"                    = "Mail";
-    "login.password"                = "Password (min. 8 characters)";
-    "login.passwordConfirmation"    = "Password Confirmation";
-    "login.userName"                = "Username";
-    "login.logIn"                   = "Log in";
-    "login.signUp"                  = "Sign up";
-    "login.welcome"                 = "Welcome to UFPIEvents";
-    "login.terms"                   = "By signing up I accept the terms and condictions";
+    "oauth.mail"                    = "Mail";
+    "oauth.password"                = "Password (min. 8 characters)";
+    "oauth.passwordConfirmation"    = "Password Confirmation";
+    "oauth.userName"                = "Username";
+    "oauth.signIn"                  = "Sign In";
+    "oauth.signUp"                  = "Sign Up";
+    "oauth.welcome"                 = "Welcome to UFPIEvents";
+    "oauth.terms"                   = "By signing up I accept the terms and condictions";
 
 
 // AlertType - English - en.lproj/Localizable.strings

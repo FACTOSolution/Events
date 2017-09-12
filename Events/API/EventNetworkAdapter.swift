@@ -19,7 +19,7 @@ struct EventNetworkAdapter {
     static let realm = try! Realm()
 
     static func getAllEvents(error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
-        provider.request(EventsAPI.getEvents(OrderBy(date: .desc, value: .none))) { (result) in
+        provider.request(EventsAPI.getEvents(OrderBy(date: .asc, value: .none))) { (result) in
             switch result {
             case .success(let response):
                 // 1:
@@ -27,9 +27,6 @@ struct EventNetworkAdapter {
                     do {
                         let eventsJson = try response.mapJSON()
                         let events: [Event] = Mapper<Event>().mapArray(JSONArray: eventsJson as! [[String : Any]])
-                        
-                        
-                        
                         try! realm.write {
                             realm.delete(realm.objects(Event.self))
                             realm.delete(realm.objects(Image.self))
@@ -44,6 +41,7 @@ struct EventNetworkAdapter {
                     }
                 } else {
                     let error = NSError(domain: response.description, code: response.statusCode, userInfo:[NSLocalizedDescriptionKey: "Parsing Error"])
+                    print(response)
                     errorCallback(error)
                 }
             case .failure(let error):

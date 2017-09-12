@@ -50,15 +50,15 @@ enum Events {
             case settings   = "tabBar.settings"
         }
         
-        enum login: String, LocalizeRepresentable {
-            case mail                   = "login.mail"
-            case password               = "login.password"
-            case passwordConfirmation   = "login.passwordConfirmation"
-            case userName               = "login.userName"
-            case logIn                  = "login.logIn"
-            case signUp                 = "login.signUp"
-            case welcome                = "login.welcome"
-            case terms                  = "login.terms"
+        enum oauth: String, LocalizeRepresentable {
+            case mail                   = "oauth.mail"
+            case password               = "oauth.password"
+            case passwordConfirmation   = "oauth.passwordConfirmation"
+            case userName               = "oauth.userName"
+            case signIn                 = "oauth.signIn"
+            case signUp                 = "oauth.signUp"
+            case welcome                = "oauth.welcome"
+            case terms                  = "oauth.terms"
         }
         
         // Alert Types

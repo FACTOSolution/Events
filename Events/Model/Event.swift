@@ -57,17 +57,3 @@ class Event: Object, Mappable {
 
     }
 }
-
-
-//var nicknames: [String] {
-//    get {
-//        return _backingNickNames.map { $0.stringValue }
-//    }
-//    set {
-//        _backingNickNames.removeAll()
-//        _backingNickNames.appendContentsOf(newValue.map({ RealmString(value: [$0]) }))
-//    }
-//}
-//let _backingNickNames = List<RealmString>()
-
-

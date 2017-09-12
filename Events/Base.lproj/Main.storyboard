@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1804" y="483.50824587706148"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In Sign Up View Controller-->
         <scene sceneID="63q-yV-JQi">
             <objects>
-                <viewController definesPresentationContext="YES" id="Pgb-o4-Hx5" customClass="LSViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" id="Pgb-o4-Hx5" customClass="SignInSignUpViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KpV-At-dIg"/>
                         <viewControllerLayoutGuide type="bottom" id="BOy-XA-YGR"/>
@@ -93,7 +93,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="q5Y-4m-k8d" id="ZqX-69-NYs"/>
+                        <outlet property="tableView" destination="q5Y-4m-k8d" id="Pmx-jk-Nxe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzK-Qj-iRE" userLabel="First Responder" sceneMemberID="firstResponder"/>

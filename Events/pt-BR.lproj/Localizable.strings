@@ -18,16 +18,16 @@
     "tabBar.events"      = "Eventos";
     "tabBar.settings"    = "Configurações";
 
-// Login - Portuguese - pt-BR.lproj/Localizable.strings
+// Oauth - Portuguese - pt-BR.lproj/Localizable.strings
 
-    "login.mail"                    = "E-mail";
-    "login.password"                = "Senha (min. 8 caracteres)";
-    "login.passwordConfirmation"    = "Confirmar Senha";
-    "login.userName"                = "Nome de usuário";
-    "login.logIn"                   = "Logar";
-    "login.signUp"                  = "Criar Conta";
-    "login.welcome"                 = "Bem Vindo ao UFPIEvents";
-    "login.terms"                   = "Ao me cadastrando, eu aceito os termos e condições";
+    "oauth.mail"                    = "E-mail";
+    "oauth.password"                = "Senha (min. 8 caracteres)";
+    "oauth.passwordConfirmation"    = "Confirmar Senha";
+    "oauth.userName"                = "Nome de usuário";
+    "oauth.signIn"                  = "Entrar";
+    "oauth.signUp"                  = "Criar Conta";
+    "oauth.welcome"                 = "Bem Vindo ao UFPIEvents";
+    "oauth.terms"                   = "Ao me cadastrando, eu aceito os termos e condições";
 
 // AlertType - Portuguese - pt-BR.lproj/Localizable.strings
 

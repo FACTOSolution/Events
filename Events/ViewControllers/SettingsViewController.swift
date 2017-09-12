@@ -14,7 +14,7 @@ class SettingsViewController: FormViewController {
     
     let realm = try! Realm()
     
-    var user: User?
+    var user: User? = try! Realm().objects(User.self).filter("logged == 1").first
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,6 @@ class SettingsViewController: FormViewController {
     }
     
     private func setupValues() {
-        user = realm.objects(User.self).filter("logged == %@", true).first
         tableView.reloadData()
     }
     
@@ -47,7 +46,10 @@ class SettingsViewController: FormViewController {
             })
         }
         
-        form +++ Section() {
+        form +++ Section()
+            
+            
+        +++ Section() {
             
             var footer = HeaderFooterView<EventUserView>(.nibFile(name: "EventUserView", bundle: nil))
             footer.onSetupView = { (view, section) -> () in
@@ -57,7 +59,7 @@ class SettingsViewController: FormViewController {
         }
         
         <<< ButtonRow() {
-            $0.title = "\(Events.localizable.login.signUp.localized) | \(Events.localizable.login.logIn.localized)"
+            $0.title = "\(Events.localizable.oauth.signUp.localized) | \(Events.localizable.oauth.signIn.localized)"
             $0.presentationMode = .segueName(segueName: "LoginSignUpSegue", onDismiss: nil)
             $0.hidden = user != nil ? true : false
         }.cellSetup { cell, row in

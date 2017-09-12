@@ -11,23 +11,21 @@ import RealmSwift
 import ObjectMapper
 
 class User : Object, Mappable {
+
     dynamic var id = 0
     dynamic var uid = 0
     dynamic var name = ""
-    dynamic var nickname = ""
+    dynamic var username = ""
     dynamic var email = ""
     dynamic var provider = ""
     dynamic var image = ""
     dynamic var created = Date()
     dynamic var updated = Date()
-    dynamic var logged = false
     
+    dynamic var verified = false
+    dynamic var logged = false
     dynamic var password = ""
-    dynamic var passwordConfirmation = ""
-
-    override static func ignoredProperties() -> [String] {
-        return ["password", "passwordConfirmation"]
-    }
+    dynamic var oauthHeader: OauthHeader?
     
     override static func primaryKey() -> String? {
         return "id"
@@ -41,17 +39,12 @@ class User : Object, Mappable {
         id          <- map["id"]
         uid         <- map["uid"]
         name        <- map["name"]
-        nickname    <- map["nickname"]
+        username    <- map["nickname"]
         email       <- map["email"]
         provider    <- map["provider"]
         image       <- map["image"]
         created     <- (map["created_at"], DateFormatterTransform())
         created     <- (map["updated_at"], DateFormatterTransform())
+        verified    <- map["verified"]
     }
-    
-    private var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        return dateFormatter
-    }()
 }
