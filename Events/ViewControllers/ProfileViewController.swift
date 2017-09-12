@@ -10,7 +10,7 @@ import UIKit
 import Eureka
 import RealmSwift
 
-class SettingsViewController: FormViewController {
+class ProfileViewController: FormViewController {
     
     let realm = try! Realm()
     
@@ -29,7 +29,7 @@ class SettingsViewController: FormViewController {
     }
     
     private func setupUI() {
-        self.title = Events.localizable.tabBar.settings.localized
+        self.title = Events.localizable.tabBar.profile.localized
     }
     
     private func setupValues() {
@@ -41,9 +41,6 @@ class SettingsViewController: FormViewController {
         
         ButtonRow.defaultCellSetup = { cell, row in
             cell.textLabel?.backgroundColor = UIColor.clear
-            row.cellUpdate({ (cell, row) in
-                cell.textLabel?.textColor = .white
-            })
         }
         
         form +++ Section()
@@ -63,11 +60,55 @@ class SettingsViewController: FormViewController {
             $0.presentationMode = .segueName(segueName: "LoginSignUpSegue", onDismiss: nil)
             $0.hidden = user != nil ? true : false
         }.cellSetup { cell, row in
-                cell.imageView?.image = Events.Images.userPlaceholderForm.image
+                cell.imageView?.image = Events.Images.profile.image
                 cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
                 cell.tintColor = UIColor.white
         }.cellUpdate({ (cell, row) in
+            cell.textLabel?.textColor = .white
             cell.imageView?.tintColor = EventsTheme.linkColor
         })
+        
+        +++ Section()
+            
+        <<< ButtonRow() {
+            $0.title = Events.localizable.eventStatus.add.localized
+            }.onCellSelection { [weak self] (cell, row) in
+                self?.showAlert()
+            }.cellSetup { cell, row in
+                cell.imageView?.image = Events.Images.addTickets.image
+                cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+                cell.tintColor = UIColor.white
+            }.cellUpdate({ (cell, row) in
+                cell.textLabel?.textColor = .white
+                cell.textLabel?.textAlignment = .left
+                cell.accessoryType = .disclosureIndicator
+            })
+            
+        +++ Section()
+        <<< ButtonRow() {
+            $0.title = Events.localizable.oauth.termsOfUse.localized
+            }.onCellSelection { [weak self] (cell, row) in
+                self?.showAlert()
+            }.cellUpdate({ (cell, row) in
+                cell.textLabel?.textColor = .white
+                cell.textLabel?.textAlignment = .left
+                cell.accessoryType = .disclosureIndicator
+            })
+        
+        <<< ButtonRow() { 
+            $0.title = Events.localizable.oauth.privacyPolicy.localized
+            }.onCellSelection { [weak self] (cell, row) in
+                self?.showAlert()
+            }.cellUpdate({ (cell, row) in
+                cell.textLabel?.textColor = .white
+                cell.textLabel?.textAlignment = .left
+                cell.accessoryType = .disclosureIndicator
+            })
     }
+    
+    
+    func showAlert() {
+        
+    }
+    
 }

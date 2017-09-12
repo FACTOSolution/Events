@@ -13,10 +13,21 @@
     "common.academic"   = "Academic";
     "common.cultural"   = "Cultural";
 
+// Event Status - English - en.lproj/Localizable.strings
+
+    "eventStatus.add"                   = "Add Event";
+    "eventStatus.update"                = "Update Event";
+    "eventStatus.delete"                = "Delete Event";
+    "eventStatus.accepted"              = "Accepted";
+    "eventStatus.waitingForApproving"   = "Waiting for Approving";
+    "eventStatus.denied"                = "Denied";
+
+
 // TabBar - English - en.lproj/Localizable.strings
 
-    "tabBar.events"      = "Events";
-    "tabBar.settings"    = "Settings";
+    "tabBar.events"     = "Events";
+    "tabBar.profile"    = "Profile";
+    "tabBar.settings"   = "Settings";
 
 
 // Oauth - English - en.lproj/Localizable.strings
@@ -29,6 +40,8 @@
     "oauth.signUp"                  = "Sign Up";
     "oauth.welcome"                 = "Welcome to UFPIEvents";
     "oauth.terms"                   = "By signing up I accept the terms and condictions";
+    "oauth.termsOfUse"              = "Terms of Use";
+    "oauth.privacyPolicy"           = "Privacy Policy";
 
 
 // AlertType - English - en.lproj/Localizable.strings

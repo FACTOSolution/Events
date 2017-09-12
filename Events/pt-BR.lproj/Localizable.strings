@@ -13,10 +13,20 @@
     "common.academic"   = "Academico";
     "common.cultural"   = "Cultural";
 
+// Event Status - English - en.lproj/Localizable.strings
+
+    "eventStatus.add"                   = "Adiconar Evento";
+    "eventStatus.update"                = "Atualizar Evento";
+    "eventStatus.delete"                = "Deletar Evento";
+    "eventStatus.accepted"              = "Aceito";
+    "eventStatus.waitingForApproving"   = "Aguardando Aprovação";
+    "eventStatus.denied"                = "Negado";
+
 // TabBar - Portuguese - pt-BR.lproj/Localizable.strings
 
-    "tabBar.events"      = "Eventos";
-    "tabBar.settings"    = "Configurações";
+    "tabBar.events"     = "Eventos";
+    "tabBar.profile"    = "Perfil";
+    "tabBar.settings"   = "Configurações";
 
 // Oauth - Portuguese - pt-BR.lproj/Localizable.strings
 
@@ -27,7 +37,9 @@
     "oauth.signIn"                  = "Entrar";
     "oauth.signUp"                  = "Criar Conta";
     "oauth.welcome"                 = "Bem Vindo ao UFPIEvents";
-    "oauth.terms"                   = "Ao me cadastrando, eu aceito os termos e condições";
+    "oauth.terms"                   = "Ao me cadastrar, eu aceito os termos e condições";
+    "oauth.termsOfUse"              = "Termos de Uso";
+    "oauth.privacyPolicy"           = "Politica de Privacidade";
 
 // AlertType - Portuguese - pt-BR.lproj/Localizable.strings
 

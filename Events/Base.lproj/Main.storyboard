@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="zdL-PA-NfS">
             <objects>
-                <viewController definesPresentationContext="YES" modalPresentationStyle="currentContext" id="sJ4-sq-PNX" customClass="SettingsViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" modalPresentationStyle="currentContext" id="sJ4-sq-PNX" customClass="ProfileViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KaK-BR-crl"/>
                         <viewControllerLayoutGuide type="bottom" id="b5Q-bq-XcV"/>
@@ -174,11 +174,11 @@
             </objects>
             <point key="canvasLocation" x="866.39999999999998" y="-233.43328335832086"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="wbc-xr-gr3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="56S-P1-8at" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="ezo-wb-UCa"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="ezo-wb-UCa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iAO-yV-WHI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -195,7 +195,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Settings" width="25" height="25"/>
+        <image name="Profile" width="25" height="25"/>
         <image name="Tickets" width="25" height="25"/>
     </resources>
 </document>

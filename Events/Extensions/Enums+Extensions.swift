@@ -26,11 +26,20 @@ enum Events {
     
     // Image Names
     enum Images: String, ImageRepresentable {
-        case academic               = "Academic"
-        case cultural               = "Cultural"
-        case eventPlaceholder       = "EventPlaceholder"
-        case userPlaceholder        = "UserPlaceholder"
-        case userPlaceholderForm    = "userPlaceholderForm"
+        case academic                   = "Academic"
+        case cultural                   = "Cultural"
+        case settings                   = "Settings"
+        case eventPlaceholder           = "EventPlaceholder"
+        case userPlaceholder            = "UserPlaceholder"
+        case profile                    = "Profile"
+        case money                      = "Money"
+        case marker                     = "Marker"
+        case ticket                     = "Tickets"
+        case addTickets                 = "AddTickets"
+        case ticketAccepted             = "TicketAccepted"
+        case ticketWaitingForApproving  = "TicketWaitingForApproving"
+        case ticketDenied               = "TicketDenied"
+
     }
     
     // Localizable Strings
@@ -44,9 +53,19 @@ enum Events {
             case cultural   = "common.cultural"
         }
         
+        enum eventStatus: String, LocalizeRepresentable {
+            case add                    = "eventStatus.add"
+            case update                 = "eventStatus.update"
+            case delete                 = "eventStatus.delete"
+            case accepted               = "eventStatus.accepted"
+            case waitingForApproving    = "eventStatus.waitingForApproving"
+            case denied                 = "eventStatus.denied"
+        }
+        
         // Common Names
         enum tabBar: String, LocalizeRepresentable {
             case events     = "tabBar.events"
+            case profile    = "tabBar.profile"
             case settings   = "tabBar.settings"
         }
         
@@ -59,6 +78,8 @@ enum Events {
             case signUp                 = "oauth.signUp"
             case welcome                = "oauth.welcome"
             case terms                  = "oauth.terms"
+            case termsOfUse             = "oauth.termsOfUse"
+            case privacyPolicy          = "oauth.privacyPolicy"
         }
         
         // Alert Types

@@ -131,8 +131,12 @@ class EventViewController: FormViewController {
             $0.value = Events.localizable.formFields.free.localized
             $0.hidden = event!.value == 00.00 ? false : true
             $0.disabled = true
+            }.cellSetup { cell, row in
+                cell.imageView?.image = Events.Images.money.image
+                cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+                cell.tintColor = UIColor.white
             }.cellUpdate({ (cell, row) in
-                print(row.isDisabled)
+                cell.imageView?.tintColor = EventsTheme.linkColor
                 cell.textField.textColor = row.isDisabled ? .gray : .red
             })
         
@@ -146,7 +150,13 @@ class EventViewController: FormViewController {
             $0.formatter = formatter
             $0.hidden = event!.value == 00.00 ? true : false
             $0.disabled = true
-        }
+            }.cellSetup { cell, row in
+                cell.imageView?.image = Events.Images.money.image
+                cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+                cell.tintColor = UIColor.white
+            }.cellUpdate({ (cell, row) in
+                cell.imageView?.tintColor = EventsTheme.linkColor
+            })
         
         
         +++ Section() {
@@ -162,7 +172,13 @@ class EventViewController: FormViewController {
             $0.title = Events.localizable.formFields.address.localized
             $0.value = event!.address
             $0.disabled = true
-        }
+            }.cellSetup { cell, row in
+                cell.imageView?.image = Events.Images.marker.image
+                cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+                cell.tintColor = UIColor.white
+            }.cellUpdate({ (cell, row) in
+                cell.imageView?.tintColor = EventsTheme.linkColor
+            })
         
         
         +++ Section(Events.localizable.formFields.createdBy.localized)
@@ -195,7 +211,9 @@ class EventViewController: FormViewController {
     }
     
     private func load(user id: Int) {
-        UserNetworkAdapter.getUser(with: self.event!.ownerId, error: { (error) in
+        UserNetworkAdapter.getUser(with: self.event!.ownerId, success: {
+            self.user = self.realm.objects(User.self).filter("id == %@", self.event!.ownerId).first
+        }, error: { (error) in
             print(error)
         }) { (moyaError) in
             print(moyaError)

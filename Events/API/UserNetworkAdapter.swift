@@ -45,7 +45,7 @@ struct UserNetworkAdapter {
         }
     }
     
-    static func getUser(with id: Int, error errorCallback: @escaping (Swift.Error) -> Void,
+    static func getUser(with id: Int, success successCallback: @escaping () -> Void, error errorCallback: @escaping (Swift.Error) -> Void,
                         failure failureCallback: @escaping (MoyaError) -> Void) {
         provider.request(EventsAPI.getUser(id: id)) { (result) in
             switch result {
@@ -58,6 +58,7 @@ struct UserNetworkAdapter {
                             try! realm.write {
                                 realm.add(user, update: true)
                             }
+                            successCallback()
                         }
                     }catch {
                         errorCallback(error)

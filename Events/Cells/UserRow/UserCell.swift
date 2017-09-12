@@ -69,9 +69,11 @@ final class UserCell: Cell<User>, CellType {
             let url = URL(string: user.image)
             userImageView.setShowActivityIndicator(true)
             userImageView.setIndicatorStyle(.gray)
-            userImageView.sd_setImage(with: url, placeholderImage: Events.Images.userPlaceholder.image, options: [.progressiveDownload, .refreshCached])
+            userImageView.sd_setImage(with: url, placeholderImage: Events.Images.profile.image, options: [.progressiveDownload, .refreshCached])
         } else {
-            userImageView.image = Events.Images.userPlaceholder.image
+            userImageView.image = Events.Images.profile.image
+            userImageView.image = userImageView.image!.withRenderingMode(.alwaysTemplate)
+            userImageView.tintColor = UIColor.white
         }
         
         // set the texts to the labels
