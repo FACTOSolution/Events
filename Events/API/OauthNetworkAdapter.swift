@@ -99,6 +99,14 @@ struct OauthNetworkAdapter {
         }
     }
     
-    
+    static func signOut(_ user: User) {
+        //User is logged
+        try! realm.write {
+            if let oauthHeader = user.oauthHeader {
+                realm.delete(oauthHeader)
+            }
+            realm.delete(user)
+        }
+    }
     
 }

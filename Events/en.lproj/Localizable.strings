@@ -38,6 +38,7 @@
     "oauth.userName"                = "Username";
     "oauth.signIn"                  = "Sign In";
     "oauth.signUp"                  = "Sign Up";
+    "oauth.signOut"                 = "Sign Out";
     "oauth.welcome"                 = "Welcome to UFPIEvents";
     "oauth.terms"                   = "By signing up I accept the terms and condictions";
     "oauth.termsOfUse"              = "Terms of Use";

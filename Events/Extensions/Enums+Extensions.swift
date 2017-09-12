@@ -39,6 +39,7 @@ enum Events {
         case ticketAccepted             = "TicketAccepted"
         case ticketWaitingForApproving  = "TicketWaitingForApproving"
         case ticketDenied               = "TicketDenied"
+        case signOut                    = "SignOut"
 
     }
     
@@ -76,6 +77,7 @@ enum Events {
             case userName               = "oauth.userName"
             case signIn                 = "oauth.signIn"
             case signUp                 = "oauth.signUp"
+            case signOut                = "oauth.signOut"
             case welcome                = "oauth.welcome"
             case terms                  = "oauth.terms"
             case termsOfUse             = "oauth.termsOfUse"

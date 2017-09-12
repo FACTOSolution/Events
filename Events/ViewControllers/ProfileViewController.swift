@@ -20,7 +20,6 @@ class ProfileViewController: FormViewController {
         super.viewDidLoad()
         self.tableView.separatorColor = EventsTheme.linkColor
         setupForm()
-        setupValues()
         setupUI()
     }
     
@@ -28,14 +27,16 @@ class ProfileViewController: FormViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.user = try! Realm().objects(User.self).filter("logged == 1").first
+        self.form.rowBy(tag: "isLogged")?.baseValue = self.user != nil ? true : false
+        self.form.rowBy(tag: "isLogged")?.updateCell()
+    }
+    
     private func setupUI() {
         self.title = Events.localizable.tabBar.profile.localized
     }
-    
-    private func setupValues() {
-        tableView.reloadData()
-    }
-    
     
     private func setupForm() {
         
@@ -43,22 +44,39 @@ class ProfileViewController: FormViewController {
             cell.textLabel?.backgroundColor = UIColor.clear
         }
         
-        form +++ Section()
+        form
+            
+            +++ Section() {
+                $0.tag = "HeaderEventUserViewSpace"
+                $0.hidden = true
+            }
+            
+            <<< SwitchRow("isLogged") { [weak self] in
+                $0.title = "Navigation accessory view"
+                $0.value = self?.user != nil ? true : false
+                print(self?.user)
+            }
             
             
         +++ Section() {
             
-            var footer = HeaderFooterView<EventUserView>(.nibFile(name: "EventUserView", bundle: nil))
-            footer.onSetupView = { (view, section) -> () in
+            var header = HeaderFooterView<EventUserView>(.nibFile(name: "EventUserView", bundle: nil))
+            header.onSetupView = { (view, section) -> () in
                 if self.user != nil { view.set(self.user!) }
             }
-            if user != nil { $0.footer = footer }
+            $0.footer = header
+            $0.hidden = "$isLogged == false"
         }
         
-        <<< ButtonRow() {
-            $0.title = "\(Events.localizable.oauth.signUp.localized) | \(Events.localizable.oauth.signIn.localized)"
+        +++ Section() {
+            $0.tag = "SingInSection"
+            $0.hidden = "$isLogged == true"
+        }
+
+            
+        <<< ButtonRow("\(Events.localizable.oauth.signUp.localized) | \(Events.localizable.oauth.signIn.localized)") {
+            $0.title = $0.tag
             $0.presentationMode = .segueName(segueName: "LoginSignUpSegue", onDismiss: nil)
-            $0.hidden = user != nil ? true : false
         }.cellSetup { cell, row in
                 cell.imageView?.image = Events.Images.profile.image
                 cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
@@ -67,11 +85,13 @@ class ProfileViewController: FormViewController {
             cell.textLabel?.textColor = .white
             cell.imageView?.tintColor = EventsTheme.linkColor
         })
-        
-        +++ Section()
             
-        <<< ButtonRow() {
-            $0.title = Events.localizable.eventStatus.add.localized
+        +++ Section() {
+            $0.hidden = "$isLogged == false"
+        }
+            
+        <<< ButtonRow(Events.localizable.eventStatus.add.localized) {
+            $0.title = $0.tag
             }.onCellSelection { [weak self] (cell, row) in
                 self?.showAlert()
             }.cellSetup { cell, row in
@@ -85,6 +105,7 @@ class ProfileViewController: FormViewController {
             })
             
         +++ Section()
+            
         <<< ButtonRow() {
             $0.title = Events.localizable.oauth.termsOfUse.localized
             }.onCellSelection { [weak self] (cell, row) in
@@ -104,11 +125,37 @@ class ProfileViewController: FormViewController {
                 cell.textLabel?.textAlignment = .left
                 cell.accessoryType = .disclosureIndicator
             })
+        
+            +++ Section() {
+                $0.hidden = "$isLogged == false"
+            }
+        
+        <<< ButtonRow() {
+            $0.title = Events.localizable.oauth.signOut.localized
+            }.onCellSelection { [weak self] (cell, row) in
+                self?.signOut()
+            }.cellSetup { cell, row in
+                cell.imageView?.image = Events.Images.signOut.image
+                cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+                cell.tintColor = UIColor.white
+            }.cellUpdate({ (cell, row) in
+                cell.textLabel?.textColor = .white
+                cell.textLabel?.textAlignment = .left
+                cell.accessoryType = .disclosureIndicator
+            })
     }
-    
-    
+
     func showAlert() {
         
+    }
+    
+    private func signOut() {
+        if let user = self.user {
+            OauthNetworkAdapter.signOut(user)
+            self.user = try! Realm().objects(User.self).filter("logged == 1").first
+            self.form.rowBy(tag: "isLogged")?.baseValue = self.user != nil ? true : false
+            self.form.rowBy(tag: "isLogged")?.updateCell()
+        }
     }
     
 }

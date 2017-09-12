@@ -143,8 +143,10 @@ class SignInSignUpViewController: FormViewController {
             
             <<< ButtonRow() {
                 $0.title = type == .signIn ? Events.localizable.oauth.signIn.localized : Events.localizable.oauth.signUp.localized
-            }
-            .onCellSelection { cell, row in
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.tintColor = EventsTheme.linkColor
+            
+            }).onCellSelection { cell, row in
                 if row.section?.form?.validate().count == 0 {
                     switch self.type {
                     case .signIn:   self.signIn()
