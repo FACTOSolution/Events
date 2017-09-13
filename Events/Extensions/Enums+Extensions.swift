@@ -113,6 +113,7 @@ enum Events {
             case report         = "formFields.report"
             case address        = "formFields.address"
             case free           = "formFields.free"
+            case location       = "formFields.location"
         }
         
         enum camera: String, LocalizeRepresentable {

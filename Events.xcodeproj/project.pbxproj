@@ -26,6 +26,7 @@
 		181900881F57B4340073AA63 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181900851F57B4340073AA63 /* ImageRow.swift */; };
 		1835DB201F5F891E002E0DEC /* SignInSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835DB1F1F5F891E002E0DEC /* SignInSignUpViewController.swift */; };
 		18425C981F62F25F00088F99 /* OauthNetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18425C971F62F25F00088F99 /* OauthNetworkAdapter.swift */; };
+		18666D061F6993C200229D80 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18666D051F6993C200229D80 /* AddEventViewController.swift */; };
 		188BF93B1F5A01FF0043ABC6 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188BF93A1F5A01FF0043ABC6 /* UserCell.xib */; };
 		188BF93D1F5A02DC0043ABC6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BF93C1F5A02DC0043ABC6 /* UserCell.swift */; };
 		18A2306D1F4C72780025DA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2306C1F4C72780025DA84 /* AppDelegate.swift */; };
@@ -90,6 +91,7 @@
 		18425C971F62F25F00088F99 /* OauthNetworkAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OauthNetworkAdapter.swift; path = API/OauthNetworkAdapter.swift; sourceTree = "<group>"; };
 		1864A8041F61D69C008A02A8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		1864A8061F61D69F008A02A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		18666D051F6993C200229D80 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEventViewController.swift; path = ViewControllers/AddEventViewController.swift; sourceTree = "<group>"; };
 		188842FD1F6789FA00D94874 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		188843031F678A3B00D94874 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		188BF93A1F5A01FF0043ABC6 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserCell.xib; path = Cells/UserRow/UserCell.xib; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			children = (
 				1813C5E41F4FE076008ACBE5 /* EventsTableViewController.swift */,
 				18A77AA01F5377B200AEE365 /* EventViewController.swift */,
+				18666D051F6993C200229D80 /* AddEventViewController.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A230B31F4C746A0025DA84 /* Enums+Extensions.swift in Sources */,
+				18666D061F6993C200229D80 /* AddEventViewController.swift in Sources */,
 				1813C5E51F4FE076008ACBE5 /* EventsTableViewController.swift in Sources */,
 				181900881F57B4340073AA63 /* ImageRow.swift in Sources */,
 				18425C981F62F25F00088F99 /* OauthNetworkAdapter.swift in Sources */,

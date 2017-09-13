@@ -58,19 +58,20 @@
 
     "formFields.name"           = "Nome";
     "formFields.birthday"       = "Nascimento";
-    "formFields.gender"         = "Genero";
+    "formFields.gender"         = "Gênero";
     "formFields.ethnic"         = "Etinia";
     "formFields.mail"           = "Email";
     "formFields.phoneNumber"    = "Telefone";
     "formFields.about"          = "Sobre";
     "formFields.description"    = "Descrição";
-    "formFields.startDate"      = "Inicio";
+    "formFields.startDate"      = "Início";
     "formFields.endDate"        = "Termino";
     "formFields.value"          = "Valor";
     "formFields.createdBy"      = "Criado por";
     "formFields.report"         = "Reportar";
     "formFields.address"        = "Local";
-    "formFields.free"           = "Gratis";
+    "formFields.free"           = "Grátis";
+    "formFields.location"       = "Localização";
 
 // Camera - Portuguese - pt-BR.lproj/Localizable.strings
 

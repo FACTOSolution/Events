@@ -54,7 +54,6 @@ class ProfileViewController: FormViewController {
             <<< SwitchRow("isLogged") { [weak self] in
                 $0.title = "Navigation accessory view"
                 $0.value = self?.user != nil ? true : false
-                print(self?.user)
             }
             
             
@@ -93,7 +92,7 @@ class ProfileViewController: FormViewController {
         <<< ButtonRow(Events.localizable.eventStatus.add.localized) {
             $0.title = $0.tag
             }.onCellSelection { [weak self] (cell, row) in
-                self?.showAlert()
+                self?.addEvent()
             }.cellSetup { cell, row in
                 cell.imageView?.image = Events.Images.addTickets.image
                 cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
@@ -147,6 +146,12 @@ class ProfileViewController: FormViewController {
 
     func showAlert() {
         
+    }
+    
+    private func addEvent() {
+        let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "AddEventViewController") as! AddEventViewController
+        let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        self.present(navController, animated:true, completion: nil)
     }
     
     private func signOut() {

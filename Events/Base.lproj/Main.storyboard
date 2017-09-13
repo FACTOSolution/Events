@@ -100,6 +100,41 @@
             </objects>
             <point key="canvasLocation" x="2709.5999999999999" y="483.50824587706148"/>
         </scene>
+        <!--Add Event View Controller-->
+        <scene sceneID="YfD-2V-BFg">
+            <objects>
+                <viewController storyboardIdentifier="AddEventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MIF-0i-clh" customClass="AddEventViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="44m-nT-XEp"/>
+                        <viewControllerLayoutGuide type="bottom" id="3pZ-eG-h13"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aPF-aR-k0m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-nt-hAU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8Ma-nt-hAU" secondAttribute="trailing" id="5LB-xa-YHZ"/>
+                            <constraint firstItem="8Ma-nt-hAU" firstAttribute="centerY" secondItem="aPF-aR-k0m" secondAttribute="centerY" id="HQS-Bb-7Mi"/>
+                            <constraint firstItem="8Ma-nt-hAU" firstAttribute="centerX" secondItem="aPF-aR-k0m" secondAttribute="centerX" id="Src-ya-sXl"/>
+                            <constraint firstItem="3pZ-eG-h13" firstAttribute="top" secondItem="8Ma-nt-hAU" secondAttribute="bottom" id="WQd-cy-f9p"/>
+                            <constraint firstItem="8Ma-nt-hAU" firstAttribute="top" secondItem="aPF-aR-k0m" secondAttribute="top" id="a7e-N9-Hiw"/>
+                            <constraint firstItem="8Ma-nt-hAU" firstAttribute="leading" secondItem="aPF-aR-k0m" secondAttribute="leading" id="r0r-c9-KXM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="8Ma-nt-hAU" id="3Lb-Hq-gVo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6H-BF-Uw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2709.5999999999999" y="1240.0299850074964"/>
+        </scene>
         <!--Events Table View Controller-->
         <scene sceneID="2A7-Rj-GMH">
             <objects>
