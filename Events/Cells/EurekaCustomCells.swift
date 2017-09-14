@@ -577,7 +577,7 @@ public class MapViewController : UIViewController, TypedRowControllerType, MKMap
         let v = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         v.image = Events.Images.marker.image//UIImage(named: "Marker", in: Bundle(for: MapViewController.self), compatibleWith: nil)
         v.image = v.image?.withRenderingMode(.alwaysTemplate)
-        v.tintColor = EventsTheme.linkColor
+        v.tintColor = EventsTheme.darkerColor
         v.backgroundColor = .clear
         v.clipsToBounds = true
         v.contentMode = .scaleAspectFit

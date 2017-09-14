@@ -39,6 +39,8 @@ class AddEventViewController: FormViewController {
         
         TextAreaRow.defaultCellSetup = { cell, row in
             cell.textView.backgroundColor = UIColor.clear
+            cell.textLabel?.backgroundColor = UIColor.clear
+            cell.textView.keyboardAppearance = .dark
             row.cellUpdate({ (cell, row) in
                 cell.textView.textColor = UIColor.white
                 cell.textLabel?.textColor = UIColor.white
