@@ -37,6 +37,12 @@ class AddEventViewController: FormViewController {
             })
         }
         
+        ActionSheetRow<String>.defaultCellSetup = { cell, row in
+            row.cellUpdate({ (cell, row) in
+                cell.textLabel?.textColor = UIColor.white
+            })
+        }
+        
         TextAreaRow.defaultCellSetup = { cell, row in
             cell.textView.backgroundColor = UIColor.clear
             cell.textLabel?.backgroundColor = UIColor.clear
@@ -72,8 +78,11 @@ class AddEventViewController: FormViewController {
             row.cellUpdate({ (cell, row) in
                 cell.textLabel?.textColor = UIColor.white
                 cell.detailTextLabel?.textColor = .white
-                cell.tintColor = .white
             })
+        }
+        
+        DateTimeInlineRow.InlineRow.defaultCellSetup = {cell, inlineRow in
+            cell.datePicker.setValue(UIColor.white, forKey: "textColor")
         }
         
         LocationRow.defaultCellSetup = { cell, row in
@@ -127,6 +136,21 @@ class AddEventViewController: FormViewController {
                 $0.add(rule: RuleRequired())
             }
         
+            
+            <<< ActionSheetRow<String>() {
+                $0.title = Events.localizable.formFields.type.localized
+                $0.selectorTitle = Events.localizable.formFields.type.localized
+                $0.options = Events.localizable.eventType.all
+                $0.value = Events.localizable.eventType.Academic.localized
+                }
+                .onPresent { from, to in
+                    to.popoverPresentationController?.permittedArrowDirections = .up
+                    to.view.tintColor = .white
+                    to.blurStyle = .dark
+                
+
+            }
+            
         +++ Section()
         
         <<< DateTimeInlineRow(Events.localizable.formFields.startDate.localized) {

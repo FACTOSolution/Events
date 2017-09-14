@@ -10,8 +10,11 @@
 
     "common.event"      = "Event";
     "common.user"       = "User";
-    "common.academic"   = "Academic";
-    "common.cultural"   = "Cultural";
+
+// Event Type - English - en.lproj/Localizable.strings
+
+    "eventType.academic"   = "Academic";
+    "eventType.cultural"   = "Cultural";
 
 // Event Status - English - en.lproj/Localizable.strings
 
@@ -77,7 +80,7 @@
     "formFields.location"       = "Location";
     "formFields.image"          = "Image";
     "formFields.preview"        = "Preview";
-
+    "formFields.type"           = "Type";
 
 // Camera - English - en.lproj/Localizable.strings
 

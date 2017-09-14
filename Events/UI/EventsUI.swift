@@ -49,6 +49,7 @@ enum EventsTheme {
         UISearchBar.appearance().barTintColor = darkColor
         UISearchBar.appearance().searchBarStyle = .minimal
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = lightColor
+     
     }
     
     static func applyImagePickerDefaults() {
