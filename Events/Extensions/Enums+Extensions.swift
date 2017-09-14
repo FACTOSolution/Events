@@ -40,7 +40,9 @@ enum Events {
         case ticketWaitingForApproving  = "TicketWaitingForApproving"
         case ticketDenied               = "TicketDenied"
         case signOut                    = "SignOut"
-
+        case calendar                   = "Calendar"
+        case map                        = "Map"
+        case preview                    = "Preview"
     }
     
     // Localizable Strings
@@ -114,6 +116,9 @@ enum Events {
             case address        = "formFields.address"
             case free           = "formFields.free"
             case location       = "formFields.location"
+            case image          = "formFields.image"
+            case preview        = "formFields.preview"
+
         }
         
         enum camera: String, LocalizeRepresentable {

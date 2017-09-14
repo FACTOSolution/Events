@@ -107,14 +107,21 @@ class EventViewController: FormViewController {
             $0.title = $0.tag
             $0.value = event!.startDate
             $0.disabled = true
-
-            }
+        }.cellSetup { cell, row in
+            cell.imageView?.image = Events.Images.calendar.image
+            cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+            cell.tintColor = UIColor.white
+        }
 
         <<< DateTimeInlineRow(Events.localizable.formFields.endDate.localized){
             $0.title = $0.tag
             $0.value = event!.endDate
             $0.disabled = true
             $0.hidden = event!.endDate == nil ? true : false
+        }.cellSetup { cell, row in
+            cell.imageView?.image = Events.Images.calendar.image
+            cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+            cell.tintColor = UIColor.white
         }
         
         +++ Section(Events.localizable.formFields.description.localized)
@@ -124,7 +131,7 @@ class EventViewController: FormViewController {
             $0.value = event!._description
             $0.disabled = true
             $0.deselect(animated: true)
-            }
+        }
 
         <<< TextRow() {
             $0.title = Events.localizable.formFields.value.localized
@@ -136,7 +143,6 @@ class EventViewController: FormViewController {
                 cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
                 cell.tintColor = UIColor.white
             }.cellUpdate({ (cell, row) in
-                cell.imageView?.tintColor = EventsTheme.linkColor
                 cell.textField.textColor = row.isDisabled ? .gray : .red
             })
         
@@ -154,9 +160,7 @@ class EventViewController: FormViewController {
                 cell.imageView?.image = Events.Images.money.image
                 cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
                 cell.tintColor = UIColor.white
-            }.cellUpdate({ (cell, row) in
-                cell.imageView?.tintColor = EventsTheme.linkColor
-            })
+            }
         
         
         +++ Section() {

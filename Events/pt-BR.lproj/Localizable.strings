@@ -69,9 +69,11 @@
     "formFields.value"          = "Valor";
     "formFields.createdBy"      = "Criado por";
     "formFields.report"         = "Reportar";
-    "formFields.address"        = "Local";
+    "formFields.address"        = "Endereço";
     "formFields.free"           = "Grátis";
     "formFields.location"       = "Localização";
+    "formFields.image"          = "Imagem";
+    "formFields.preview"        = "Preview";
 
 // Camera - Portuguese - pt-BR.lproj/Localizable.strings
 

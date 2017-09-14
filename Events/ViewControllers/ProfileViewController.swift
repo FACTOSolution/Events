@@ -18,7 +18,6 @@ class ProfileViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.separatorColor = EventsTheme.linkColor
         setupForm()
         setupUI()
     }
@@ -36,6 +35,7 @@ class ProfileViewController: FormViewController {
     
     private func setupUI() {
         self.title = Events.localizable.tabBar.profile.localized
+        self.tableView.separatorColor = EventsTheme.linkColor
     }
     
     private func setupForm() {

@@ -75,6 +75,9 @@
     "formFields.address"        = "Address";
     "formFields.free"           = "Free";
     "formFields.location"       = "Location";
+    "formFields.image"          = "Image";
+    "formFields.preview"        = "Preview";
+
 
 // Camera - English - en.lproj/Localizable.strings
 
