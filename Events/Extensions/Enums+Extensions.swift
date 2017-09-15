@@ -78,6 +78,15 @@ enum Events {
             case privacyPolicy          = "oauth.privacyPolicy"
         }
         
+        enum oauthAlerts: String, LocalizeRepresentable {
+            case password               = "oauthAlert.password"
+            case passwordConfirmation   = "oauthAlert.passwordConfirmation"
+            case userName               = "oauthAlert.userName"
+            case mail                   = "oauthAlert.mail"
+            case emailPasswordError     = "oauthAlert.emailPasswordError"
+        }
+        
+        
         // Alert Types
         enum alertType: String, LocalizeRepresentable {
             case change     = "alertType.change"
@@ -111,7 +120,14 @@ enum Events {
             case image          = "formFields.image"
             case preview        = "formFields.preview"
             case type           = "formFields.type"
-
+        }
+        
+        enum formAlerts: String, LocalizeRepresentable {
+            case image              = "formAlert.image"
+            case name               = "formAlert.name"
+            case description        = "formAlert.description"
+            case descriptionLimit   = "formAlert.descriptionLimit"
+            case address            = "formAlert.address"
         }
         
         enum camera: String, LocalizeRepresentable {

@@ -45,6 +45,14 @@
     "oauth.termsOfUse"              = "Termos de Uso";
     "oauth.privacyPolicy"           = "Politica de Privacidade";
 
+// OauthAlert - Portuguese - pt-BR.lproj/Localizable.strings
+
+    "oauthAlert.mail"                    = "E-mail é obrigatorio";
+    "oauthAlert.password"                = "Senha (min. 8 caracteres) é obrigatorio";
+    "oauthAlert.passwordConfirmation"    = "Confirmar Senha é obrigatorio";
+    "oauthAlert.userName"                = "Nome de usuário é obrigatorio";
+    "oauthAlerts.emailPasswordError"     = "E-mail ou senha errado";
+
 // AlertType - Portuguese - pt-BR.lproj/Localizable.strings
 
     "alertType.change"      = "Mudar";
@@ -78,6 +86,14 @@
     "formFields.image"          = "Imagem";
     "formFields.preview"        = "Preview";
     "formFields.type"           = "Tipo";
+
+// FormAlert - English - en.lproj/Localizable.strings
+
+    "formAlert.image"               = "Uma imagem é obrigatoria";
+    "formAlert.name"                = "Name é obrigatorio";
+    "formAlert.description"         = "Descrição é obrigatoria";
+    "formAlert.descriptionLimit"    = "Limite de 300 caracteres";
+    "formAlert.address"             = "Endereço/Lugar é obrigario";
 
 // Camera - Portuguese - pt-BR.lproj/Localizable.strings
 

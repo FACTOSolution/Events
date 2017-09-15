@@ -80,6 +80,6 @@ extension UIAlertController {
         super.viewWillLayoutSubviews()
         
         visualEffectView?.effect = UIBlurEffect(style: blurStyle)
-        cancelActionView?.backgroundColor = cancelButtonColor
+        //cancelActionView?.backgroundColor = cancelButtonColor
     }
 }

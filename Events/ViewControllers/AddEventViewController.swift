@@ -31,6 +31,7 @@ class AddEventViewController: FormViewController {
     private func setupForm() {
         NameRow.defaultCellSetup = { cell, row in
             cell.textField.backgroundColor = UIColor.clear
+            cell.tintColor = UIColor.white
             row.cellUpdate({ (cell, row) in
                 cell.textField.textColor = UIColor.white
                 cell.textLabel?.textColor = UIColor.white
@@ -44,12 +45,13 @@ class AddEventViewController: FormViewController {
         }
         
         TextAreaRow.defaultCellSetup = { cell, row in
-            cell.textView.backgroundColor = UIColor.clear
-            cell.textLabel?.backgroundColor = UIColor.clear
+            cell.textView.backgroundColor = .clear
+            cell.textLabel?.backgroundColor = .clear
             cell.textView.keyboardAppearance = .dark
             row.cellUpdate({ (cell, row) in
-                cell.textView.textColor = UIColor.white
-                cell.textLabel?.textColor = UIColor.white
+                cell.textView.textColor = .white
+                cell.textLabel?.textColor = .white
+                cell.placeholderLabel?.textColor = .gray
             })
         }
         
@@ -58,7 +60,7 @@ class AddEventViewController: FormViewController {
             cell.textLabel?.backgroundColor = UIColor.clear
             row.cellUpdate({ (cell, row) in
                 cell.textField.textColor = .white
-                cell.textLabel?.textColor = UIColor.white
+                cell.textLabel?.textColor = .white
             })
         }
         
@@ -116,8 +118,23 @@ class AddEventViewController: FormViewController {
             <<< ImageRow() {
                 $0.title = Events.localizable.formFields.image.localized
                 $0.placeholderImage = Events.Images.eventPlaceholder.image
-                $0.add(rule: RuleRequired())
-            }
+                $0.add(rule: RuleRequired(msg:Events.localizable.formAlerts.image.localized))
+                $0.validationOptions = .validatesOnChange
+                }.onRowValidationChanged({ (cell, row) in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
+                })
             
             <<< ImageRow() {
                 $0.title = Events.localizable.formFields.image.localized
@@ -133,8 +150,27 @@ class AddEventViewController: FormViewController {
         
             <<< NameRow() {
                 $0.title = Events.localizable.formFields.name.localized
-                $0.add(rule: RuleRequired())
-            }
+                $0.add(rule: RuleRequired(msg:Events.localizable.formAlerts.name.localized))
+                $0.validationOptions = .validatesOnChange
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = .red
+                    }
+                }.onRowValidationChanged({ (cell, row) in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
+                })
         
             
             <<< ActionSheetRow<String>() {
@@ -142,12 +178,13 @@ class AddEventViewController: FormViewController {
                 $0.selectorTitle = Events.localizable.formFields.type.localized
                 $0.options = Events.localizable.eventType.all
                 $0.value = Events.localizable.eventType.Academic.localized
+                $0.add(rule: RuleRequired())
                 }
                 .onPresent { from, to in
                     to.popoverPresentationController?.permittedArrowDirections = .up
-                    to.view.tintColor = .white
-                    to.blurStyle = .dark
-                
+                    to.view.tintColor = EventsTheme.darkerColor
+                    //to.blurStyle = .dark
+                    to.blurStyle = .light
 
             }
             
@@ -179,13 +216,13 @@ class AddEventViewController: FormViewController {
             cell.tintColor = UIColor.white
         }
         
-        +++ Section(Events.localizable.formFields.description.localized)
+        +++ Section(Events.localizable.formFields.description.localized )
         
         <<< TextAreaRow() {
             $0.textAreaHeight = .dynamic(initialTextViewHeight: 50)
-            $0.placeholder = "Este evento..."
+            $0.placeholder = "Este evento...  • " + Events.localizable.formAlerts.descriptionLimit.localized
             $0.add(rule: RuleMaxLength(maxLength: 350))
-            $0.add(rule: RuleRequired())
+            $0.add(rule: RuleRequired(msg:Events.localizable.formAlerts.description.localized))
             $0.validationOptions = .validatesOnChange
             }.onRowValidationChanged { cell, row in
                 let rowIndex = row.indexPath!.row
@@ -222,13 +259,33 @@ class AddEventViewController: FormViewController {
             
         <<< TextRow() {
             $0.title = Events.localizable.formFields.address.localized
-            $0.add(rule: RuleRequired())
+            $0.add(rule: RuleRequired(msg:Events.localizable.formAlerts.address.localized))
+            $0.validationOptions = .validatesOnChange
             }.cellSetup { cell, row in
                 cell.imageView?.image = Events.Images.marker.image
                 cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
                 cell.tintColor = UIColor.white
-            }
-        
+            }.cellUpdate { cell, row in
+                if !row.isValid {
+                    cell.textField?.textColor = .red
+                }
+            }.onRowValidationChanged({ (cell, row) in
+                let rowIndex = row.indexPath!.row
+                while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                    row.section?.remove(at: rowIndex + 1)
+                }
+                if !row.isValid {
+                    for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                        let labelRow = LabelRow() {
+                            $0.title = validationMsg
+                            $0.cell.height = { 30 }
+                        }
+                        row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                    }
+                }
+            })
+            
+            
         <<< LocationRow() {
             $0.title = Events.localizable.formFields.location.localized
             $0.value = CLLocation(latitude: -5.056265, longitude: -42.790367)
@@ -244,7 +301,9 @@ class AddEventViewController: FormViewController {
             <<< ButtonRow() {
                 $0.title = Events.localizable.formFields.preview.localized
                 }.onCellSelection { [weak self] (cell, row) in
-                    self?.preview()
+                   if row.section?.form?.validate().count == 0 {
+                        self?.preview()
+                    }
                 }.cellSetup { cell, row in
                     cell.imageView?.image = Events.Images.preview.image
                     cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)

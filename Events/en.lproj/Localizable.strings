@@ -47,6 +47,13 @@
     "oauth.termsOfUse"              = "Terms of Use";
     "oauth.privacyPolicy"           = "Privacy Policy";
 
+// OauthAlert - English - en.lproj/Localizable.strings
+
+    "oauthAlert.mail"                    = "Mail is required";
+    "oauthAlert.password"                = "Password (min. 8 characters) is required";
+    "oauthAlert.passwordConfirmation"    = "Password Confirmation is required";
+    "oauthAlert.userName"                = "Username is required";
+    "oauthAlert.emailPasswordError"     = "Email or passord wrong";
 
 // AlertType - English - en.lproj/Localizable.strings
 
@@ -81,6 +88,15 @@
     "formFields.image"          = "Image";
     "formFields.preview"        = "Preview";
     "formFields.type"           = "Type";
+
+
+// FormAlert - English - en.lproj/Localizable.strings
+
+    "formAlert.image"               = "Image is required";
+    "formAlert.name"                = "Name is required";
+    "formAlert.description"         = "Description is required";
+    "formAlert.descriptionLimit"    = "Limit of 300 characters";
+    "formAlert.address"             = "Address is required";
 
 // Camera - English - en.lproj/Localizable.strings
 
