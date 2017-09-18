@@ -16,6 +16,8 @@ struct UserNetworkAdapter {
     static let provider = MoyaProvider<EventsAPI>()
     // Get the default Realm
     static let realm = try! Realm()
+    //User Logged
+    static var userLogged: User? = try! Realm().objects(User.self).filter("logged == 1").first
     
     static func getAllUsers(error errorCallback: @escaping (Swift.Error) -> Void,
                             failure failureCallback: @escaping (MoyaError) -> Void) {
@@ -29,6 +31,13 @@ struct UserNetworkAdapter {
                         try! realm.write {
                             realm.delete(realm.objects(User.self))
                             for user in users {
+                                if let userLogged = self.userLogged {
+                                    if user.id == userLogged.id {
+                                        user.logged = true
+                                        user.oauthHeader = userLogged.oauthHeader
+                                        user.password = userLogged.password
+                                    }
+                                }
                                 realm.add(user, update: true)
                             }
                         }
@@ -53,8 +62,14 @@ struct UserNetworkAdapter {
                 if response.statusCode >= 200 && response.statusCode <= 300 {
                     do {
                         let userJson = try response.mapJSON()
-                        print(userJson)
                         if let user = Mapper<User>().map(JSON: userJson as! [String : Any]) {
+                            if let userLogged = self.userLogged {
+                                if user.id == userLogged.id {
+                                    user.logged = true
+                                    user.oauthHeader = userLogged.oauthHeader
+                                    user.password = userLogged.password
+                                }
+                            }
                             try! realm.write {
                                 realm.add(user, update: true)
                             }
@@ -81,7 +96,6 @@ struct UserNetworkAdapter {
                 if response.statusCode >= 200 && response.statusCode <= 300 {
                     successCallback()
                 } else {
-                    print(response)
                     let error = NSError(domain: response.debugDescription, code: response.statusCode, userInfo:[NSLocalizedDescriptionKey: "Parsing Error"] )
                     errorCallback(error)
                 }

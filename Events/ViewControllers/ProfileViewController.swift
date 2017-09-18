@@ -150,7 +150,7 @@ class ProfileViewController: FormViewController {
     
     private func addEvent() {
         let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "AddEventViewController") as! AddEventViewController
-        let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        let navController = UINavigationController(rootViewController: VC1)
         self.present(navController, animated:true, completion: nil)
     }
     

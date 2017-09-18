@@ -8,6 +8,7 @@
 
 import Foundation
 import ImageSlideshow
+import RealmSwift
 
 protocol ImageSlideShowDelegate {
     func slideShowTapped(cell: ImageSlideShow)
@@ -18,6 +19,9 @@ class ImageSlideShow: UIView {
     @IBOutlet var slideshow: ImageSlideshow!
     
     var delegate: ImageSlideShowDelegate?
+    var imageImputs: [SDWebImageSource] = [SDWebImageSource]()
+    var previewImputs: [ImageSource] = [ImageSource]()
+
     
     func cellTapped(sender: AnyObject) {
         delegate?.slideShowTapped(cell: self)
@@ -34,6 +38,23 @@ class ImageSlideShow: UIView {
         slideshow.contentScaleMode = UIViewContentMode.scaleAspectFill
         
         slideshow.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ImageSlideShow.cellTapped)))
+    }
+    
+    func set(_ images: List<Image>) {
+        //slideshow.setImageInputs(imageImputs)
+        guard slideshow.images.count == 0 else { return }
+        for image in images {
+            if image.url != "" {
+                imageImputs.append(SDWebImageSource(urlString: image.url, placeholder: Events.Images.eventPlaceholder.image)!)
+            } else if let image =  image.preview {
+                previewImputs.append(ImageSource(image: image))
+            }
+        }
+
+        if imageImputs.count > 0 { slideshow.setImageInputs(imageImputs)
+        } else if previewImputs.count > 0 { slideshow.setImageInputs(previewImputs) }
         
+        
+
     }
 }

@@ -83,21 +83,11 @@ class EventViewController: FormViewController {
         }
     
        form +++ Section() {
-            var imageImputs: [SDWebImageSource] = [SDWebImageSource]()
-
-            for image in event!.images {
-                imageImputs.append(SDWebImageSource(urlString: image.url, placeholder: Events.Images.eventPlaceholder.image)!)
-            }
-        
-        if imageImputs.count == 0 { imageImputs.append(SDWebImageSource(urlString: "https://avatars2.githubusercontent.com/u/25615186?v=4&s=200.png", placeholder: Events.Images.eventPlaceholder.image)!)}
-        
             var header = HeaderFooterView<ImageSlideShow>(.nibFile(name: "ImageSlideShow", bundle: nil))
             header.onSetupView = { (view, section) -> () in
-                
                 view.delegate = self as ImageSlideShowDelegate
-                view.slideshow.setImageInputs(imageImputs)
+                view.set(self.event!.images)
             }
-        
             $0.header = header
         }
         

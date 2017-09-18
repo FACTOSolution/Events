@@ -23,6 +23,10 @@ class OauthHeader : Object, Mappable {
         self.init()
     }
     
+    override static func primaryKey() -> String? {
+        return "uid"
+    }
+    
     public func mapping(map: Map) {
         accessToken <- map["Access-Token"]
         tokenType   <- map["Token-Type"]

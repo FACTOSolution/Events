@@ -73,6 +73,7 @@ struct OauthNetworkAdapter {
                                     user.logged = true
                                     //Adding header fields to User
                                     user.oauthHeader = Mapper<OauthHeader>().map(JSON: response.response?.allHeaderFields as! [String : Any])
+                                
                                     try! realm.write {
                                         realm.add(user, update: true)
                                     }

@@ -77,7 +77,7 @@ final class UserCell: Cell<User>, CellType {
         }
         
         // set the texts to the labels
-        nameLabel.text = user.name
+        nameLabel.text = user.name == "" ? user.email : user.name
     }
     
 }

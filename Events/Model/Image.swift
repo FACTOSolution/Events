@@ -14,9 +14,14 @@ public class Image: Object, Mappable {
     dynamic var id = 0
     dynamic var eventId = 0
     dynamic var url = ""
+    var preview: UIImage? =  nil
 
     override public static func primaryKey() -> String? {
         return "id"
+    }
+    
+    override public static func ignoredProperties() -> [String] {
+        return ["preview"]
     }
     
     required convenience public init?(map: Map) {

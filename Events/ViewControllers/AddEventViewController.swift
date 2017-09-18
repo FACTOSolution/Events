@@ -9,9 +9,13 @@
 import UIKit
 import Eureka
 import CoreLocation
+import ObjectMapper
+import RealmSwift
 
 class AddEventViewController: FormViewController {
 
+    var user: User? = try! Realm().objects(User.self).filter("logged == 1").first
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -115,7 +119,7 @@ class AddEventViewController: FormViewController {
         
         form +++ Section(footer: "• Requerido 1 imagem. \n• As imagens serão adicionadas na ordem em que estão apresentadas.")
             
-            <<< ImageRow() {
+            <<< ImageRow("PreviewImg1") {
                 $0.title = Events.localizable.formFields.image.localized
                 $0.placeholderImage = Events.Images.eventPlaceholder.image
                 $0.add(rule: RuleRequired(msg:Events.localizable.formAlerts.image.localized))
@@ -136,19 +140,19 @@ class AddEventViewController: FormViewController {
                     }
                 })
             
-            <<< ImageRow() {
+            <<< ImageRow("PreviewImg2") {
                 $0.title = Events.localizable.formFields.image.localized
                 $0.placeholderImage = Events.Images.eventPlaceholder.image
             }
             
-            <<< ImageRow() {
+            <<< ImageRow("PreviewImg3") {
                 $0.title = Events.localizable.formFields.image.localized
                 $0.placeholderImage = Events.Images.eventPlaceholder.image
             }
             
         +++ Section()
         
-            <<< NameRow() {
+            <<< NameRow("name") {
                 $0.title = Events.localizable.formFields.name.localized
                 $0.add(rule: RuleRequired(msg:Events.localizable.formAlerts.name.localized))
                 $0.validationOptions = .validatesOnChange
@@ -173,7 +177,7 @@ class AddEventViewController: FormViewController {
                 })
         
             
-            <<< ActionSheetRow<String>() {
+            <<< ActionSheetRow<String>("type") {
                 $0.title = Events.localizable.formFields.type.localized
                 $0.selectorTitle = Events.localizable.formFields.type.localized
                 $0.options = Events.localizable.eventType.all
@@ -190,8 +194,8 @@ class AddEventViewController: FormViewController {
             
         +++ Section()
         
-        <<< DateTimeInlineRow(Events.localizable.formFields.startDate.localized) {
-            //$0.title = $0.tag
+        <<< DateTimeInlineRow("date") {
+            //$0.title = Events.localizable.formFields.startDate.localized
             $0.value = Date()
             $0.add(rule: RuleRequired())
         }.cellSetup { cell, row in
@@ -206,8 +210,8 @@ class AddEventViewController: FormViewController {
             $0.hidden = true
         }
         
-        <<< DateTimeInlineRow(Events.localizable.formFields.endDate.localized){
-            $0.title = $0.tag
+        <<< DateTimeInlineRow("endDate"){
+            $0.title = Events.localizable.formFields.endDate.localized
             $0.value = Date()
             $0.hidden = "$EndDate == false"
         }.cellSetup { cell, row in
@@ -218,7 +222,7 @@ class AddEventViewController: FormViewController {
         
         +++ Section(Events.localizable.formFields.description.localized )
         
-        <<< TextAreaRow() {
+        <<< TextAreaRow("description") {
             $0.textAreaHeight = .dynamic(initialTextViewHeight: 50)
             $0.placeholder = "Este evento...  • " + Events.localizable.formAlerts.descriptionLimit.localized
             $0.add(rule: RuleMaxLength(maxLength: 350))
@@ -240,7 +244,7 @@ class AddEventViewController: FormViewController {
                 }
             }
         
-        <<< DecimalRow(){
+        <<< DecimalRow("value"){
             $0.useFormatterDuringInput = true
             $0.title = Events.localizable.formFields.value.localized
             $0.value = 00.00
@@ -257,7 +261,7 @@ class AddEventViewController: FormViewController {
         
         +++ Section()
             
-        <<< TextRow() {
+        <<< TextRow("address") {
             $0.title = Events.localizable.formFields.address.localized
             $0.add(rule: RuleRequired(msg:Events.localizable.formAlerts.address.localized))
             $0.validationOptions = .validatesOnChange
@@ -286,7 +290,7 @@ class AddEventViewController: FormViewController {
             })
             
             
-        <<< LocationRow() {
+        <<< LocationRow("Location") {
             $0.title = Events.localizable.formFields.location.localized
             $0.value = CLLocation(latitude: -5.056265, longitude: -42.790367)
             $0.add(rule: RuleRequired())
@@ -341,12 +345,24 @@ class AddEventViewController: FormViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc private func add() {
+    func add() {
         print("HI")
     }
     
+    private func getEvent() -> Event? {
+        let values : Dictionary! = form.values()
+        let event = Mapper<Event>().map(JSON: values as Any as! [String : Any])
+        if let user = user {
+            event?.ownerId = user.id
+        }
+        return event
+    }
+    
     private func preview() {
-        print("preview")
+        
+        let eventvc = self.storyboard!.instantiateViewController(withIdentifier: "EventViewController") as! EventViewController
+        eventvc.event = getEvent()
+        self.navigationController?.pushViewController(eventvc, animated: true)
     }
     
 }

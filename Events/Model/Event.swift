@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import ObjectMapper
+import CoreLocation
 
 //Academico e Cultural
 class Event: Object, Mappable {
@@ -54,6 +55,31 @@ class Event: Object, Mappable {
         type            <- map["type"]
         latitude        <- map["lat"]
         longitude       <- map["long"]
+        
+        // Preview
+        if let uImage = map.JSON["PreviewImg1"] as? UIImage {
+            let image = Image()
+            image.preview = uImage
+            images.append(image)
+        }
+        
+        if let uImage = map.JSON["PreviewImg2"] as? UIImage {
+            let image = Image()
+            image.preview = uImage
+            images.append(image)
+        }
+        
+        if let uImage = map.JSON["PreviewImg3"] as? UIImage {
+            let image = Image()
+            image.preview = uImage
+            images.append(image)
+        }
 
+        //Location
+        
+        if let location = map.JSON["Location"] as? CLLocation {
+            latitude = String(location.coordinate.latitude)
+            longitude = String(location.coordinate.longitude)
+        }
     }
 }

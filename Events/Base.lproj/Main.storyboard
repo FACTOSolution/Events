@@ -160,7 +160,7 @@
         <!--Event View Controller-->
         <scene sceneID="AEX-4l-zmV">
             <objects>
-                <viewController id="2Zq-T8-zVw" customClass="EventViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Zq-T8-zVw" customClass="EventViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="udX-jd-YV9"/>
                         <viewControllerLayoutGuide type="bottom" id="Lwx-s5-OXS"/>
