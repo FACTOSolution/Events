@@ -14,8 +14,8 @@ enum EventsAPI {
     case updateUser(User)
     case getUser(id: Int)
     case getAllUsers
-    case createEvent(Event)
-    case updateEvent(Event)
+    case createEvent(Event, OauthHeader)
+    case updateEvent(Event, OauthHeader)
     case getEvent(id: Int)
     case getEvents(OrderBy)
     case signIn(User)
@@ -41,6 +41,7 @@ struct OrderBy {
 // MARK: - TargetType Protocol Implementation
 extension EventsAPI: TargetType {
     var baseURL: URL { return URL(string: "https://still-reaches-96571.herokuapp.com")! }
+    
     var path: String {
         switch self {
         case .createUser:
@@ -52,9 +53,9 @@ extension EventsAPI: TargetType {
         case .getAllUsers:
             return "/users"
         case .createEvent:
+            return "/event/add"
+        case .updateEvent:
             return "/event"
-        case .updateEvent(let event):
-            return "/event/\(event.id)"
         case .getEvent(let id):
             return "/event/\(id)"
         case .getEvents:
@@ -63,6 +64,7 @@ extension EventsAPI: TargetType {
             return "/auth/sign_in"
         }
     }
+    
     var method: Moya.Method {
         switch self {
         case .getUser, .getAllUsers, .getEvent:
@@ -73,6 +75,7 @@ extension EventsAPI: TargetType {
             return .put
         }
     }
+    
     var parameters: [String: Any]? {
         switch self {
         case .createUser(let user), .updateUser(let user):
@@ -86,21 +89,18 @@ extension EventsAPI: TargetType {
             parameters["image"] = user.image
             print(parameters)
             return parameters
-        case .createEvent(let event), .updateEvent(let event):
+        case .createEvent(let event, let oauthHeader), .updateEvent(let event, let oauthHeader):
             var parameters = [String: Any]()
-            parameters["id"] = event.id
-            parameters["name"] = event.name
-            parameters["user_id"] = event.ownerId
-            parameters["description"] = event.description
-            parameters["contact"] = event.contact
-            parameters["value_in_real"] = event.value
-            parameters["address"] = event.address
-            parameters["startDate"] = event.startDate
-            parameters["endDate"] = event.endDate
-            parameters["created_at"] = event.created
-            parameters["updated_at"] = event.updated
-            parameters["published"] = event.published
-            parameters["type"] = event.type
+            parameters["event_id"]      = event.id
+            parameters["user"]          = event.ownerId
+            parameters["name"]          = event.name
+            parameters["description"]   = event.description
+            parameters["contact"]       = event.contact
+            parameters["value"]         = event.value
+            parameters["address"]       = event.address
+            parameters["date"]          = event.startDate
+            parameters["endDate"]       = event.endDate
+            parameters["type"]          = event.type
             print(parameters)
             return parameters
             
@@ -126,6 +126,7 @@ extension EventsAPI: TargetType {
             return nil
         }
     }
+    
     var parameterEncoding: ParameterEncoding {
         switch self {
         case .getUser, .getAllUsers, .getEvent:
@@ -146,12 +147,24 @@ extension EventsAPI: TargetType {
         case .createUser, .updateUser, .createEvent, .updateEvent, .getEvents, .signIn:
             return .requestParameters(parameters: parameters!, encoding: parameterEncoding)
         default:
-            return .requestPlain
+            return .requestCompositeParameters(bodyParameters: parameters!, bodyEncoding: parameterEncoding, urlParameters: headers!)
         }
     }
     
     var headers: [String: String]? {
-        return ["Content-type": "application/json; charset=utf-8"]
+        switch self {
+        case .createEvent(_, let oauthHeader), .updateEvent(_, let oauthHeader):
+            var headers = [String: String]()
+            headers["Access-Token"] = oauthHeader.accessToken
+            headers["Token-Type"]   = oauthHeader.tokenType
+            headers["Client"]       = oauthHeader.client
+            headers["Expiry"]       = oauthHeader.expiry
+            headers["Uid"]          = oauthHeader.uid
+            return headers
+            
+        default:
+            return ["Content-type": "application/json; charset=utf-8"]
+        }
     }
 }
 // MARK: - Helpers
