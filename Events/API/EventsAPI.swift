@@ -89,20 +89,22 @@ extension EventsAPI: TargetType {
             parameters["image"] = user.image
             print(parameters)
             return parameters
-        case .createEvent(let event, let oauthHeader), .updateEvent(let event, let oauthHeader):
-            var parameters = [String: Any]()
-            parameters["event_id"]      = event.id
-            parameters["user"]          = event.ownerId
-            parameters["name"]          = event.name
-            parameters["description"]   = event.description
-            parameters["contact"]       = event.contact
-            parameters["value"]         = event.value
-            parameters["address"]       = event.address
-            parameters["date"]          = event.startDate
-            parameters["endDate"]       = event.endDate
-            parameters["type"]          = event.type
-            print(parameters)
-            return parameters
+        case .createEvent(let event,_), .updateEvent(let event,_):
+//            var parameters = [String: Any]()
+//            parameters["event_id"]      = event.id
+//            parameters["user"]          = event.ownerId
+//            parameters["name"]          = event.name
+//            parameters["description"]   = event.description
+//            parameters["contact"]       = event.contact
+//            parameters["value"]         = event.value
+//            parameters["address"]       = event.address
+//            parameters["date"]          = event.startDate
+//            parameters["endDate"]       = event.endDate
+//            parameters["type"]          = event.type
+            print(event.toJSON())
+            
+            
+            return event.toJSON()
             
         case .getEvents(let orderBy):
             var parameters = [String: Any]()
@@ -144,10 +146,12 @@ extension EventsAPI: TargetType {
 
     var task: Task {
         switch self {
-        case .createUser, .updateUser, .createEvent, .updateEvent, .getEvents, .signIn:
+        case .createEvent, .updateEvent:
+            return .requestCompositeParameters(bodyParameters: parameters!, bodyEncoding: parameterEncoding, urlParameters: headers!)
+        case .createUser, .updateUser, .getEvents, .signIn:
             return .requestParameters(parameters: parameters!, encoding: parameterEncoding)
         default:
-            return .requestCompositeParameters(bodyParameters: parameters!, bodyEncoding: parameterEncoding, urlParameters: headers!)
+            return .requestPlain
         }
     }
     

@@ -59,6 +59,29 @@ public class ListImageTransform: TransformType {
     }
 }
 
+public class ListImageTransformJson: TransformType {
+    
+    public typealias Object = List<Image>
+    public typealias JSON = [String]
+    
+    init() {}
+    
+    public func transformFromJSON(_ value: Any?) -> List<Image>? {
+        guard let items = value as? [[String : Any]] else { return nil }
+        let mapperImages: [Image] = Mapper<Image>().mapArray(JSONArray: items)
+        let realmImages = List<Image>()
+        for image in mapperImages {
+            realmImages.append(image)
+        }
+        return realmImages
+    }
+    public func transformToJSON(_ value: List<Image>?) -> [String]? {
+        guard let listImage = value else { return nil }
+        guard listImage.count > 0 else { return nil }
+        return listImage.map{ $0.url }
+    }
+}
+
 public class ValueTransform: TransformType {
     
     public typealias Object = Double
@@ -69,6 +92,8 @@ public class ValueTransform: TransformType {
     public func transformFromJSON(_ value: Any?) -> Double? {
         if let valueString = value as? String {
             return Double(valueString)
+        }else if let value = value as? Double {
+            return value
         }
         return nil
     }

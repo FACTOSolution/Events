@@ -82,4 +82,29 @@ struct EventNetworkAdapter {
             }
         }
     }
+    
+    static func create(_ event: Event,with oauthHeader: OauthHeader, success successCallback: @escaping () -> Void, error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
+        
+        provider.request(EventsAPI.createEvent(event, oauthHeader)) { (result) in
+            switch result {
+            case .success(let response):
+                if response.statusCode >= 200 && response.statusCode <= 300 {
+                    do {
+                        let event = try response.mapJSON()
+                        print(event)
+                        successCallback()
+                    }catch {
+                        errorCallback(error)
+                    }
+                } else {
+                    let error = NSError(domain: response.description, code: response.statusCode, userInfo:[NSLocalizedDescriptionKey: "Parsing Error"])
+                    errorCallback(error)
+                }
+                
+            case .failure(let error):
+                failureCallback(error)
+            }
+        }
+    }
+    
 }

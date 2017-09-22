@@ -28,7 +28,7 @@ class AddEventViewController: FormViewController {
         title = Events.localizable.eventStatus.add.localized
         tableView.separatorColor = EventsTheme.linkColor
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(create))
         navigationOptions = .Disabled
     }
     
@@ -345,16 +345,27 @@ class AddEventViewController: FormViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func add() {
-        print("HI")
+    func create() {
+        if let event = getEvent(), let user = user {
+            EventNetworkAdapter.create(event, with: user.oauthHeader!, success: { 
+                
+            }, error: { (error) in
+                print(error)
+            }, failure: { (moyaError) in
+                print(moyaError)
+            })
+        }
+
     }
     
     private func getEvent() -> Event? {
         let values : Dictionary! = form.values()
+        print(values)
         let event = Mapper<Event>().map(JSON: values as Any as! [String : Any])
         if let user = user {
             event?.ownerId = user.id
         }
+        print(event)
         return event
     }
     

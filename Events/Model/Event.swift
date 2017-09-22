@@ -39,7 +39,6 @@ class Event: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        id              <- map["event_id"]
         ownerId         <- map["user"]
         name            <- map["name"]
         _description    <- map["description"]
@@ -48,13 +47,21 @@ class Event: Object, Mappable {
         address         <- map["address"]
         startDate       <- (map["date"], DateFormatterTransform())
         endDate         <- (map["endDate"], DateFormatterTransform())
-        created         <- (map["created_at"], DateFormatterTransform())
-        updated         <- (map["updated_at"], DateFormatterTransform())
-        published       <- map["published"]
-        images          <- (map["images"], ListImageTransform())
         type            <- map["type"]
         latitude        <- map["lat"]
         longitude       <- map["long"]
+        
+        if map.mappingType == .fromJSON {
+            id          <- map["event_id"]
+            images      <- (map["images"], ListImageTransform())
+            published   <- map["published"]
+            created     <- (map["created_at"], DateFormatterTransform())
+            updated     <- (map["updated_at"], DateFormatterTransform())
+            
+        } else {
+            images >>> (map["images"], ListImageTransformJson())
+        }
+        
         
         // Preview
         if let uImage = map.JSON["PreviewImg1"] as? UIImage {

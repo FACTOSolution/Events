@@ -104,6 +104,14 @@
     "camera.photoLibrary"       = "Photo Library";
     "camera.savedPhotosAlbum"   = "Saved Photos";
 
+// Eureka Camera - en.lproj/Localizable.strings
+
+    "Take photo"    = "Take Photo";
+    "Photo Library" = "Photo Library";
+    "Saved Photos"  = "Saved Photos";
+    "Cancel"        = "Cancel";
+    "Clear Photo"   = "Clear Photo";
+
 // TableView - English - en.lproj/Localizable.strings
 
     "tableView.pullToRefresh" = "Pull to Refresh...";
