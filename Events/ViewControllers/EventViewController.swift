@@ -174,6 +174,20 @@ class EventViewController: FormViewController {
                 cell.imageView?.tintColor = EventsTheme.linkColor
             })
         
+        +++ Section()
+        
+        +++ Section()
+        <<< TextRow() {
+            $0.title = Events.localizable.formFields.contact.localized
+            $0.value = event!.contact
+            $0.disabled = true
+            }.cellSetup { cell, row in
+                cell.imageView?.image = Events.Images.contact.image
+                cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+                cell.tintColor = UIColor.white
+            }.cellUpdate({ (cell, row) in
+                cell.imageView?.tintColor = EventsTheme.linkColor
+            })
         
         +++ Section(Events.localizable.formFields.createdBy.localized)
         

@@ -89,10 +89,17 @@ struct EventNetworkAdapter {
             switch result {
             case .success(let response):
                 if response.statusCode >= 200 && response.statusCode <= 300 {
+                    print(response)
                     do {
-                        let event = try response.mapJSON()
-                        print(event)
-                        successCallback()
+                        let eventJson = try response.mapJSON()
+                        print(eventJson)
+                        if let event = Mapper<Event>().map(JSON: eventJson as! [String : Any]) {
+                            print(event)
+                            successCallback()
+                        } else {
+                            let error = NSError(domain: response.description, code: response.statusCode, userInfo:[NSLocalizedDescriptionKey: "Parsing Error"])
+                            errorCallback(error)
+                        }
                     }catch {
                         errorCallback(error)
                     }

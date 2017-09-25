@@ -13,7 +13,7 @@ import ObjectMapper
 public class Image: Object, Mappable {
     dynamic var id = 0
     dynamic var eventId = 0
-    dynamic var url = ""
+    dynamic var url = "http://lorempixel.com/300/300"
     var preview: UIImage? =  nil
 
     override public static func primaryKey() -> String? {
@@ -29,8 +29,13 @@ public class Image: Object, Mappable {
     }
     
     public func mapping(map: Map) {
-        id      <- map["id"]
-        eventId <- map["event_id"]
-        url     <- map["image_url"]
+        if map.mappingType == .fromJSON {
+            id      <- map["id"]
+            eventId <- map["event_id"]
+            url     <- map["image_url"]
+            
+        } else {
+            url  >>> map["image_url"]
+        }
     }
 }

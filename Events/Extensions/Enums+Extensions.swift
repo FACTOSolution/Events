@@ -30,6 +30,7 @@ enum Events {
         case calendar                   = "Calendar"
         case map                        = "Map"
         case preview                    = "Preview"
+        case contact                    = "Contact"
     }
     
     // Localizable Strings
@@ -120,6 +121,7 @@ enum Events {
             case image          = "formFields.image"
             case preview        = "formFields.preview"
             case type           = "formFields.type"
+            case contact        = "formFields.contact"
         }
         
         enum formAlerts: String, LocalizeRepresentable {
@@ -128,6 +130,7 @@ enum Events {
             case description        = "formAlert.description"
             case descriptionLimit   = "formAlert.descriptionLimit"
             case address            = "formAlert.address"
+            case contact            = "formAlert.contact"
         }
         
         enum camera: String, LocalizeRepresentable {

@@ -29,6 +29,13 @@ class Event: Object, Mappable {
     dynamic var type = ""
     dynamic var latitude = ""
     dynamic var longitude = ""
+    
+    enum EventStatus: Int { case approved = 0; case waiting = 1; case recused = 2; case reported = 3; }
+    private dynamic var privateStatus: Int = EventStatus.approved.rawValue
+    var status: EventStatus {
+        get { return EventStatus(rawValue: privateStatus)! }
+        set { privateStatus = newValue.rawValue }
+    }
 
     override static func primaryKey() -> String? {
         return "id"
@@ -39,7 +46,6 @@ class Event: Object, Mappable {
     }
     
     func mapping(map: Map) {
-        ownerId         <- map["user"]
         name            <- map["name"]
         _description    <- map["description"]
         contact         <- map["contact"]
@@ -53,13 +59,15 @@ class Event: Object, Mappable {
         
         if map.mappingType == .fromJSON {
             id          <- map["event_id"]
+            ownerId     <- map["user"]
             images      <- (map["images"], ListImageTransform())
             published   <- map["published"]
             created     <- (map["created_at"], DateFormatterTransform())
             updated     <- (map["updated_at"], DateFormatterTransform())
             
         } else {
-            images >>> (map["images"], ListImageTransformJson())
+            ownerId >>> map["user_id"]
+            images  >>> (map["images_attributes"], ListImageTransform())
         }
         
         

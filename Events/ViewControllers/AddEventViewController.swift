@@ -299,6 +299,36 @@ class AddEventViewController: FormViewController {
                 cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
                 cell.tintColor = UIColor.white
             }
+            
+            
+        +++ Section()
+            <<< NameRow("contact") {
+                $0.title = Events.localizable.formFields.contact.localized
+                $0.add(rule: RuleRequired(msg:Events.localizable.formAlerts.contact.localized))
+                $0.validationOptions = .validatesOnChange
+                }.cellSetup { cell, row in
+                    cell.imageView?.image = Events.Images.contact.image
+                    cell.imageView?.image = cell.imageView?.image!.withRenderingMode(.alwaysTemplate)
+                    cell.tintColor = UIColor.white
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = .red
+                    }
+                }.onRowValidationChanged({ (cell, row) in
+                    let rowIndex = row.indexPath!.row
+                    while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+                        row.section?.remove(at: rowIndex + 1)
+                    }
+                    if !row.isValid {
+                        for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                            let labelRow = LabelRow() {
+                                $0.title = validationMsg
+                                $0.cell.height = { 30 }
+                            }
+                            row.section?.insert(labelRow, at: row.indexPath!.row + index + 1)
+                        }
+                    }
+                })
         
         +++ Section()
         
@@ -348,7 +378,7 @@ class AddEventViewController: FormViewController {
     func create() {
         if let event = getEvent(), let user = user {
             EventNetworkAdapter.create(event, with: user.oauthHeader!, success: { 
-                
+                self.dismiss(animated: true, completion: nil)
             }, error: { (error) in
                 print(error)
             }, failure: { (moyaError) in
@@ -360,12 +390,10 @@ class AddEventViewController: FormViewController {
     
     private func getEvent() -> Event? {
         let values : Dictionary! = form.values()
-        print(values)
         let event = Mapper<Event>().map(JSON: values as Any as! [String : Any])
         if let user = user {
             event?.ownerId = user.id
         }
-        print(event)
         return event
     }
     

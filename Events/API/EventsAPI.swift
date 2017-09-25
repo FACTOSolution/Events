@@ -90,22 +90,9 @@ extension EventsAPI: TargetType {
             print(parameters)
             return parameters
         case .createEvent(let event,_), .updateEvent(let event,_):
-//            var parameters = [String: Any]()
-//            parameters["event_id"]      = event.id
-//            parameters["user"]          = event.ownerId
-//            parameters["name"]          = event.name
-//            parameters["description"]   = event.description
-//            parameters["contact"]       = event.contact
-//            parameters["value"]         = event.value
-//            parameters["address"]       = event.address
-//            parameters["date"]          = event.startDate
-//            parameters["endDate"]       = event.endDate
-//            parameters["type"]          = event.type
-            print(event.toJSON())
-            
-            
-            return event.toJSON()
-            
+            var parameters = [String: Any]()
+            parameters["event"] = event.toJSON()
+            return parameters
         case .getEvents(let orderBy):
             var parameters = [String: Any]()
             
@@ -135,8 +122,10 @@ extension EventsAPI: TargetType {
             return URLEncoding.default // Send parameters in URL for GET, DELETE and HEAD. For other HTTP methods, parameters will be sent in request body
         case .updateUser, .updateEvent:
             return URLEncoding.queryString // Always sends parameters in URL, regardless of which HTTP method is used
-        case .createUser, .createEvent, .signIn, .getEvents:
+        case .createUser, .signIn, .getEvents:
             return JSONEncoding.default // Send parameters as JSON in request body
+        case .createEvent:
+            return JSONEncoding.prettyPrinted // Send parameters as JSON in request body
         }
     }
     
@@ -147,6 +136,7 @@ extension EventsAPI: TargetType {
     var task: Task {
         switch self {
         case .createEvent, .updateEvent:
+            print(parameters!)
             return .requestCompositeParameters(bodyParameters: parameters!, bodyEncoding: parameterEncoding, urlParameters: headers!)
         case .createUser, .updateUser, .getEvents, .signIn:
             return .requestParameters(parameters: parameters!, encoding: parameterEncoding)
@@ -164,10 +154,11 @@ extension EventsAPI: TargetType {
             headers["Client"]       = oauthHeader.client
             headers["Expiry"]       = oauthHeader.expiry
             headers["Uid"]          = oauthHeader.uid
+            headers["Content-Type"] = "application/json; charset=utf-8"
             return headers
             
         default:
-            return ["Content-type": "application/json; charset=utf-8"]
+            return ["Content-Type": "application/json; charset=utf-8"]
         }
     }
 }

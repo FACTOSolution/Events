@@ -88,7 +88,7 @@
     "formFields.image"          = "Image";
     "formFields.preview"        = "Preview";
     "formFields.type"           = "Type";
-
+    "formFields.contact"        = "Contact";
 
 // FormAlert - English - en.lproj/Localizable.strings
 
@@ -97,6 +97,7 @@
     "formAlert.description"         = "Description is required";
     "formAlert.descriptionLimit"    = "Limit of 300 characters";
     "formAlert.address"             = "Address is required";
+    "formAlert.contact"             = "Contact is required";
 
 // Camera - English - en.lproj/Localizable.strings
 
