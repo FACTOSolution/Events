@@ -371,11 +371,11 @@ class AddEventViewController: FormViewController {
     }
     
     
-    func cancel() {
+    @objc func cancel() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func create() {
+    @objc func create() {
         if let event = getEvent(), let user = user {
             EventNetworkAdapter.create(event, with: user.oauthHeader!, success: { 
                 self.dismiss(animated: true, completion: nil)

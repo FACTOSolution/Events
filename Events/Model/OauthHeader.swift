@@ -13,11 +13,11 @@ import ObjectMapper
 
 class OauthHeader : Object, Mappable {
     
-    dynamic var accessToken = ""
-    dynamic var tokenType = ""
-    dynamic var client = ""    
-    dynamic var expiry = ""
-    dynamic var uid = ""
+    @objc dynamic var accessToken = ""
+    @objc dynamic var tokenType = ""
+    @objc dynamic var client = ""
+    @objc dynamic var expiry = ""
+    @objc dynamic var uid = ""
     
     required convenience public init?(map: Map) {
         self.init()

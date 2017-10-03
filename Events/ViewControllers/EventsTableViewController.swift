@@ -116,7 +116,7 @@ extension EventsTableViewController{
     
     // MARK: - Update
     
-    func update(){
+    @objc func update(){
         loadEvents()
         tableView.reloadData()
         self.refreshControl?.endRefreshing()

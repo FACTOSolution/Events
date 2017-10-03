@@ -28,7 +28,7 @@ enum EventsTheme {
         UINavigationBar.appearance().barStyle = UIBarStyle.blackTranslucent
         UINavigationBar.appearance().barTintColor = darkColor
         UINavigationBar.appearance().tintColor = linkColor
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: linkColor]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: linkColor]
         UINavigationBar.appearance().isTranslucent = true
         
         UITabBar.appearance().barStyle = UIBarStyle.black

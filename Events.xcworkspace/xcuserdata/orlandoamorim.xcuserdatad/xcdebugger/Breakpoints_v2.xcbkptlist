@@ -9,24 +9,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Events/ViewControllers/EventsTableViewController.swift"
-            timestampString = "526580136.347227"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "loadEvents()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Events/ViewControllers/AddEventViewController.swift"
-            timestampString = "527996431.815444"
+            timestampString = "528581669.679314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "383"
@@ -42,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Events/ViewControllers/AddEventViewController.swift"
-            timestampString = "527996431.815444"
+            timestampString = "528581669.685139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "384"
@@ -54,31 +38,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Events.AddEventViewController.(create () -&gt; ()).(closure #2)"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in Events.AddEventViewController.create() -&gt; ()"
                   moduleName = "Events"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/orlandoamorim/Library/Mobile%20Documents/com~apple~CloudDocs/Events/Events/ViewControllers/AddEventViewController.swift"
-                  timestampString = "527996433.646"
+                  timestampString = "528581670.503298"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "384"
                   endingLineNumber = "384"
-                  offsetFromSymbolStart = "186">
+                  offsetFromSymbolStart = "217">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Events.AddEventViewController.(create () -&gt; ()).(closure #3)"
+                  symbolName = "closure #3 (Moya.MoyaError) -&gt; () in Events.AddEventViewController.create() -&gt; ()"
                   moduleName = "Events"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/orlandoamorim/Library/Mobile%20Documents/com~apple~CloudDocs/Events/Events/ViewControllers/AddEventViewController.swift"
-                  timestampString = "527996433.648314"
+                  timestampString = "528581670.507789"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "385"
                   endingLineNumber = "385"
-                  offsetFromSymbolStart = "50">
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>

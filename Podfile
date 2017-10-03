@@ -3,11 +3,10 @@ platform :ios, '10.0'
 
 target 'Events' do
   use_frameworks!
-  pod 'Alamofire', '~> 4.4'
+  pod 'Alamofire', '~> 4.5'
   pod 'Moya'
   pod 'ImageSlideshow/SDWebImage'
   pod 'RealmSwift'
-  pod 'ObjectMapper', '~> 2.2'
+  pod 'ObjectMapper', '~> 3.0'
   pod 'Eureka'
-  pod 'Cloudinary', '~> 2.0'
 end

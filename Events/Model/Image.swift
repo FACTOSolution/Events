@@ -11,9 +11,9 @@ import RealmSwift
 import ObjectMapper
 
 public class Image: Object, Mappable {
-    dynamic var id = 0
-    dynamic var eventId = 0
-    dynamic var url = "http://lorempixel.com/300/300"
+    @objc dynamic var id = 0
+    @objc dynamic var eventId = 0
+    @objc dynamic var url = "http://lorempixel.com/300/300"
     var preview: UIImage? =  nil
 
     override public static func primaryKey() -> String? {

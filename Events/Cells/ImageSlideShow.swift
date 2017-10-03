@@ -23,7 +23,7 @@ class ImageSlideShow: UIView {
     var previewImputs: [ImageSource] = [ImageSource]()
 
     
-    func cellTapped(sender: AnyObject) {
+    @objc func cellTapped(sender: AnyObject) {
         delegate?.slideShowTapped(cell: self)
     }
     

@@ -13,25 +13,25 @@ import CoreLocation
 
 //Academico e Cultural
 class Event: Object, Mappable {
-    dynamic var id = 0
-    dynamic var ownerId = 0
-    dynamic var name = ""
-    dynamic var _description = ""
-    dynamic var contact = ""
-    dynamic var value: Double = 0.0
-    dynamic var address = ""
-    dynamic var startDate = Date()
-    dynamic var endDate: Date? = nil
-    dynamic var created = Date()
-    dynamic var updated = Date()
-    dynamic var published = false
+    @objc dynamic var id = 0
+    @objc dynamic var ownerId = 0
+    @objc dynamic var name = ""
+    @objc dynamic var _description = ""
+    @objc dynamic var contact = ""
+    @objc dynamic var value: Double = 0.0
+    @objc dynamic var address = ""
+    @objc dynamic var startDate = Date()
+    @objc dynamic var endDate: Date? = nil
+    @objc dynamic var created = Date()
+    @objc dynamic var updated = Date()
+    @objc dynamic var published = false
     var images = List<Image>()
-    dynamic var type = ""
-    dynamic var latitude = ""
-    dynamic var longitude = ""
+    @objc dynamic var type = ""
+    @objc dynamic var latitude = ""
+    @objc dynamic var longitude = ""
     
     enum EventStatus: Int { case approved = 0; case waiting = 1; case recused = 2; case reported = 3; }
-    private dynamic var privateStatus: Int = EventStatus.approved.rawValue
+    @objc private dynamic var privateStatus: Int = EventStatus.approved.rawValue
     var status: EventStatus {
         get { return EventStatus(rawValue: privateStatus)! }
         set { privateStatus = newValue.rawValue }

@@ -12,20 +12,20 @@ import ObjectMapper
 
 class User : Object, Mappable {
 
-    dynamic var id = 0
-    dynamic var uid = 0
-    dynamic var name = ""
-    dynamic var username = ""
-    dynamic var email = ""
-    dynamic var provider = ""
-    dynamic var image = ""
-    dynamic var created = Date()
-    dynamic var updated = Date()
+    @objc dynamic var id = 0
+    @objc dynamic var uid = 0
+    @objc dynamic var name = ""
+    @objc dynamic var username = ""
+    @objc dynamic var email = ""
+    @objc dynamic var provider = ""
+    @objc dynamic var image = ""
+    @objc dynamic var created = Date()
+    @objc dynamic var updated = Date()
     
-    dynamic var verified = false
-    dynamic var logged = false
-    dynamic var password = ""
-    dynamic var oauthHeader: OauthHeader?
+    @objc dynamic var verified = false
+    @objc dynamic var logged = false
+    @objc dynamic var password = ""
+    @objc dynamic var oauthHeader: OauthHeader?
     
     override static func primaryKey() -> String? {
         return "id"
