@@ -13,6 +13,7 @@ class EventsTableViewController: UITableViewController {
     
     let results = try! Realm().objects(Event.self).sorted(byKeyPath: "startDate", ascending: true)
     var notificationToken: NotificationToken?
+    var canLoadMore: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,17 +118,25 @@ extension EventsTableViewController{
     // MARK: - Update
     
     @objc func update(){
-        loadEvents()
-        tableView.reloadData()
-        self.refreshControl?.endRefreshing()
+        print(canLoadMore)
+        if canLoadMore {
+            loadEvents()
+        }
     }
     
     func loadEvents() {
-        EventNetworkAdapter.getAllEvents(error: { (error) in
+        
+        EventNetworkAdapter.getEvent(paginated: true, success: { (isLastPage) in
+            self.refreshControl?.endRefreshing()
+            if isLastPage {
+                self.canLoadMore = false
+            }
+        }, error: { (error) in
             print(error)
-        }) { (error) in
-            print(error)
+        }) { (moyaError) in
+            print(moyaError)
         }
+        
     }
     
 }

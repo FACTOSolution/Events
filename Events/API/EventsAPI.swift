@@ -17,7 +17,7 @@ enum EventsAPI {
     case createEvent(Event, OauthHeader)
     case updateEvent(Event, OauthHeader)
     case getEvent(id: Int)
-    case getEvents(OrderBy)
+    case getEvents(on: Int , order: OrderBy)
     case signIn(User)
 }
 
@@ -93,8 +93,10 @@ extension EventsAPI: TargetType {
             var parameters = [String: Any]()
             parameters["event"] = event.toJSON()
             return parameters
-        case .getEvents(let orderBy):
+        case .getEvents(let page, let orderBy):
             var parameters = [String: Any]()
+            
+            parameters["page"] = page > 0 ? page : 1
             
             if orderBy.date != .none {
                 parameters["date"] = orderBy.date.rawValue
@@ -136,7 +138,6 @@ extension EventsAPI: TargetType {
     var task: Task {
         switch self {
         case .createEvent, .updateEvent:
-            print(parameters!)
             return .requestCompositeParameters(bodyParameters: parameters!, bodyEncoding: parameterEncoding, urlParameters: headers!)
         case .createUser, .updateUser, .getEvents, .signIn:
             return .requestParameters(parameters: parameters!, encoding: parameterEncoding)

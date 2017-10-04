@@ -17,9 +17,12 @@ struct EventNetworkAdapter {
     static let provider = MoyaProvider<EventsAPI>()
     // Get the default Realm
     static let realm = try! Realm()
-
-    static func getAllEvents(error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
-        provider.request(EventsAPI.getEvents(OrderBy(date: .asc, value: .none))) { (result) in
+    //Page counter
+    static private var page: Int = 1
+    
+    static func getEvent(paginated: Bool = true, success successCallback: @escaping (_ lastPage: Bool) -> Void, error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
+        page = paginated == true ? page : 1
+        provider.request(EventsAPI.getEvents(on: page , order: OrderBy(date: .asc, value: .none))) { (result) in
             switch result {
             case .success(let response):
                 // 1:
@@ -28,14 +31,18 @@ struct EventNetworkAdapter {
                         let eventsJson = try response.mapJSON()
                         let events: [Event] = Mapper<Event>().mapArray(JSONArray: eventsJson as! [[String : Any]])
                         try! realm.write {
-                            realm.delete(realm.objects(Event.self))
-                            realm.delete(realm.objects(Image.self))
-                            //SDImageCache.shared().clearMemory()
-                            //SDImageCache.shared().clearDisk()
+                            if page == 1 {
+                                realm.delete(realm.objects(Event.self))
+                                realm.delete(realm.objects(Image.self))
+                                //SDImageCache.shared().clearMemory()
+                                //SDImageCache.shared().clearDisk()
+                            }
                             for event in events {
                                 realm.add(event, update: true)
                             }
                         }
+                        events.count > 0 ? successCallback(false) : successCallback(true)
+                        page = (paginated == true && events.count > 0) ? (page + 1) : page
                     }catch {
                         errorCallback(error)
                     }
@@ -83,7 +90,7 @@ struct EventNetworkAdapter {
         }
     }
     
-    static func create(_ event: Event,with oauthHeader: OauthHeader, success successCallback: @escaping () -> Void, error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
+    static func create(_ event: Event, with oauthHeader: OauthHeader, success successCallback: @escaping () -> Void, error errorCallback: @escaping (Swift.Error) -> Void, failure failureCallback: @escaping (MoyaError) -> Void) {
         
         provider.request(EventsAPI.createEvent(event, oauthHeader)) { (result) in
             switch result {
