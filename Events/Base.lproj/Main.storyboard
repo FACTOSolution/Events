@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,7 +49,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3ZQ-5G-dPQ" secondAttribute="trailing" id="5sO-8z-Rqy"/>
                             <constraint firstItem="3ZQ-5G-dPQ" firstAttribute="leading" secondItem="bgb-Np-P5W" secondAttribute="leading" id="Aj3-1z-QU1"/>
-                            <constraint firstItem="3ZQ-5G-dPQ" firstAttribute="centerX" secondItem="bgb-Np-P5W" secondAttribute="centerX" id="FgW-vW-tXV"/>
                             <constraint firstItem="3ZQ-5G-dPQ" firstAttribute="centerY" secondItem="bgb-Np-P5W" secondAttribute="centerY" id="JUz-Re-FPW"/>
                             <constraint firstItem="3ZQ-5G-dPQ" firstAttribute="top" secondItem="bgb-Np-P5W" secondAttribute="top" id="Lh8-qv-9Gn"/>
                             <constraint firstAttribute="bottom" secondItem="3ZQ-5G-dPQ" secondAttribute="bottom" id="s6v-hZ-690"/>
@@ -84,12 +83,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="q5Y-4m-k8d" secondAttribute="bottom" id="4oz-Go-BUw"/>
-                            <constraint firstItem="q5Y-4m-k8d" firstAttribute="leading" secondItem="3vd-s7-bfs" secondAttribute="leading" id="8Ud-2C-lQM"/>
-                            <constraint firstItem="q5Y-4m-k8d" firstAttribute="centerX" secondItem="3vd-s7-bfs" secondAttribute="centerX" id="8Wo-Ec-zC6"/>
-                            <constraint firstAttribute="trailing" secondItem="q5Y-4m-k8d" secondAttribute="trailing" id="hQz-8f-JA2"/>
-                            <constraint firstItem="q5Y-4m-k8d" firstAttribute="top" secondItem="3vd-s7-bfs" secondAttribute="top" id="tKg-jb-LWN"/>
-                            <constraint firstItem="q5Y-4m-k8d" firstAttribute="centerY" secondItem="3vd-s7-bfs" secondAttribute="centerY" id="wob-C4-qFE"/>
+                            <constraint firstItem="q5Y-4m-k8d" firstAttribute="top" secondItem="3vd-s7-bfs" secondAttribute="top" id="3cT-wn-33X"/>
+                            <constraint firstAttribute="bottom" secondItem="q5Y-4m-k8d" secondAttribute="bottom" id="6m3-xY-pZy"/>
+                            <constraint firstItem="q5Y-4m-k8d" firstAttribute="leading" secondItem="3vd-s7-bfs" secondAttribute="leading" id="O6C-0f-wfl"/>
+                            <constraint firstAttribute="trailing" secondItem="q5Y-4m-k8d" secondAttribute="trailing" id="XRd-Ey-nWa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -121,7 +118,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8Ma-nt-hAU" secondAttribute="trailing" id="5LB-xa-YHZ"/>
                             <constraint firstItem="8Ma-nt-hAU" firstAttribute="centerY" secondItem="aPF-aR-k0m" secondAttribute="centerY" id="HQS-Bb-7Mi"/>
-                            <constraint firstItem="8Ma-nt-hAU" firstAttribute="centerX" secondItem="aPF-aR-k0m" secondAttribute="centerX" id="Src-ya-sXl"/>
                             <constraint firstItem="3pZ-eG-h13" firstAttribute="top" secondItem="8Ma-nt-hAU" secondAttribute="bottom" id="WQd-cy-f9p"/>
                             <constraint firstItem="8Ma-nt-hAU" firstAttribute="top" secondItem="aPF-aR-k0m" secondAttribute="top" id="a7e-N9-Hiw"/>
                             <constraint firstItem="8Ma-nt-hAU" firstAttribute="leading" secondItem="aPF-aR-k0m" secondAttribute="leading" id="r0r-c9-KXM"/>
@@ -197,7 +193,6 @@
                     <tabBarItem key="tabBarItem" title="Events" image="Tickets" id="8AU-QA-Kbe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eww-vJ-2Di">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -216,7 +211,6 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="ezo-wb-UCa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iAO-yV-WHI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -42,7 +42,7 @@
                   moduleName = "Events"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/orlandoamorim/Library/Mobile%20Documents/com~apple~CloudDocs/Events/Events/ViewControllers/AddEventViewController.swift"
-                  timestampString = "528581670.503298"
+                  timestampString = "528775656.975934"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "384"
@@ -57,7 +57,7 @@
                   moduleName = "Events"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/orlandoamorim/Library/Mobile%20Documents/com~apple~CloudDocs/Events/Events/ViewControllers/AddEventViewController.swift"
-                  timestampString = "528581670.507789"
+                  timestampString = "528775656.978935"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "385"
@@ -65,6 +65,22 @@
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Events/API/EventsAPI.swift"
+            timestampString = "528775716.207462"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "method"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

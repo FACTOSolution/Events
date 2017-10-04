@@ -200,10 +200,10 @@ class EventViewController: FormViewController {
             var str = string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
             if !string.isEmpty, numberStyle == .currency && !string.contains(currencySymbol) {
                 // Check if the currency symbol is at the last index
-                if let formattedNumber = self.string(from: 1),
-                    formattedNumber.substring(from: formattedNumber.index(before: formattedNumber.endIndex)) == currencySymbol {
+                if let formattedNumber = self.string(from: 1), String(formattedNumber[formattedNumber.index(before: formattedNumber.endIndex)...]) == currencySymbol {
                     // This means the user has deleted the currency symbol. We cut the last number and then add the symbol automatically
-                    str = str.substring(to: str.index(before: str.endIndex))
+                    str = String(str[..<str.index(before: str.endIndex)])
+                    
                 }
             }
             obj?.pointee = NSNumber(value: (Double(str) ?? 0.0)/Double(pow(10.0, Double(minimumFractionDigits))))
